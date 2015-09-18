@@ -1,7 +1,7 @@
 package ProyectoAD;
 
 import java.util.HashMap;
-import Herramientas.recorrerMap;
+import Herramientas.herramientas;
 
 public class hashMapDos {
 
@@ -15,7 +15,7 @@ public class hashMapDos {
         colores.put(200,"Verde");
         colores.put(300,"Azul");
        
-        recorrerMap.recorrerMapInt(colores);
+        herramientas.recorrerMapInt(colores);
         
         // Cambiar Rojo por Negro
         if (colores.containsKey(100))
@@ -31,6 +31,6 @@ public class hashMapDos {
         }
         
         // Mostrar cómo queda el HashMap
-        recorrerMap.recorrerMapInt(colores);
+        herramientas.recorrerMapInt(colores);
     }
 }

@@ -3,7 +3,7 @@ package ProyectoAD;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import Herramientas.recorrerColeccion.*;
+import Herramientas.herramientas;
 
 public class hashMapUno {
 
