@@ -38,6 +38,13 @@ public class Ejercicio1 {
         list2.add(equipo4);
         list2.add(equipo5);
         list2.add(equipo6);
-
+        
+        ArrayList list3 = new ArrayList();
+        
+        for(int i = 0; i < list1.size(); i++) {
+            list3.add(list1.get(i));
+            System.out.println(list3.get(i));
+        }
+        
     }
 }

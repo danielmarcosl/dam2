@@ -11,5 +11,9 @@ public class Equipo {
         cantidad = c;
         precio = p;
     }
+    
+    public double getPrecio() {
+        return precio;
+    }
 
 }
