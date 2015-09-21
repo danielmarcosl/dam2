@@ -8,8 +8,7 @@ public class ficherosecuencial2 {
     public static void main(String args[]) {
         // Leer por teclado
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
-        //Scanner scan = new Scanner(teclado);
-
+        
         // Escribir en el fichero secuencial
         try {
             BufferedWriter fe = new BufferedWriter(new FileWriter("C:\\Users\\Alumnot\\Documents\\ejemplo.txt"));
