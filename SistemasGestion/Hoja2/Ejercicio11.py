@@ -8,7 +8,7 @@ num3 = int(raw_input("Introduce un numero: "))
 # Comprobamos si hay varios iguales
 if num1 == num2 and num1 == num3 :
 	print "Has escrito el mismo numero tres veces"
-elif (num1 == num2 and num1 != num3) or (num2 == num3 and num2 != num1) :
+elif num1 == num2 or num1 != num3 or num2 == num3 :
 	print "Has escrito uno de los numeros dos veces"
 elif num1 != num2 and num1 != num3 :
 	print "Los tres numeros que has escrito son distintos"
