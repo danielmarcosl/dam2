@@ -50,7 +50,7 @@ public class Profesor {
         //}
     }
 
-    public static void main() {
+    public static void main(String args[]) {
 
         Profesor profe1 = new Profesor();
         Profesor profe2 = new Profesor();
@@ -69,7 +69,7 @@ public class Profesor {
         listaprofe.add(profe3);
         listaprofe.add(profe4);
 
-    // generar 4 profesores que vamos a guardar en un ArrayList (listaprofe)
+        // generar 4 profesores que vamos a guardar en un ArrayList (listaprofe)
         // y mostrar su contenido
         // Declarar el ArrayList
         // sin tipo
