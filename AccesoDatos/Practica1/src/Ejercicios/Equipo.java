@@ -12,8 +12,19 @@ public class Equipo {
         precio = p;
     }
     
+    public void descuentoEquipo() {
+        precio = precio * 0.8;
+    }
+    
+    public String getNombre()  {
+        return nombre;
+    }
+    
+    public Integer getCantidad() {
+        return cantidad;
+    }
+    
     public double getPrecio() {
         return precio;
     }
-
 }
