@@ -1,6 +1,8 @@
 package Herramientas;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -34,5 +36,16 @@ public class herramientas {
             Object valor = (Object) map.get(clave);
             System.out.println(clave + " " + valor);
         }
+    }
+
+    public static void eliminarDuplicados(ArrayList ar) {
+
+        HashSet hash = new HashSet(ar);
+        ArrayList ar2 = new ArrayList(hash);
+//        Iterator it = ar2.iterator();
+//
+//        while (it.hasNext()) {
+//            System.out.println(it.next());
+//        }
     }
 }
