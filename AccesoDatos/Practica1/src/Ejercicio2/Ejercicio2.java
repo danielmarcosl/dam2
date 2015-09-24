@@ -64,7 +64,7 @@ public class Ejercicio2 {
                     System.out.println("La titulacion " + titulacion1 + " esta repetida");
                 }
                 
-                // Buscamos un profesor repetidos, si existe, mostrar un mensaje
+                // Buscamos profesores repetidos, si existe, mostrar un mensaje
                 if((nombre1 == nombre2) && (edad1 == edad2) && (titulacion1 == titulacion2)) {
                     System.out.println("El profesor " + nombre1 + ", " + edad1 + ", " + titulacion1 + ", esta repetido");
                 }
