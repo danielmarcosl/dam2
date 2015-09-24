@@ -17,6 +17,10 @@ public class Ejercicio2 {
         prof3.nuevoProfesor("Enrique", 42, "Ingeniero");
         Profesor prof4 = new Profesor();
         prof4.nuevoProfesor("David", 26, "Filologo ingles");
+        Profesor prof5 = new Profesor();
+        prof5.nuevoProfesor("Enrique", 42, "Ingeniero");
+        Profesor prof6 = new Profesor();
+        prof6.nuevoProfesor("Agustin", 63, "Tecnico de redes");
 
         // Declaramos los dos maps
         HashMap<String, Object> map1 = new HashMap<String, Object>();
@@ -25,8 +29,10 @@ public class Ejercicio2 {
         // Añadimos los profesores a los maps, poniendo 2 distintos en cada uno
         map1.put("12345678A", prof1);
         map1.put("56411501C", prof2);
-        map2.put("48161616X", prof3);
+        map1.put("48161616X", prof3);
         map2.put("15151651W", prof4);
+        map2.put("93819832C", prof5);
+        map2.put("42484465K", prof6);
 
         // Iteramos los dos HashMap a la vez
         for (Map.Entry obj1 : map1.entrySet()) {
@@ -56,6 +62,11 @@ public class Ejercicio2 {
                 // Buscamos coincidencias, si existe, mostrar un mensaje
                 if(titulacion1 == titulacion2) {
                     System.out.println("La titulacion " + titulacion1 + " esta repetida");
+                }
+                
+                // Buscamos un profesor repetidos, si existe, mostrar un mensaje
+                if((nombre1 == nombre2) && (edad1 == edad2) && (titulacion1 == titulacion2)) {
+                    System.out.println("El profesor " + nombre1 + ", " + edad1 + ", " + titulacion1 + ", esta repetido");
                 }
             }
         }
