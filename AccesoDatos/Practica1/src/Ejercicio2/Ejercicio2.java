@@ -26,7 +26,7 @@ public class Ejercicio2 {
         HashMap<String, Object> map1 = new HashMap<String, Object>();
         HashMap<String, Object> map2 = new HashMap<String, Object>();
 
-        // Añadimos los profesores a los maps, poniendo 2 distintos en cada uno
+        // Añadimos los profesores a los maps, poniendo 3 en cada uno
         map1.put("12345678A", prof1);
         map1.put("56411501C", prof2);
         map1.put("48161616X", prof3);
@@ -55,7 +55,7 @@ public class Ejercicio2 {
                     System.out.println("La edad " + edad1 + " esta repetida");
                 }
                 
-                // almacenamos las titulaciones de cada HashMap en una variable distinta
+                // Almacenamos las titulaciones de cada HashMap en una variable distinta
                 String titulacion1 = ((Profesor)obj1.getValue()).getTitulacion();
                 String titulacion2 = ((Profesor)obj2.getValue()).getTitulacion();
                 
