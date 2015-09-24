@@ -6,17 +6,6 @@ import java.util.Map;
 
 public class Ejercicio6 {
 
-    public static void recorrerMapa(Map map) {
-
-        Iterator it = map.keySet().iterator();
-
-        while (it.hasNext()) {
-            String clave = (String) it.next();
-            Object valor = (Object) map.get(clave);
-            clave.System.out.println(clave + " " + valor);
-        }
-    }
-
     public static void main(String args[]) {
 
         // Creamos los dos empleados
