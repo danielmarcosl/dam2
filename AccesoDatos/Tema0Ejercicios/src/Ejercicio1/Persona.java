@@ -4,6 +4,11 @@ public class Persona {
 
     String rut;
     String nombre;
+    
+    public void nuevaPersona(String r, String n) {
+        rut = r;
+        nombre = n;
+    }
 
     public String getnombre() {
         return nombre;

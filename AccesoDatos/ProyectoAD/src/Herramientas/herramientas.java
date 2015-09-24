@@ -48,4 +48,15 @@ public class herramientas {
 //            System.out.println(it.next());
 //        }
     }
+
+    public static String convertUTF(String txt, int largo) {
+
+        if (txt.length() > largo) {
+            return txt.substring(0, largo);
+        }
+        for (int n = txt.length(); n < largo; n++) {
+            txt = txt + " ";
+        }
+        return txt;
+    }
 }
