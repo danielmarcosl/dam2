@@ -1,10 +1,10 @@
 import java.io.*;
 
-public class CMD {
+public class CreacionDeProcesos2 {
 
 	public static void main(String args[]) {
 		Runtime r = Runtime.getRuntime();
-		String Comando = "NOTEPAD";
+		String Comando = "CMD /C DIR";
 		Process p = null;
 
 		try {
