@@ -28,12 +28,12 @@ elif opcion == 4 :
 	print lista[-1:-3:-1]
 elif opcion == 5 :
 	# Pintar par o impar en posicion 0 y -1
-	# Dividimos el numero de la posicion 0 para saber si es par o impar
+	# Dividimos el numero de la posicion 0 entre 2 para saber si es par o impar
 	if lista[0] % 2 == 0 :
 		print "El numero " + str(lista[0]) + ", de la posicion 0, es par"
 	else :
 		print "El numero " + str(lista[0]) + ", de la posicion 0, es impar"
-	# Dividimos el numero de la posicion -1 para saber si es par o impar
+	# Dividimos el numero de la posicion -1 entre 2 para saber si es par o impar
 	if lista[-1] % 2 == 0 :
 		print "El numero " + str(lista[-1]) + ", de la posicion -1, es par"
 	else :
