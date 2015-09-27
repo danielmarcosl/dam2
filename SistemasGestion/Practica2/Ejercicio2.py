@@ -13,10 +13,10 @@ if (num1 > num2) and (num1 > num3) :
 	print "El primer numero, " + str(num1) + ", es el mayor"
 # Si el num2 es mayor que los otros 2, lo pintamos
 elif (num2 > num1) and (num2 > num3) :
-	print "El segundo numero, " + str(num1) + ", es el mayor"
+	print "El segundo numero, " + str(num2) + ", es el mayor"
 # Si el num3 es mayor que los otros 2, lo pintamos
 elif (num3 > num1) and (num3 > num2) :
-	print "El tercer numero, " + str(num1) + ", es el mayor"
+	print "El tercer numero, " + str(num3) + ", es el mayor"
 # En caso de que dos o más numeros sean iguales, metemos opciones
 # Si num1 y num2 son iguales y son mayores que num3, los pintamos
 elif (num1 == num2) and (num1 > num3) :
