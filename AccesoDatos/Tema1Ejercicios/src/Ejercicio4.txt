@@ -1,0 +1,62 @@
+/*
+Ejercicio 4. Crear un fichero aleatorio que llamaremos biblioteca.txt , cargando los datos 
+que tendremos previamente guardados en  un arraylist  Biblio,
+( los datos son  los títulos de los libros de los que disponemos).
+Una vez guardada la información en el fichero debemos mostrar:
+	a.los datos guardados
+	b.el primer titulo de libro
+        c.Mostrar el último libro
+ */
+
+package Ficheros_Ejercicios;
+import java.io.*;
+import java.util.*;
+import Herramientas.*;
+
+public class Ejercicio4 {
+
+    public static void main(String[] args) {
+        try{
+            
+            BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));//
+        
+            ArrayList<String> listaLibros = new ArrayList<>(); //CREO ARRAYLIST
+            listaLibros.add("Harry Potter"); 
+            listaLibros.add("50 Sombras"); 
+            listaLibros.add("Los pilares de la tierra"); 
+            listaLibros.add("El senor de los anillos"); 
+            listaLibros.add("La vida de pi"); 
+     
+            RandomAccessFile libros = new RandomAccessFile("C:\\Users\\Alumnot\\desktop\\biblioteca.txt", "rw");
+            
+            Iterator it = listaLibros.iterator(); 
+            
+            
+            while (it.hasNext()){
+                String x = (String)it.next();
+		libros.writeUTF(Herramientas.convertUTF(x, 30));
+		}
+            
+            libros.close();
+            
+        }catch (IOException e){
+            System.out.println("Error de lectura.");
+        }
+    
+        try{
+        RandomAccessFile re = new RandomAccessFile("C:\\Users\\Alumnot\\Desktop\\biblioteca.txt","r");
+                
+             for (int i=0;i<5;i++){
+                    re.seek(i*32); //Me posiciono
+                    String nombre = re.readUTF(); //Inic var String para guardar los nombres
+                    System.out.println("Libro: "+nombre);
+                       }
+                
+                
+        }catch(IOException e){
+            System.out.println("ERROR DE LECTURA");
+        
+        }
+    }
+    
+}
