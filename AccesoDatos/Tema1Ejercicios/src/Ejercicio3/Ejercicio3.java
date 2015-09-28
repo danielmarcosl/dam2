@@ -1,6 +1,7 @@
 package Ejercicio3;
 
 import java.io.*;
+import java.util.*;
 
 public class Ejercicio3 {
 
@@ -20,57 +21,54 @@ public class Ejercicio3 {
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
         try {
-            RandomAccessFile fw = new RandomAccessFile("C:\\Users\\Alumnot\\Documents\\ej3.txt", "rw");
-
-            for (int i = 0; i < 5; i++) {
-                System.out.println("Escribe código, nombre y sueldo del empleado");
-                fw.writeUTF(convertUTF(teclado.readLine(), 20/*teclado.readLine().length()*/));
-            }
-            fw.close();
-        } catch (IOException e) {
-            System.out.println("Error: " + e);
-        }
-
-        try {
-            //BufferedReader fl = new BufferedReader(new FileReader("C:\\Users\\Alumnot\\Documents\\ej3.txt"));
-            RandomAccessFile fl = new RandomAccessFile("C:\\Users\\Alumnot\\Documents\\ej3.txt", "r");
+            RandomAccessFile raf = new RandomAccessFile("C:\\Users\\Alumnot\\Documents\\ej3.txt", "rw");
 
             System.out.println("Selecciona una opcion\na. Mostrar todos los datos\nb.Mostrar el ultimo data\nc.Mostrar el primer y tercer dato");
             String opcion = teclado.readLine();
 
             switch (opcion) {
                 case "a":
+                    // Leer todo el fichero
                     for (int i = 0; i < 5; i++) {
-                        fl.seek(i * 20);
-                        String datos = fl.readUTF();
-                        System.out.println(datos);
+                        raf.seek(i * 34);
+
+                        int codigo = raf.readInt();
+                        String nombre = raf.readUTF();
+                        double sueldo = raf.readDouble();
+
+                        System.out.println(codigo + " " + nombre + " " + sueldo);
                     }
                     break;
                 case "b":
-                    String str = null;
-                    for (int i = 0; i < 5; i++) {
-                        fl.seek(i * 20);
-                        String datos = fl.readUTF();
-                    }
-                    System.out.println(str);
+                    // Leer el ultimo registro introducido
+                    raf.seek(4 * 34);
+                    int codigo = raf.readInt();
+                    String nombre = raf.readUTF();
+                    double sueldo = raf.readDouble();
+
+                    System.out.println(codigo + " " + nombre + " " + sueldo);
                     break;
                 case "c":
-                    int count = 0;
-                    String st = null;
-                    for (int i = 0; i < 5; i++) {
-                        fl.seek(i * 20);
-                        if (count == 0 || count == 2) {
-                            st = fl.readUTF();
-                            System.out.println(st);
-                        }
-                        count++;
-                    }
+                    // Leer el primer y tercer registro
+                    raf.seek(0 * 34);
+                    codigo = raf.readInt();
+                    nombre = raf.readUTF();
+                    sueldo = raf.readDouble();
+
+                    System.out.println(codigo + " " + nombre + " " + sueldo);
+
+                    raf.seek(0 * 34);
+                    codigo = raf.readInt();
+                    nombre = raf.readUTF();
+                    sueldo = raf.readDouble();
+
+                    System.out.println(codigo + " " + nombre + " " + sueldo);
                     break;
                 default:
                     System.out.println("Opcion no valida");
                     break;
             }
-            fl.close();
+            raf.close();
         } catch (IOException e) {
             System.out.println("Error: " + e);
         }
