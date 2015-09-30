@@ -12,6 +12,8 @@ suma = 0
 for i in range(0,cantidad) :
 	lista.append(raw_input("Introduce el " + str(i) + " numero: "))
 
+print lista
+
 for i in range(0,len(lista)) :
 	if lista[i] > i :
 		mayor = lista[i]
