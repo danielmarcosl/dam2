@@ -16,7 +16,7 @@ public class Tokens2 {
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader fl = new BufferedReader(new FileReader("C:\\Users\\Alumnot\\Documents\\dam2\\AccesoDatos\\ProyectoAD\\src\\ProyectoAD\\numeros.txt"));
 
-        System.out.print("Elige una opción:\na) Listar fichero\nb) Cantidad de numeros de 1 cifra\nc) Cantidad de numeros de 2o más cifras\nd) La media de cada tipo\nTu opción: ");
+        System.out.print("Elige una opción:\na) Listar fichero\nb) Cantidad de numeros de 1 cifra\nc) Cantidad de numeros de 2 o más cifras\nd) La media de cada tipo\nTu opción: ");
         String opcion = teclado.readLine();
 
         herramientas.leerFichero(fl,nums);
