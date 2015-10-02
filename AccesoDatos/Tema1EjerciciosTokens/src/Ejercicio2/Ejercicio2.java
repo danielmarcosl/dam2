@@ -1,4 +1,4 @@
-package Ejercicio1;
+package Ejercicio2;
 
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Ejercicio1 {
+public class Ejercicio2 {
 
     public static void main(String args[]) {
 
@@ -21,8 +21,7 @@ public class Ejercicio1 {
             StringTokenizer st = new StringTokenizer(teclado.readLine()," ");
 
             while (st.hasMoreTokens()) {
-                escribir.write(st.nextToken());
-                escribir.newLine();
+                escribir.write(st.nextToken() + "@");
             }
             escribir.close();
 
