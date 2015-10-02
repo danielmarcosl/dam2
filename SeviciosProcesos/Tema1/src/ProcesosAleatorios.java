@@ -11,7 +11,7 @@ public class ProcesosAleatorios {
 
 	static int aleatorios = 6;
 	
-	public static void main(String args[]) throws IOException {
+	public static void main(String args[]) throws IOException, InterruptedException {
 
 		Process[] p = new Process[aleatorios]; // Array de procesos
 		InputStream is[] = new InputStream[aleatorios];
@@ -19,7 +19,7 @@ public class ProcesosAleatorios {
 		BufferedReader br[] = new BufferedReader[aleatorios];
 
 		for (int i = 0; i < aleatorios; i++) {
-			p[i] = new ProcessBuilder(".\\aleatorioHijo.java").start();
+			p[i] = new ProcessBuilder("").start();
 			is[i] = p[i].getInputStream();
 			isr[i] = new InputStreamReader(is[i]);
 			br[i] = new BufferedReader(isr[i]);
