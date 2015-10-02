@@ -1,8 +1,8 @@
 package Herramientas;
 
 /**
- * @author Daniel Marcos Lorrio
- * @version 0.288 28 de Septiembre de 2015
+ * @author Alvaro Gomez Muñoz
+ * @version 1.0.1 de Octubre de 2015
  */
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,8 +20,10 @@ public class herramientas {
      * @param colec Cualquier coleccion
      */
     public static void recorrerColeccion(Collection colec) {
+        // Iteraramos la coleccion
         Iterator it = colec.iterator();
 
+        // Recorremos la coleccion e imprimimos todos los valores
         while (it.hasNext()) {
             System.out.println(it.next());
         }
@@ -33,9 +35,10 @@ public class herramientas {
      * @param map Cualquier map
      */
     public static void recorrerMapStr(Map map) {
-
+        // Iteramos el map
         Iterator it = map.keySet().iterator();
 
+        // Recorremos el map e imprimimos la clave y el valor
         while (it.hasNext()) {
             String clave = (String) it.next();
             Object valor = (Object) map.get(clave);
@@ -49,9 +52,10 @@ public class herramientas {
      * @param map Cualquier map
      */
     public static void recorrerMapInt(Map map) {
-
+        // Iteramos el map
         Iterator it = map.keySet().iterator();
-
+        
+        // Recorremos el map e imprimimos la clave y el valor
         while (it.hasNext()) {
             Integer clave = (Integer) it.next();
             Object valor = (Object) map.get(clave);
@@ -67,16 +71,19 @@ public class herramientas {
      * @return Cadena generada
      */
     public static String convertUTF(String txt, int largo) {
-
+        // Si la longitud del String es mayor que el integer asociado
+        // Devuelve un substring del String dado
         if (txt.length() > largo) {
             return txt.substring(0, largo);
         }
+        // Si el String es menor, añadirle espacios en blanco
         for (int n = txt.length(); n < largo; n++) {
             txt = txt + " ";
         }
         return txt;
     }
-    //--------------------
+    
+    // Metodos asociados a Tokens2.java
 
     /**
      * Metodo para leer fichero mediante BufferedReader
@@ -85,16 +92,23 @@ public class herramientas {
      * @param ar ArrayList de Integer declarado previamente
      */
     public static void leerFichero(BufferedReader br, ArrayList<Integer> ar) {
-        String linea = null;
+        // Declaramos variable para luego almacenar las lineas leidas del fichero
+        String linea;
         try {
+            // Se almacenan las lineas mientras haya lineas
             while ((linea = br.readLine()) != null) {
+                // Declaracion de StringTokenizer para la linea almacenada
+                // con el token !
                 StringTokenizer tok = new StringTokenizer(linea, "!");
+                // Mientras haya tokens, añadirlos al ArrayList<Integer>
                 while (tok.hasMoreTokens()) {
                     ar.add(Integer.parseInt(tok.nextToken()));
                     ar.add(Integer.parseInt(tok.nextToken()));
                 }
             }
+            // Cerrar el fichero
             br.close();
+            // SI ha habido un error, mostrarlo
         } catch (IOException e) {
             System.out.println("Error: " + e);
         }
@@ -118,13 +132,17 @@ public class herramientas {
      * @return Cantidad de Integers menores de 10
      */
     public static int contarUnaCifra(ArrayList<Integer> ar) {
+        // Declarar e inicializar contador
         int count = 0;
 
+        // Recorrer el ArrayList<Integer>
         for (int i = 0; i < ar.size(); i++) {
+            // Si un valor es menor de 10, aumentar el contador
             if (ar.get(i) < 10) {
                 count++;
             }
         }
+        // Devolver el valor del contador
         return count;
     }
 
@@ -135,13 +153,17 @@ public class herramientas {
      * @return Cantidad de Integers mayores o igual a 10
      */
     public static int contarDosCifras(ArrayList<Integer> ar) {
+        // Declarar e inicializar el contador
         int count = 0;
 
+        // Recorrer el ArrayList<Integer>
         for (int i = 0; i < ar.size(); i++) {
+            // Si un valor es igual o mayor a 10, aumentar el contador
             if (ar.get(i) >= 10) {
                 count++;
             }
         }
+        // Devolver el valor del contador
         return count;
     }
 
@@ -152,13 +174,17 @@ public class herramientas {
      * @return Suma de los integers
      */
     public static int sumaUnaCifra(ArrayList<Integer> ar) {
+        // Declarar e inicializar una variable para añadir numeros y sumarlos
         int suma = 0;
 
+        // Recorremos el ArrayList<Integer>
         for (int i = 0; i < ar.size(); i++) {
+            // Si un valor es menor a 10, sumarlo a la variable
             if (ar.get(i) < 10) {
                 suma += ar.get(i);
             }
         }
+        // Devolver el valor de la suma
         return suma;
     }
 
@@ -169,13 +195,17 @@ public class herramientas {
      * @return Suma de los integers
      */
     public static int sumaDosCifras(ArrayList<Integer> ar) {
+        // Declarar e inicializar una variable para añadir numeros y sumarlos
         int suma = 0;
 
+        //Recorremos el ArrayList<Integer>
         for (int i = 0; i < ar.size(); i++) {
+            // Si un valor es mayor o igual a 10, sumarlo a la variable
             if (ar.get(i) >= 10) {
                 suma += ar.get(i);
             }
         }
+        // Devolver el valor de la variable
         return suma;
     }
 }
