@@ -1,0 +1,12 @@
+public class ExtendHelloThread extends Thread {
+
+	public void run() {
+		System.out.println("Hola desde el hilo creado!");
+	}
+	
+	public static void main(String args[]) {
+		new HelloThread().start(); // Crea y arranca un nuevo hilo de ejecución
+		System.out.println("Hola desde el hilo principal!");
+		System.out.println("Proceso acabando.");
+	}
+}

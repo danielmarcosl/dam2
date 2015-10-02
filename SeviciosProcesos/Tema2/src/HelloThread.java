@@ -14,10 +14,10 @@ public class HelloThread implements Runnable {
 	}
 }
 
-class RunThread{
-		public static void main(String args[]) {
-	new HelloThread(); // Crea un nuevo hilo de ejecución
-	System.out.println("Hola desde el hilo prinicpal");
-	System.out.println("Proceso acabado");
-}
+class RunThread {
+	public static void main(String args[]) {
+		new HelloThread(); // Crea un nuevo hilo de ejecución
+		System.out.println("Hola desde el hilo prinicpal");
+		System.out.println("Proceso acabado");
+	}
 }
