@@ -4,34 +4,96 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-  }
+    // Variables modelo de datos
+    private String numeroA = "";
+    private String numeroB = "";
+    private String operacion = "";
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_main, menu);
-    return true;
-  }
+    // Variables de objetos de la vista
+    private TextView campoPantalla;
 
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
+    // Variables de la lógica
+    private boolean estadoA = true;
+    private boolean estadoB = false;
 
-    //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
-      return true;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        campoPantalla = (TextView) findViewById(R.id.campoPantalla);
     }
 
-    return super.onOptionsItemSelected(item);
-  }
+    public void pulsaNumero(View v) {
+        String teclaPulsada = String.valueOf(v.getTag());
+
+        if (estadoA == true) {
+            numeroA += teclaPulsada;
+            campoPantalla.setText(numeroA);
+        }
+        if (estadoB == true) {
+            numeroB += teclaPulsada;
+            campoPantalla.setText(numeroA + " " + operacion + " " + numeroB);
+        }
+    }// end pulsaNumero
+
+    /**
+     * @param v
+     */
+    public void pulsaOperacion(View v) {
+        int idPulsada = v.getId();
+
+        switch (idPulsada) {
+            case R.id.btnSumar:
+                operacion = "+";
+                break;
+            case R.id.btnRestar:
+                operacion = "-";
+                break;
+            case R.id.btnMultiplicar:
+                operacion = "x";
+                break;
+            case R.id.btnDividir:
+                operacion = "/";
+                break;
+        }
+
+        estadoA = false;
+        estadoB = true;
+
+        campoPantalla.setText(numeroA + " " + operacion);
+    }// end pulsaOperacion
+
+    public void pulsaResolver(View v) {
+        switch (operacion) {
+            case "+":
+                campoPantalla.setText(String.valueOf(Double.parseDouble(numeroA) +
+                        Double.parseDouble(numeroB)));
+                break;
+            case "-":
+                campoPantalla.setText(String.valueOf(Double.parseDouble(numeroA) -
+                        Double.parseDouble(numeroB)));
+                break;
+            case "x":
+                campoPantalla.setText(String.valueOf(Double.parseDouble(numeroA) *
+                        Double.parseDouble(numeroB)));
+                break;
+            case "/":
+                campoPantalla.setText(String.valueOf(Double.parseDouble(numeroA) /
+                        Double.parseDouble(numeroB)));
+                break;
+        }
+
+        estadoA = true;
+        estadoB = false;
+
+        numeroA = "";
+        numeroB = "";
+        operacion = "";
+    }
 }
