@@ -1,0 +1,1 @@
+create table empleado(DNI varchar(10) primary key,Nombre varchar(20) not null,Edad numeric(2,0) not null,Sueldo numeric(5,0) not null,CONSTRAINT comprobarEdad CHECK (edad between 18 and 110),CONSTRAINT comprobarSueldo CHECK (sueldo > 0));

@@ -1,0 +1,3 @@
+select * from empleado where sueldo in (100,500,5000);
+select * from empleado where nombre like 's%' or nombre like 'S%';
+select * from empleado where edad between 20 and 90;
