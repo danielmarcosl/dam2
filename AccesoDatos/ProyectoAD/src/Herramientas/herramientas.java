@@ -242,7 +242,7 @@ public class herramientas {
      * @throws IOException
      * @throws ClassNotFoundException 
      */
-    public static void desserializarArray(String ruta) throws IOException, ClassNotFoundException {
+    public static void deserializarArray(String ruta) throws IOException, ClassNotFoundException {
         ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ruta));
         int[] obj = (int[]) entrada.readObject();
         for (int i = 0; i < obj.length; i++) {
@@ -269,7 +269,7 @@ public class herramientas {
      * @throws IOException
      * @throws ClassNotFoundException 
      */
-    public static void desserializarObject(String ruta) throws IOException, ClassNotFoundException {
+    public static void deserializarObject(String ruta) throws IOException, ClassNotFoundException {
         ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ruta));
         Object obj = (Object) entrada.readObject();
         System.out.println("El objeto es: " + obj);
