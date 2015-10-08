@@ -5,7 +5,12 @@ package Herramientas;
  * @version 1.0.1 de Octubre de 2015
  */
 import java.io.BufferedReader;
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -54,7 +59,7 @@ public class herramientas {
     public static void recorrerMapInt(Map map) {
         // Iteramos el map
         Iterator it = map.keySet().iterator();
-        
+
         // Recorremos el map e imprimimos la clave y el valor
         while (it.hasNext()) {
             Integer clave = (Integer) it.next();
@@ -82,9 +87,8 @@ public class herramientas {
         }
         return txt;
     }
-    
-    // Metodos asociados a Tokens2.java
 
+    // Metodos asociados a Tokens2.java
     /**
      * Metodo para leer fichero mediante BufferedReader
      *
@@ -207,5 +211,92 @@ public class herramientas {
         }
         // Devolver el valor de la variable
         return suma;
+    }
+
+    /**
+     * Metodo para escribir "n" objetos entro de un fichero
+     *
+     * @param escribir
+     * @param objeto
+     * @throws IOException
+     */
+    public static void escribirObjetos(ObjectOutputStream escribir, Object objeto) throws IOException {
+        escribir.writeObject(objeto);
+    }
+
+    /**
+     * 
+     * @param array
+     * @param ruta
+     * @throws IOException 
+     */
+    public static void serializarArray(int array[], String ruta) throws IOException {
+        ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ruta));
+        salida.writeObject(array);
+        salida.close();
+    }
+
+    /**
+     * 
+     * @param ruta
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
+    public static void desserializarArray(String ruta) throws IOException, ClassNotFoundException {
+        ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ruta));
+        int[] obj = (int[]) entrada.readObject();
+        for (int i = 0; i < obj.length; i++) {
+            System.out.println("El objeto es: " + obj[i]);
+        }
+        entrada.close();
+    }
+
+    /**
+     * 
+     * @param obj
+     * @param ruta
+     * @throws IOException 
+     */
+    public static void serializarObject(Object obj, String ruta) throws IOException {
+        ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ruta));
+        salida.writeObject(obj);
+        salida.close();
+    }
+
+    /**
+     * 
+     * @param ruta
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
+    public static void desserializarObject(String ruta) throws IOException, ClassNotFoundException {
+        ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ruta));
+        Object obj = (Object) entrada.readObject();
+        System.out.println("El objeto es: " + obj);
+        entrada.close();
+    }
+
+    /**
+     * Metodo para leer "n" objetos dentro de un fichero
+     *
+     * @param leer
+     * @param objeto
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public static void leerObjetos(ObjectInputStream leer, Object objeto) throws IOException, ClassNotFoundException {
+        try {
+            while (true) {
+                Object c = (Object) leer.readObject();
+            }
+            // tratamiento de accion > pintar pantalla / guardar en un map / guardar en una colection / guardar fichero
+            // sout (final fichero)
+        } catch (EOFException ex) {
+            System.out.println("EOFException: " + ex);
+        } finally {
+            if (leer != null) {
+                leer.close();
+            }
+        }
     }
 }
