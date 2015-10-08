@@ -1,9 +1,7 @@
 package com.example.alumnot.presentacion;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -27,16 +25,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         campoPantalla = (TextView) findViewById(R.id.campoPantalla);
-    }
+    }// end onCreate
 
     public void pulsaNumero(View v) {
         String teclaPulsada = String.valueOf(v.getTag());
 
-        if (estadoA == true) {
+        if (estadoA) {
             numeroA += teclaPulsada;
             campoPantalla.setText(numeroA);
         }
-        if (estadoB == true) {
+        if (estadoB) {
             numeroB += teclaPulsada;
             campoPantalla.setText(numeroA + " " + operacion + " " + numeroB);
         }
@@ -95,5 +93,16 @@ public class MainActivity extends AppCompatActivity {
         numeroA = "";
         numeroB = "";
         operacion = "";
-    }
+    }// end pulsaResolver
+
+    public void pulsaC(View v) {
+        estadoA = true;
+        estadoB = false;
+
+        numeroA = "";
+        numeroB = "";
+        operacion = "";
+
+        campoPantalla.setText("");
+    }// end pulsaC
 }
