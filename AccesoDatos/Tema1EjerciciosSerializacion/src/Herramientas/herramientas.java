@@ -226,10 +226,10 @@ public class herramientas {
     }
 
     /**
-     * 
+     *
      * @param array
      * @param ruta
-     * @throws IOException 
+     * @throws IOException
      */
     public static void serializarArray(int array[], String ruta) throws IOException {
         ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ruta));
@@ -238,10 +238,10 @@ public class herramientas {
     }
 
     /**
-     * 
+     *
      * @param ruta
      * @throws IOException
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public static void deserializarArray(String ruta) throws IOException, ClassNotFoundException {
         ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ruta));
@@ -253,10 +253,10 @@ public class herramientas {
     }
 
     /**
-     * 
+     *
      * @param obj
      * @param ruta
-     * @throws IOException 
+     * @throws IOException
      */
     public static void serializarObject(Object obj, String ruta) throws IOException {
         ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ruta));
@@ -265,16 +265,16 @@ public class herramientas {
     }
 
     /**
-     * 
+     *
      * @param ruta
      * @throws IOException
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
-    public static Object deserializarObject(String ruta) throws IOException, ClassNotFoundException {
+    public static void deserializarObject(String ruta) throws IOException, ClassNotFoundException {
         ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ruta));
         Object obj = (Object) entrada.readObject();
+        System.out.println("El objeto es: " + obj);
         entrada.close();
-        return obj;
     }
 
     /**
@@ -297,6 +297,32 @@ public class herramientas {
         } finally {
             if (leer != null) {
                 leer.close();
+            }
+        }
+    }
+
+    public static void escribirMap(ObjectOutputStream ob, Map mapa) throws IOException {
+        ob.writeObject(mapa);
+    }
+
+    public static void leerMap(ObjectInputStream ob) throws IOException, ClassNotFoundException {
+        Map m = null;
+        try {
+            while (true) {
+                m = (HashMap) ob.readObject();
+            }
+        } catch (EOFException e) {
+            System.out.println("Final del fichero");
+
+            Iterator it = m.keySet().iterator();
+            while (it.hasNext()) {
+                Integer clave = (Integer) it.next();
+                Object valor = (Object) m.get(clave);
+                System.out.println(m.toString());
+            }
+        } finally {
+            if (ob != null) {
+                ob.close();
             }
         }
     }
