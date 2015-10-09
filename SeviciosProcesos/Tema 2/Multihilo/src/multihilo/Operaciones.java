@@ -3,7 +3,7 @@ package multihilo;
 /**
  *
  * @author Daniel Marcos Lorrio
- * @version 1 07/10/2015
+ * @version 2 09/10/2015
  */
 public class Operaciones {
 

@@ -6,7 +6,7 @@ import multihilo.Hijo;
 /**
  *
  * @author Daniel Marcos Lorrio
- * @version 1 07/10/2015
+ * @version 2 09/10/2015
  */
 public class Padre extends Thread {
 
@@ -14,8 +14,7 @@ public class Padre extends Thread {
     private static int hiloActual = 0; // Numero del hilo que se esta ejecutando actualmente
    
     /**
-     * Metodo principal, crea hilos, los lanza y devuelve el resultado de las
-     * acciones que hagan
+     * Metodo principal, crea hilos, los lanza y recoge el resultado
      *
      * @param args No se usa
      * @throws InterruptedException

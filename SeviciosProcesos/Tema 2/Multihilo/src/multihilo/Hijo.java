@@ -4,22 +4,26 @@ import multihilo.Operaciones;
 
 /**
  *
- * @author Alumnot
+ * @author Daniel Marcos Lorrio
+ * @version 2 09/10/2015
  */
 class Hijo extends Thread {
 
-    private int hiloActual = 0;
-    public int resultado = 0;
+    public int hiloActual = 0; // Numero del hilo que se esta ejecutando actualmente
+    public int resultado = 0; // Variable que almacena el resultado de cada operacion
 
+    /**
+     * Crea un hilo hijo con el numero de hilo dado por el padre
+     * @param nHilo Numero de hilo dado por el padre
+     */
     Hijo(int nHilo) {
         this.hiloActual = nHilo;
     }
 
-    public int resultado(int re) {
-        resultado = re;
-        return resultado;
-    }
-    
+   /**
+    * Metodo para recoger el resultado desde el padre
+    * @return Resultado de cada operacion
+    */
     public int getResultado() {
         return resultado;
     }
@@ -32,19 +36,19 @@ class Hijo extends Thread {
         System.out.print("Hilo " + hiloActual + ": ");
         switch (hiloActual) {
             case 0:
-                resultado(Operaciones.suma());
+                resultado = Operaciones.suma();
                 System.out.print("La suma de los 10 primeros numeros naturales es ");
                 break;
             case 1:
-                resultado(Operaciones.multiplicacion());
+                resultado = Operaciones.multiplicacion();
                 System.out.print("La multiplicacion de los 10 primeros numeros naturales es ");
                 break;
             case 2:
-                resultado(Operaciones.sumaPar());
+                resultado = Operaciones.sumaPar();
                 System.out.print("La suma de los 10 primeros numeros pares es ");
                 break;
             case 3:
-                resultado(Operaciones.sumaImpar());
+                resultado = Operaciones.sumaImpar();
                 System.out.print("La suma de los 10 primeros numeros impares es ");
                 break;
         }
