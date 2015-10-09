@@ -12,6 +12,7 @@ public class Padre extends Thread {
 
     private static int nHilos = 2; // Numero de hilos que se van a crear
     private static int hiloActual = 0; // Numero del hilo que se esta ejecutando actualmente
+    private static int N = 20; // Numero para calcular la suma
    
     /**
      * Metodo principal, crea hilos, los lanza y recoge el resultado
@@ -23,7 +24,7 @@ public class Padre extends Thread {
         Hijo hilo = null;
 
         while (hiloActual < nHilos) {
-            hilo = new Hijo(hiloActual);
+            hilo = new Hijo(hiloActual, N);
             hilo.start();
             hilo.join();
             int resultado = hilo.getResultado();
