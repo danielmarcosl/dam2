@@ -18,6 +18,22 @@ public class Persona {
         edad = e;
     }
     
+    public void setNombre(String nom) {
+        nombre = nom;
+    }
+    
+    public void setApellidos(String ape) {
+        apellidos = ape;
+    }
+    
+    public void setDNI(String d) {
+        dni = d;
+    }
+    
+    public void setEdad(int e) {
+        edad = e;
+    }
+    
     public String getNombre() {
         return nombre;
     }
