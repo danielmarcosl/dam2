@@ -1,2 +1,0 @@
-RunT
-ExtendHelloThread

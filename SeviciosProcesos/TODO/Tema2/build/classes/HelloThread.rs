@@ -1,2 +1,0 @@
-RunThread
-HelloThread
