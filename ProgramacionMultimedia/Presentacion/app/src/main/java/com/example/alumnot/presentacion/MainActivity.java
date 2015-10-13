@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * @author Daniel Marcos Lorrio
+ * @version 1.6 08/10/2015
+ */
 public class MainActivity extends AppCompatActivity {
 
     // Variables modelo de datos
@@ -19,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private boolean estadoA = true;
     private boolean estadoB = false;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         campoPantalla = (TextView) findViewById(R.id.campoPantalla);
     }// end onCreate
 
+    /**
+     *
+     * @param v
+     */
     public void pulsaNumero(View v) {
         String teclaPulsada = String.valueOf(v.getTag());
 
@@ -67,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
         campoPantalla.setText(numeroA + " " + operacion);
     }// end pulsaOperacion
 
+    /**
+     *
+     * @param v
+     */
     public void pulsaResolver(View v) {
         switch (operacion) {
             case "+":
@@ -95,6 +111,10 @@ public class MainActivity extends AppCompatActivity {
         operacion = "";
     }// end pulsaResolver
 
+    /**
+     *
+     * @param v
+     */
     public void pulsaC(View v) {
         estadoA = true;
         estadoB = false;
