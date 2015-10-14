@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 /**
  * @author Daniel Marcos Lorrio
- * @version 1.6 08/10/2015
+ * @version 1.7 14/10/2015 12:46 GMT+1
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean estadoB = false;
 
     /**
+     * Metodo onCreate, muestra el layout activity_main
+     * Vincula el campo de texto con id campoPantalla con la variable campoOantalla
      *
      * @param savedInstanceState
      */
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     }// end onCreate
 
     /**
+     * Metodo ejecutado al pulsar cualquier boton de numero
+     * Anade el numero pulsado a la variable correspondiente y lo muestra en el campo de texto del layout
      *
      * @param v
      */
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             numeroA += teclaPulsada;
             campoPantalla.setText(numeroA);
         }
+
         if (estadoB) {
             numeroB += teclaPulsada;
             campoPantalla.setText(numeroA + " " + operacion + " " + numeroB);
@@ -53,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
     }// end pulsaNumero
 
     /**
+     * Metodo ejecutado al pulsar cualquier boton de operacion
+     * Anade la operacion pulsada a la variable operacion y la muestra en el campo de texto
+     * Cambia los valores de los estados
+     *
      * @param v
      */
     public void pulsaOperacion(View v) {
@@ -80,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
     }// end pulsaOperacion
 
     /**
+     * Metodo ejecutado al pulsar el boton de resolver
+     * Ejecuta la operacion almacenada en la variable operacion y muestra el resultado en el campo de texto
+     * Reinicializa las variables y los estados
      *
      * @param v
      */
@@ -112,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
     }// end pulsaResolver
 
     /**
+     * Metodo ejecutado al pulsar el boton C
+     * Reinizializa las variables y los estados
      *
      * @param v
      */
