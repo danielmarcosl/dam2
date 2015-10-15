@@ -5,7 +5,7 @@ public class contacto implements java.io.Serializable {
     String nom;
     int telefono;
 
-    public void nuevoContacto(String nombre, int telf) {
+    public contacto(String nombre, int telf) {
         nom = nombre;
         telefono = telf;
     }
