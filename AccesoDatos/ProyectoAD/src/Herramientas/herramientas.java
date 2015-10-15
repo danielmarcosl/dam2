@@ -215,17 +215,6 @@ public class herramientas {
     }
 
     /**
-     * Metodo para escribir "n" objetos entro de un fichero
-     *
-     * @param escribir
-     * @param objeto
-     * @throws IOException
-     */
-    public static void escribirObjetos(ObjectOutputStream escribir, Object objeto) throws IOException {
-        escribir.writeObject(objeto);
-    }
-
-    /**
      *
      * @param array
      * @param ruta
@@ -278,6 +267,17 @@ public class herramientas {
     }
 
     /**
+     * Metodo para escribir "n" objetos entro de un fichero
+     *
+     * @param escribir
+     * @param objeto
+     * @throws IOException
+     */
+    public static void escribirObjetos(ObjectOutputStream escribir, Object objeto) throws IOException {
+        escribir.writeObject(objeto);
+    }
+
+    /**
      * Metodo para leer "n" objetos dentro de un fichero
      *
      * @param leer
@@ -285,15 +285,15 @@ public class herramientas {
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    public static void leerObjetos(ObjectInputStream leer, Object objeto) throws IOException, ClassNotFoundException {
+    public static void leerObjetos(ObjectInputStream leer) throws IOException, ClassNotFoundException {
         try {
             while (true) {
                 Object c = (Object) leer.readObject();
+                System.out.println(c);
             }
-            // tratamiento de accion > pintar pantalla / guardar en un map / guardar en una colection / guardar fichero
-            // sout (final fichero)
         } catch (EOFException ex) {
-            System.out.println("EOFException: " + ex);
+            // tratamiento de Accion (-pintar pantalla -guardar en una coleccion -guardar en un Map -guardar fichero
+            System.out.println("Final de fichero");
         } finally {
             if (leer != null) {
                 leer.close();
