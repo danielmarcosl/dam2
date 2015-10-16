@@ -12,7 +12,7 @@ public class Ejercicio4 {
 
     public static void main(String args[]) {
 
-        System.out.println("1) Volcado de ArrayList\n2) Mostrar el numero de la posicion 3\n3) Salir");
+        System.out.print("1) Volcado de ArrayList\n2) Mostrar el numero de la posicion 3\n3) Salir\nTu opcion: ");
 
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
