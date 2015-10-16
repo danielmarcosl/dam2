@@ -17,7 +17,7 @@ public class Ejercicio4 {
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
         int opcion = 0;
-        
+
         try {
             opcion = Integer.parseInt(teclado.readLine());
         } catch (IOException e) {
