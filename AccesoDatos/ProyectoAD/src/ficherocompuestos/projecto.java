@@ -15,6 +15,6 @@ public class projecto {
     
     String nombreProjecto;
     empleado jefe_projecto = new empleado();
-    oObjeto uso_lenguaje = new oObjeto();
+    //oObjeto uso_lenguaje = new oObjeto();
 
 }
