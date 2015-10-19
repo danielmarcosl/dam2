@@ -11,7 +11,7 @@ import java.awt.event.*;
 public class TestingAwl extends Frame implements ActionListener {
 
     // Declaracion de botones
-    Button button1, button2, button3;
+    Button buttonAceptar, buttonCancelar, buttonSalir;
 
     /**
      * Constructor
@@ -23,19 +23,19 @@ public class TestingAwl extends Frame implements ActionListener {
         setVisible(true); // Aplica la visibilidad
 
         // Creamos los botones
-        button1 = new Button("Aceptar");
-        button2 = new Button("Cancelar");
-        button3 = new Button("Salir");
+        buttonAceptar = new Button("Aceptar");
+        buttonCancelar = new Button("Cancelar");
+        buttonSalir = new Button("Salir");
 
         // Aniadimos listener a los botones
-        button1.addActionListener(this);
-        button2.addActionListener(this);
-        button3.addActionListener(this);
+        buttonAceptar.addActionListener(this);
+        buttonCancelar.addActionListener(this);
+        buttonSalir.addActionListener(this);
 
         // Aniadimos los botones y un listener al boton de cerrar
-        add(button1);
-        add(button2);
-        add(button3);
+        add(buttonAceptar);
+        add(buttonCancelar);
+        add(buttonSalir);
         addWindowListener(new CerrarVentana());
     }
 
@@ -46,11 +46,11 @@ public class TestingAwl extends Frame implements ActionListener {
      * @param e Boton pulsado
      */
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button1) {
+        if (e.getSource() == buttonAceptar) {
             System.out.println("Gracias por pulsar el botón");
-        } else if (e.getSource() == button2) {
+        } else if (e.getSource() == buttonCancelar) {
             System.out.println("Si desea cerrar la ventana pulse en Salir");
-        } else if (e.getSource() == button3) {
+        } else if (e.getSource() == buttonSalir) {
             System.out.println("Aqui tampoco se cierra, pulsa la X");
         }
     }
