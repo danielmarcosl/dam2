@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,6 +17,61 @@
             android:layout_height="wrap_content"
             android:onClick="lanzarActivity"
             android:text="Navegar sitio Web" />
+
+        <Button
+            android:id="@+id/verContactos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarActivity"
+            android:text="Ver contactos" />
+
+        <Button
+            android:id="@+id/llamar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarActivity"
+            android:text="Inicia una llamada" />
+
+        <Button
+            android:id="@+id/google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarActivity"
+            android:text="Busqueda en Google" />
+
+        <Button
+            android:id="@+id/mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarActivity"
+            android:text="Envia un e-mail" />
+
+        <Button
+            android:id="@+id/camara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarActivity"
+            android:text="Inicia la camara" />
+
+        <Button
+            android:id="@+id/galeria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarActivity"
+            android:text="Abre la galeria" />
+
+        <Button
+            android:id="@+id/mapas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarActivity"
+            android:text="Abre los mapas" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/contenedorImagen"
+            android:adjustViewBounds="true" />
 
     </LinearLayout>
 </ScrollView>
