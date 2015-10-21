@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 
 /**
  *
- * @author Alumnot
+ * @author Daniel Marcos Lorrio
  */
 public class semaforoseccioncritica {
 
