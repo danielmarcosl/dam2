@@ -16,7 +16,7 @@ public class Calculadora extends JFrame implements ActionListener {
     int[] dimW = {300, 45, 100, 90};
     int[] dimH = {35, 40};
     Dimension displayDimension = new Dimension(dimW[0], dimH[0]);
-    Dimension regularDimension = new Dimension(dimW[1], dimH[1]);
+    Dimension numberDimension = new Dimension(dimW[1], dimH[1]);
     Dimension rColumnDimension = new Dimension(dimW[2], dimH[1]);
     Dimension zeroButDimension = new Dimension(dimW[3], dimH[1]);
     boolean[] function = new boolean[4];
@@ -59,7 +59,7 @@ public class Calculadora extends JFrame implements ActionListener {
         display.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         display.setPreferredSize(displayDimension);
         for (int i = 0; i < 14; i++) {
-            button[i].setPreferredSize(regularDimension);
+            button[i].setPreferredSize(numberDimension);
         }
         for (int i = 14; i < 18; i++) {
             button[i].setPreferredSize(rColumnDimension);

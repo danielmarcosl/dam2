@@ -1,251 +1,197 @@
-package Calculadora;
+package calculadora;
 
 import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
+import javax.xml.soap.Text;
 
-public class Calculadora extends JFrame implements ActionListener {
+/**
+ *
+ * @author Daniel Marcos Lorrio
+ * @version 1 21/10/2015
+ */
+public class Calculadora extends Frame implements ActionListener {
 
-    JPanel[] row = new JPanel[5];
-    JButton[] button = new JButton[19];
-    String[] buttonString = {"7", "8", "9", "+",
-        "4", "5", "6", "-",
-        "1", "2", "3", "*",
-        ".", "/", "C", "√",
-        "+/-", "=", "0"};
-    int[] dimW = {300, 45, 100, 90};
-    int[] dimH = {35, 40};
-    Dimension displayDimension = new Dimension(dimW[0], dimH[0]);
-    Dimension regularDimension = new Dimension(dimW[1], dimH[1]);
-    Dimension rColumnDimension = new Dimension(dimW[2], dimH[1]);
-    Dimension zeroButDimension = new Dimension(dimW[3], dimH[1]);
-    boolean[] function = new boolean[4];
-    double[] temporary = {0, 0};
-    JTextArea display = new JTextArea(1, 20);
-    Font font = new Font("Times new Roman", Font.BOLD, 14);
+    // Declaracion de botones
+    Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bSuma, bResta, bMulti, bDivi, bIgual, bCero;
 
-    Calculadora() {
-        super("Calculadora");
-        setDesign();
-        setSize(380, 250);
-        setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        GridLayout grid = new GridLayout(5, 5);
-        setLayout(grid);
+    // Variables modelo de datos
+    private String numeroA = "";
+    private String numeroB = "";
+    private String operacion = "";
 
-        for (int i = 0; i < 4; i++) {
-            function[i] = false;
-        }
+    // Variables de objetos de la vista
+    private Text pantalla;
 
-        FlowLayout f1 = new FlowLayout(FlowLayout.CENTER);
-        FlowLayout f2 = new FlowLayout(FlowLayout.CENTER, 1, 1);
-        for (int i = 0; i < 5; i++) {
-            row[i] = new JPanel();
-        }
-        row[0].setLayout(f1);
-        for (int i = 1; i < 5; i++) {
-            row[i].setLayout(f2);
-        }
+    // Variables de la lógica
+    private boolean estadoA = true;
+    private boolean estadoB = false;
 
-        for (int i = 0; i < 19; i++) {
-            button[i] = new JButton();
-            button[i].setText(buttonString[i]);
-            button[i].setFont(font);
-            button[i].addActionListener(this);
-        }
+    /**
+     * Constructor
+     */
+    public Calculadora() {
+        setTitle("Calculeitor"); // Titulo de la ventana
+        setLayout(new FlowLayout()); // Tipo de layout FlowLayout
+        setSize(175, 380); // Tamano 175 x 320
+        setVisible(true); // Aplica visibilidad
 
-        display.setFont(font);
-        display.setEditable(false);
-        display.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        display.setPreferredSize(displayDimension);
-        for (int i = 0; i < 14; i++) {
-            button[i].setPreferredSize(regularDimension);
-        }
-        for (int i = 14; i < 18; i++) {
-            button[i].setPreferredSize(rColumnDimension);
-        }
-        button[18].setPreferredSize(zeroButDimension);
+        Dimension numberDimension = new Dimension(45, 40);
+        Dimension igualDimension = new Dimension(145, 40);
 
-        row[0].add(display);
-        add(row[0]);
+        // Creamos vista de texto
+        Label pantalla = new Label();
+        // Creamos los botones
+        b0 = new Button("0");
+        b1 = new Button("1");
+        b2 = new Button("2");
+        b3 = new Button("3");
+        b4 = new Button("4");
+        b5 = new Button("5");
+        b6 = new Button("6");
+        b7 = new Button("7");
+        b8 = new Button("8");
+        b9 = new Button("9");
+        bSuma = new Button("+");
+        bResta = new Button("-");
+        bMulti = new Button("*");
+        bDivi = new Button("/");
+        bCero = new Button("C");
+        bIgual = new Button("=");
 
-        for (int i = 0; i < 4; i++) {
-            row[1].add(button[i]);
-        }
-        row[1].add(button[14]);
-        add(row[1]);
+        // Asignamos el tamano a los botones
+        pantalla.setPreferredSize(igualDimension);
+        b0.setPreferredSize(numberDimension);
+        b1.setPreferredSize(numberDimension);
+        b2.setPreferredSize(numberDimension);
+        b3.setPreferredSize(numberDimension);
+        b4.setPreferredSize(numberDimension);
+        b5.setPreferredSize(numberDimension);
+        b6.setPreferredSize(numberDimension);
+        b7.setPreferredSize(numberDimension);
+        b8.setPreferredSize(numberDimension);
+        b9.setPreferredSize(numberDimension);
+        bSuma.setPreferredSize(numberDimension);
+        bResta.setPreferredSize(numberDimension);
+        bMulti.setPreferredSize(numberDimension);
+        bDivi.setPreferredSize(numberDimension);
+        bCero.setPreferredSize(numberDimension);
+        bIgual.setPreferredSize(igualDimension);
 
-        for (int i = 4; i < 8; i++) {
-            row[2].add(button[i]);
-        }
-        row[2].add(button[15]);
-        add(row[2]);
+        // Anadimos listeners a los botones
+        b0.addActionListener(this);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+        b9.addActionListener(this);
+        bSuma.addActionListener(this);
+        bResta.addActionListener(this);
+        bMulti.addActionListener(this);
+        bDivi.addActionListener(this);
+        bCero.addActionListener(this);
+        bIgual.addActionListener(this);
+        // Anadimos un listener al boton de cerrar
+        addWindowListener(new CerrarVentana());
 
-        for (int i = 8; i < 12; i++) {
-            row[3].add(button[i]);
-        }
-        row[3].add(button[16]);
-        add(row[3]);
-
-        row[4].add(button[18]);
-        for (int i = 12; i < 14; i++) {
-            row[4].add(button[i]);
-        }
-        row[4].add(button[17]);
-        add(row[4]);
-
-        setVisible(true);
+        // Anadimos los botones
+        add(pantalla);
+        add(b1);
+        add(b2);
+        add(b3);
+        add(b4);
+        add(b5);
+        add(b6);
+        add(b7);
+        add(b8);
+        add(b9);
+        add(bSuma);
+        add(b0);
+        add(bResta);
+        add(bMulti);
+        add(bDivi);
+        add(bCero);
+        add(bIgual);
     }
 
-    public void clear() {
-        try {
-            display.setText("");
-            for (int i = 0; i < 4; i++) {
-                function[i] = false;
-            }
-            for (int i = 0; i < 2; i++) {
-                temporary[i] = 0;
-            }
-        } catch (NullPointerException e) {
-        }
-    }
+    /**
+     * Metodo que recoge las pulsaciones de los botones y ejecuta una accion
+     * dependiendo de cual sea pulsado
+     *
+     * @param e Boton pulsado
+     */
+    public void actionPerformed(ActionEvent e) {
+        String teclaPulsada = e.getSource().toString();
 
-    public void getSqrt() {
-        try {
-            double value = Math.sqrt(Double.parseDouble(display.getText()));
-            display.setText(Double.toString(value));
-        } catch (NumberFormatException e) {
-        }
-    }
+        if (teclaPulsada == "+" || teclaPulsada == "-"
+                || teclaPulsada == "/" || teclaPulsada == "*") {
 
-    public void getPosNeg() {
-        try {
-            double value = Double.parseDouble(display.getText());
-            if (value != 0) {
-                value = value * (-1);
-                display.setText(Double.toString(value));
-            } else {
-            }
-        } catch (NumberFormatException e) {
-        }
-    }
+            operacion = teclaPulsada;
 
-    public void getResult() {
-        double result = 0;
-        temporary[1] = Double.parseDouble(display.getText());
-        String temp0 = Double.toString(temporary[0]);
-        String temp1 = Double.toString(temporary[1]);
-        try {
-            if (temp0.contains("-")) {
-                String[] temp00 = temp0.split("-", 2);
-                temporary[0] = (Double.parseDouble(temp00[1]) * -1);
-            }
-            if (temp1.contains("-")) {
-                String[] temp11 = temp1.split("-", 2);
-                temporary[1] = (Double.parseDouble(temp11[1]) * -1);
-            }
-        } catch (ArrayIndexOutOfBoundsException e) {
-        }
-        try {
-            if (function[2] == true) {
-                result = temporary[0] * temporary[1];
-            } else if (function[3] == true) {
-                result = temporary[0] / temporary[1];
-            } else if (function[0] == true) {
-                result = temporary[0] + temporary[1];
-            } else if (function[1] == true) {
-                result = temporary[0] - temporary[1];
-            }
-            display.setText(Double.toString(result));
-            for (int i = 0; i < 4; i++) {
-                function[i] = false;
-            }
-        } catch (NumberFormatException e) {
-        }
-    }
+            estadoA = false;
+            estadoB = true;
 
-    public final void setDesign() {
-        try {
-            UIManager.setLookAndFeel(
-                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-        } catch (Exception e) {
-        }
-    }
+            pantalla.setTextContent(numeroA + " " + operacion);
+        } else if (teclaPulsada == "=") {
+            switch (operacion) {
+                case "+":
+                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                            + Double.parseDouble(numeroB)));
+                    break;
+                case "-":
+                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                            - Double.parseDouble(numeroB)));
+                    break;
+                case "*":
+                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                            * Double.parseDouble(numeroB)));
+                    break;
+                case "/":
+                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                            / Double.parseDouble(numeroB)));
+                    break;
+            }
 
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == button[0]) {
-            display.append("7");
-        }
-        if (ae.getSource() == button[1]) {
-            display.append("8");
-        }
-        if (ae.getSource() == button[2]) {
-            display.append("9");
-        }
-        if (ae.getSource() == button[3]) {
-            //add function[0]
-            temporary[0] = Double.parseDouble(display.getText());
-            function[0] = true;
-            display.setText("");
-        }
-        if (ae.getSource() == button[4]) {
-            display.append("4");
-        }
-        if (ae.getSource() == button[5]) {
-            display.append("5");
-        }
-        if (ae.getSource() == button[6]) {
-            display.append("6");
-        }
-        if (ae.getSource() == button[7]) {
-            //subtract function[1]
-            temporary[0] = Double.parseDouble(display.getText());
-            function[1] = true;
-            display.setText("");
-        }
-        if (ae.getSource() == button[8]) {
-            display.append("1");
-        }
-        if (ae.getSource() == button[9]) {
-            display.append("2");
-        }
-        if (ae.getSource() == button[10]) {
-            display.append("3");
-        }
-        if (ae.getSource() == button[11]) {
-            //multiply function[2]
-            temporary[0] = Double.parseDouble(display.getText());
-            function[2] = true;
-            display.setText("");
-        }
-        if (ae.getSource() == button[12]) {
-            display.append(".");
-        }
-        if (ae.getSource() == button[13]) {
-            //divide function[3]
-            temporary[0] = Double.parseDouble(display.getText());
-            function[3] = true;
-            display.setText("");
-        }
-        if (ae.getSource() == button[14]) {
-            clear();
-        }
-        if (ae.getSource() == button[15]) {
-            getSqrt();
-        }
-        if (ae.getSource() == button[16]) {
-            getPosNeg();
-        }
-        if (ae.getSource() == button[17]) {
-            getResult();
-        }
-        if (ae.getSource() == button[18]) {
-            display.append("0");
+            estadoA = true;
+            estadoB = false;
+
+            numeroA = "";
+            numeroB = "";
+            operacion = "";
+        } else if (teclaPulsada == "C") {
+
+            estadoA = true;
+            estadoB = false;
+
+            numeroA = "";
+            numeroB = "";
+            operacion = "";
+
+            pantalla.setTextContent("");
+        } else {
+            if (estadoA) {
+                numeroA += teclaPulsada;
+                pantalla.setTextContent(numeroA);
+            }
+
+            if (estadoB) {
+                numeroB += teclaPulsada;
+                pantalla.setTextContent(numeroA + " " + operacion + " " + numeroB);
+            }
+            if (e.getSource() == b1) {
+            }
         }
     }
 
-    public static void main(String[] arguments) {
-        Calculadora c = new Calculadora();
+    /**
+     * Metodo principal que llama al constructor y muestra la ventana creada
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        new Calculadora(); // Invocamos al constructor
     }
 }
