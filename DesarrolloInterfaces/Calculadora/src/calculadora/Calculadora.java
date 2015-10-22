@@ -126,6 +126,7 @@ public class Calculadora extends Frame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String teclaPulsada = e.getSource().toString();
 
+        // Operaciones SUMA RESTA MULTIPLICACION DIVISION
         if (teclaPulsada == "+" || teclaPulsada == "-"
                 || teclaPulsada == "/" || teclaPulsada == "*") {
 
@@ -135,6 +136,7 @@ public class Calculadora extends Frame implements ActionListener {
             estadoB = true;
 
             pantalla.setTextContent(numeroA + " " + operacion);
+        // Resolver
         } else if (teclaPulsada == "=") {
             switch (operacion) {
                 case "+":
@@ -161,6 +163,7 @@ public class Calculadora extends Frame implements ActionListener {
             numeroA = "";
             numeroB = "";
             operacion = "";
+        // Borrar
         } else if (teclaPulsada == "C") {
 
             estadoA = true;
@@ -171,6 +174,7 @@ public class Calculadora extends Frame implements ActionListener {
             operacion = "";
 
             pantalla.setTextContent("");
+        // Numeros
         } else {
             if (estadoA) {
                 numeroA += teclaPulsada;
