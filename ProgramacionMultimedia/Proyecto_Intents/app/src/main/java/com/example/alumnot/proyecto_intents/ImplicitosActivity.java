@@ -3,12 +3,14 @@ package com.example.alumnot.proyecto_intents;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -123,6 +125,33 @@ public class ImplicitosActivity extends Activity {
                 Uri uri = Uri.fromFile(tmpFile);
                 i.putExtra(MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(i, RC_TAKE_PHOTO);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case RC_SELECT_PHOTO:
+                if (resultCode == RESULT_OK) {
+                    ImageView imageView = (ImageView) findViewById(R.id.contenedorImagen);
+                    Uri imageUri = data.getData();
+                    Bitmap galleryPick = scaleBitmap(getPathFromUri(imageUri), imageView.getHeight());
+
+                    if (galleryPick != null) {
+                        imageView.setImageBitmap(galleryPick);
+                    } else {
+                        Toast toast = Toast.makeText(this, "fallo al cargar la imagen", Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                }
+                break;
+            case RC_TAKE_PHOTO:
+                if(resultCode == RESULT_OK) {
+                    ImageView imageView = (ImageView) findViewById(R.id.contenedorImagen);
+
+                }
                 break;
         }
     }
