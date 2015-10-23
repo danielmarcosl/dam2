@@ -14,7 +14,6 @@ public class Metodos extends Calculadora {
      */
     public static void suma() {
         operacion = bSuma.getLabel();
-        System.out.println(operacion);
 
         estadoA = false;
         estadoB = true;
