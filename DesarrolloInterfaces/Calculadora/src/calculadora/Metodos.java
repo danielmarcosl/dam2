@@ -106,17 +106,23 @@ public class Metodos extends Calculadora {
 
         texto_pantalla.setText("");
     }
-    
-    public static void botonNumero(Button numero) {
-        
-            if (estadoA) {
-                numeroA += numero.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
 
-            if (estadoB) {
-                numeroB += numero.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+    /**
+     * Metodo de los botones numericos Anade el numero a la variable
+     * correspondiente
+     *
+     * @param numero Boton numerico pulsado
+     */
+    public static void botonNumero(Button numero) {
+
+        if (estadoA) {
+            numeroA += numero.getLabel();
+            texto_pantalla.setText(numeroA);
+        }
+
+        if (estadoB) {
+            numeroB += numero.getLabel();
+            texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
+        }
     }
 }
