@@ -20,7 +20,7 @@ public class Calculadora extends Frame implements ActionListener {
     private String operacion = "";
 
     // Variables de objetos de la vista
-    private Text pantalla;
+    private TextArea pantalla;
 
     // Variables de la lógica
     private boolean estadoA = true;
@@ -124,78 +124,124 @@ public class Calculadora extends Frame implements ActionListener {
      * @param e Boton pulsado
      */
     public void actionPerformed(ActionEvent e) {
-        String teclaPulsada = e.getSource().toString();
 
-        // Operaciones SUMA RESTA MULTIPLICACION DIVISION
-        if (teclaPulsada == "+" || teclaPulsada == "-"
-                || teclaPulsada == "/" || teclaPulsada == "*") {
-
-            operacion = teclaPulsada;
+        if (e.getSource() == bSuma) { // Boton suma
+            operacion = bSuma.getLabel();
+            System.out.println(operacion);
 
             estadoA = false;
             estadoB = true;
 
-            pantalla.setTextContent(numeroA + " " + operacion);
-        // Resolver
-        } else if (teclaPulsada == "=") {
+            pantalla.setText(numeroA + " " + operacion);
+        } else if (e.getSource() == bResta) { // Boton resta
+            operacion = bSuma.getName();
+
+            estadoA = false;
+            estadoB = true;
+
+            pantalla.setText(numeroA + " " + operacion);
+        } else if (e.getSource() == bDivi) { // Boton division
+            operacion = bSuma.getName();
+
+            estadoA = false;
+            estadoB = true;
+
+            pantalla.setText(numeroA + " " + operacion);
+        } else if (e.getSource() == bMulti) { // Boton multiplicacion
+            operacion = bSuma.getName();
+
+            estadoA = false;
+            estadoB = true;
+
+            pantalla.setText(numeroA + " " + operacion);
+        } else if (e.getSource() == bIgual) { // Boton resolver
             switch (operacion) {
                 case "+":
-                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                    pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
                             + Double.parseDouble(numeroB)));
                     break;
                 case "-":
-                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                    pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
                             - Double.parseDouble(numeroB)));
                     break;
                 case "*":
-                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                    pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
                             * Double.parseDouble(numeroB)));
                     break;
                 case "/":
-                    pantalla.setTextContent(String.valueOf(Double.parseDouble(numeroA)
+                    pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
                             / Double.parseDouble(numeroB)));
                     break;
             }
 
+            if (operacion != null) {
+                estadoA = true;
+                estadoB = false;
+
+                numeroA = "";
+                numeroB = "";
+                operacion = null;
+            }
+        } else if (e.getSource() == bCero) { // Boton Borrar
+
             estadoA = true;
             estadoB = false;
 
             numeroA = "";
             numeroB = "";
             operacion = "";
-        // Borrar
-        } else if (teclaPulsada == "C") {
 
-            estadoA = true;
-            estadoB = false;
-
-            numeroA = "";
-            numeroB = "";
-            operacion = "";
-
-            pantalla.setTextContent("");
-        // Numeros
-        } else {
+            pantalla.setText("");
+        } else if (e.getSource() == b0) { // Boton 0
             if (estadoA) {
-                numeroA += teclaPulsada;
-                pantalla.setTextContent(numeroA);
+                numeroA += b0.getLabel();
+                pantalla.setText(numeroA);
             }
 
             if (estadoB) {
-                numeroB += teclaPulsada;
-                pantalla.setTextContent(numeroA + " " + operacion + " " + numeroB);
+                numeroB += b0.getLabel();
+                pantalla.setText(numeroA + " " + operacion + " " + numeroB);
             }
-            if (e.getSource() == b1) {
+        } else if (e.getSource() == b1) { // Boton 1
+            if (estadoA) {
+                numeroA += b1.getLabel();
+                pantalla.setText(numeroA);
+            }
+
+            if (estadoB) {
+                numeroB += b1.getLabel();
+                pantalla.setText(numeroA + " " + operacion + " " + numeroB);
+            }
+        } else if (e.getSource() == b2) { // Boton 2
+            if (estadoA) {
+                numeroA += b2.getLabel();
+                pantalla.setText(numeroA);
+            }
+
+            if (estadoB) {
+                numeroB += b2.getLabel();
+                pantalla.setText(numeroA + " " + operacion + " " + numeroB);
+            }
+        } else if (e.getSource() == b2) { // Boton 2
+            if (estadoA) {
+                numeroA += b2.getLabel();
+                pantalla.setText(numeroA);
+            }
+
+            if (estadoB) {
+                numeroB += b2.getLabel();
+                pantalla.setText(numeroA + " " + operacion + " " + numeroB);
             }
         }
     }
+}
 
-    /**
-     * Metodo principal que llama al constructor y muestra la ventana creada
-     *
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+/**
+ * Metodo principal que llama al constructor y muestra la ventana creada
+ *
+ * @param args the command line arguments
+ */
+public static void main(String[] args) {
         new Calculadora(); // Invocamos al constructor
     }
 }
