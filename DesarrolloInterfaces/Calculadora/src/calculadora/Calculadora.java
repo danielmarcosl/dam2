@@ -95,7 +95,7 @@ public class Calculadora extends Frame implements ActionListener {
 
         // Anadimos el campo de texto
         add(texto_pantalla);
-        
+
         // Anadimos los botones
         for (int i = 0; i < botones.size(); i++) {
             add(botones.get(i));
