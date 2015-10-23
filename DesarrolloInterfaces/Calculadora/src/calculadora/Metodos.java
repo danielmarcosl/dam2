@@ -64,20 +64,24 @@ public class Metodos extends Calculadora {
     public static void resolver() {
         switch (operacion) {
             case "+":
-                texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                        + Double.parseDouble(numeroB)));
+                numeroA = String.valueOf(Double.parseDouble(numeroA)
+                        + Double.parseDouble(numeroB));
+                texto_pantalla.setText(numeroA);
                 break;
             case "-":
-                texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                        - Double.parseDouble(numeroB)));
+                numeroA = String.valueOf(Double.parseDouble(numeroA)
+                        - Double.parseDouble(numeroB));
+                texto_pantalla.setText(numeroA);
                 break;
             case "*":
-                texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                        * Double.parseDouble(numeroB)));
+                numeroA = String.valueOf(Double.parseDouble(numeroA)
+                        * Double.parseDouble(numeroB));
+                texto_pantalla.setText(numeroA);
                 break;
             case "/":
-                texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                        / Double.parseDouble(numeroB)));
+                numeroA = String.valueOf(Double.parseDouble(numeroA)
+                        / Double.parseDouble(numeroB));
+                texto_pantalla.setText(numeroA);
                 break;
         }
 
@@ -85,7 +89,6 @@ public class Metodos extends Calculadora {
             estadoA = true;
             estadoB = false;
 
-            numeroA = "";
             numeroB = "";
             operacion = null;
         }
