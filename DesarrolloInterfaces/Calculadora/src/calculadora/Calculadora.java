@@ -2,17 +2,21 @@ package calculadora;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author Daniel Marcos Lorrio
- * @version 1 21/10/2015
+ * @version 2 23/10/2015
  */
 public class Calculadora extends Frame implements ActionListener {
 
     // Declaracion de botones
     public static Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9,
             bSuma, bResta, bMulti, bDivi, bIgual, bCero;
+
+    // ArrayList que contendra todos los botones
+    public static ArrayList<Button> botones = new ArrayList<Button>();
 
     // Variables modelo de datos
     public static String numeroA = "";
@@ -32,8 +36,9 @@ public class Calculadora extends Frame implements ActionListener {
     public Calculadora() {
         setTitle("Calculeitor"); // Titulo de la ventana
         setLayout(new FlowLayout()); // Tipo de layout FlowLayout
-        setSize(175, 380); // Tamano 175 x 320
+        setSize(175, 360); // Tamano 175 x 320
         setVisible(true); // Aplica visibilidad
+        setResizable(false);
 
         Dimension numberDimension = new Dimension(45, 40);
         Dimension igualDimension = new Dimension(145, 40);
@@ -56,63 +61,44 @@ public class Calculadora extends Frame implements ActionListener {
         bCero = new Button("C");
         bIgual = new Button("=");
 
+        // Anadimos los botones al ArrayList
+        botones.add(b1);
+        botones.add(b2);
+        botones.add(b3);
+        botones.add(b4);
+        botones.add(b5);
+        botones.add(b6);
+        botones.add(b7);
+        botones.add(b8);
+        botones.add(b9);
+        botones.add(bSuma);
+        botones.add(b0);
+        botones.add(bResta);
+        botones.add(bDivi);
+        botones.add(bMulti);
+        botones.add(bCero);
+        botones.add(bIgual);
+
         // Asignamos el tamano a los botones
+        for (int i = 0; i < (botones.size() - 1); i++) {
+            botones.get(i).setPreferredSize(numberDimension);
+        }
         texto_pantalla.setPreferredSize(igualDimension);
-        b0.setPreferredSize(numberDimension);
-        b1.setPreferredSize(numberDimension);
-        b2.setPreferredSize(numberDimension);
-        b3.setPreferredSize(numberDimension);
-        b4.setPreferredSize(numberDimension);
-        b5.setPreferredSize(numberDimension);
-        b6.setPreferredSize(numberDimension);
-        b7.setPreferredSize(numberDimension);
-        b8.setPreferredSize(numberDimension);
-        b9.setPreferredSize(numberDimension);
-        bSuma.setPreferredSize(numberDimension);
-        bResta.setPreferredSize(numberDimension);
-        bMulti.setPreferredSize(numberDimension);
-        bDivi.setPreferredSize(numberDimension);
-        bCero.setPreferredSize(numberDimension);
         bIgual.setPreferredSize(igualDimension);
 
         // Anadimos listeners a los botones
-        b0.addActionListener(this);
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
-        b4.addActionListener(this);
-        b5.addActionListener(this);
-        b6.addActionListener(this);
-        b7.addActionListener(this);
-        b8.addActionListener(this);
-        b9.addActionListener(this);
-        bSuma.addActionListener(this);
-        bResta.addActionListener(this);
-        bMulti.addActionListener(this);
-        bDivi.addActionListener(this);
-        bCero.addActionListener(this);
-        bIgual.addActionListener(this);
+        for (int i = 0; i < botones.size(); i++) {
+            botones.get(i).addActionListener(this);
+        }
         // Anadimos un listener al boton de cerrar
         addWindowListener(new CerrarVentana());
 
-        // Anadimos los botones
+        // Anadimos el campo de texto
         add(texto_pantalla);
-        add(b1);
-        add(b2);
-        add(b3);
-        add(b4);
-        add(b5);
-        add(b6);
-        add(b7);
-        add(b8);
-        add(b9);
-        add(bSuma);
-        add(b0);
-        add(bResta);
-        add(bMulti);
-        add(bDivi);
-        add(bCero);
-        add(bIgual);
+        // Anadimos los botones
+        for (int i = 0; i < botones.size(); i++) {
+            add(botones.get(i));
+        }
     }
 
     /**
@@ -124,172 +110,37 @@ public class Calculadora extends Frame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == bSuma) { // Boton suma
-            operacion = bSuma.getLabel();
-            System.out.println(operacion);
-
-            estadoA = false;
-            estadoB = true;
-
-            texto_pantalla.setText(numeroA + " " + operacion);
+            Metodos.suma();
         } else if (e.getSource() == bResta) { // Boton resta
-            operacion = bResta.getLabel();
-
-            estadoA = false;
-            estadoB = true;
-
-            texto_pantalla.setText(numeroA + " " + operacion);
+            Metodos.resta();
         } else if (e.getSource() == bDivi) { // Boton division
-            operacion = bDivi.getLabel();
-
-            estadoA = false;
-            estadoB = true;
-
-            texto_pantalla.setText(numeroA + " " + operacion);
+            Metodos.division();
         } else if (e.getSource() == bMulti) { // Boton multiplicacion
-            operacion = bMulti.getLabel();
-
-            estadoA = false;
-            estadoB = true;
-
-            texto_pantalla.setText(numeroA + " " + operacion);
+            Metodos.multiplicacion();
         } else if (e.getSource() == bIgual) { // Boton resolver
-            switch (operacion) {
-                case "+":
-                    texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                            + Double.parseDouble(numeroB)));
-                    break;
-                case "-":
-                    texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                            - Double.parseDouble(numeroB)));
-                    break;
-                case "*":
-                    texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                            * Double.parseDouble(numeroB)));
-                    break;
-                case "/":
-                    texto_pantalla.setText(String.valueOf(Double.parseDouble(numeroA)
-                            / Double.parseDouble(numeroB)));
-                    break;
-            }
-
-            if (operacion != null) {
-                estadoA = true;
-                estadoB = false;
-
-                numeroA = "";
-                numeroB = "";
-                operacion = null;
-            }
+            Metodos.resolver();
         } else if (e.getSource() == bCero) { // Boton Borrar
-
-            estadoA = true;
-            estadoB = false;
-
-            numeroA = "";
-            numeroB = "";
-            operacion = "";
-
-            texto_pantalla.setText("");
+            Metodos.borrar();
         } else if (e.getSource() == b0) { // Boton 0
-            if (estadoA) {
-                numeroA += b0.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b0.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b0);
         } else if (e.getSource() == b1) { // Boton 1
-            if (estadoA) {
-                numeroA += b1.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b1.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b1);
         } else if (e.getSource() == b2) { // Boton 2
-            if (estadoA) {
-                numeroA += b2.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b2.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b2);
         } else if (e.getSource() == b3) { // Boton 3
-            if (estadoA) {
-                numeroA += b3.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b3.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b3);
         } else if (e.getSource() == b4) { // Boton 4
-            if (estadoA) {
-                numeroA += b4.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b4.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b4);
         } else if (e.getSource() == b5) { // Boton 5
-            if (estadoA) {
-                numeroA += b5.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b5.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b5);
         } else if (e.getSource() == b6) { // Boton 6
-            if (estadoA) {
-                numeroA += b6.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b6.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b6);
         } else if (e.getSource() == b7) { // Boton 7
-            if (estadoA) {
-                numeroA += b7.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b7.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b7);
         } else if (e.getSource() == b8) { // Boton 8
-            if (estadoA) {
-                numeroA += b8.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b8.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b8);
         } else if (e.getSource() == b9) { // Boton 9
-            if (estadoA) {
-                numeroA += b9.getLabel();
-                texto_pantalla.setText(numeroA);
-            }
-
-            if (estadoB) {
-                numeroB += b9.getLabel();
-                texto_pantalla.setText(numeroA + " " + operacion + " " + numeroB);
-            }
+            Metodos.botonNumero(b9);
         }
     }
 
