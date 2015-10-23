@@ -18,13 +18,13 @@ public class Calculadora extends Frame implements ActionListener {
     // ArrayList que contendra todos los botones
     public static ArrayList<Button> botones = new ArrayList<Button>();
 
+    // Variables de objetos de la vista
+    public static TextArea texto_pantalla = new TextArea();
+
     // Variables modelo de datos
     public static String numeroA = "";
     public static String numeroB = "";
     public static String operacion = "";
-
-    // Variables de objetos de la vista
-    public static TextArea texto_pantalla = new TextArea(1, 20);
 
     // Variables de la lógica
     public static boolean estadoA = true;
@@ -37,8 +37,8 @@ public class Calculadora extends Frame implements ActionListener {
         setTitle("Calculeitor"); // Titulo de la ventana
         setLayout(new FlowLayout()); // Tipo de layout FlowLayout
         setSize(175, 360); // Tamano 175 x 320
+        setResizable(false); // Hace que no se pueda cambiar el tamano
         setVisible(true); // Aplica visibilidad
-        setResizable(false);
 
         Dimension numberDimension = new Dimension(45, 40);
         Dimension igualDimension = new Dimension(145, 40);
@@ -95,6 +95,7 @@ public class Calculadora extends Frame implements ActionListener {
 
         // Anadimos el campo de texto
         add(texto_pantalla);
+        
         // Anadimos los botones
         for (int i = 0; i < botones.size(); i++) {
             add(botones.get(i));
