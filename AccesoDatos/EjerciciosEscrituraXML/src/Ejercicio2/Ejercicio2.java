@@ -1,9 +1,11 @@
 package Ejercicio2;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import org.jdom2.Document;
 import org.jdom2.Element;
 
+import Herramientas.Herramientas;
 /**
  *
  * @author Daniel Marcos Lorrio
@@ -11,43 +13,43 @@ import org.jdom2.Element;
 public class Ejercicio2 {
     
     public static void main(String args[]) {
-        // Creamos la etiqueta root menu <Menu Almuerzo></Menu Almuerzo>
+        
+        // Creamos un ArrayList para la primera comida
+        ArrayList<Element> comida1 = new ArrayList<Element>();
+        comida1.add(new Element("Nombre").setText("Waffles"));
+        comida1.add(new Element("Precio").setText("$2.00"));
+        comida1.add(new Element("Descripcion").setText("Waffles baratos de McDonald's"));
+        comida1.add(new Element("Calorias").setText("650"));
+        
+        // Creamos un ArrayList para la segunda comida
+        ArrayList<Element> comida2 = new ArrayList<Element>();
+        comida2.add(new Element("Nombre").setText("Hamburguesa"));
+        comida2.add(new Element("Precio").setText("$5.00"));
+        comida2.add(new Element("Descripcion").setText("La hamburguesa mas comun de McDonald's"));
+        comida2.add(new Element("Calorias").setText("1500"));
+        
+        // Cremos un ArrayList que contendra a los ArrayList anteriores
+        ArrayList<ArrayList<Element>> comidaGlobal = new ArrayList<ArrayList<Element>>();
+        comidaGlobal.add(comida1);
+        comidaGlobal.add(comida2);
+        
+        // Creamos la etiqueta root menu
         Element menu = new Element("Menu_Almuerzo");
         
-        // Creamos la etiqueta comida <Comida></Comida>
-        Element comida = new Element("Comida");
-        // Creamos la etiqueta comida2 <Comida></Comida>
-        Element comida2 = new Element("Comida");
-        
-        // Creamos la etiqueta nombre <Nombre></Nombre> y le anadimos un texto
-        Element nombre = new Element("Nombre").setText("Waffles");
-        // Creamos la etiqueta precio <Precio></Precio> y le anadimos un texto
-        Element precio = new Element("Precio").setText("$2.00");
-        // Creamos la etiqueta descripcion <Descripcion></Descripcion> y le anadimos un texto
-        Element descripcion = new Element("Descripcion").setText("Waffles baratos de McDonald's");
-        // Creamos la etiqueta calorias <Calorias></Calorias> y le anadimos un texto
-        Element calorias = new Element("Calorias").setText("650");
-                
-        // Creamos la etiqueta nombre2 <Nombre></Nombre> y le anadimos un texto
-        Element nombre2 = new Element("Nombre").setText("Hamburguesa");
-        // Creamos la etiqueta precio2 <Precio></Precio> y le anadimos un texto
-        Element precio2 = new Element("Precio").setText("$5.00");
-        // Creamos la etiqueta descripcion2 <Descripcion></Descripcion> y le anadimos un texto
-        Element descripcion2 = new Element("Descripcion").setText("La hamburguesa mas comun de McDonald-s");
-        // Creamos la etiqueta calorias2 <Calorias></Calorias> y le anadimos un texto
-        Element calorias2 = new Element("Calorias").setText("1500");
+        // Creamos un ArrayList para los hijos de menu
+        ArrayList<Element> comida = new ArrayList<Element>();
+        comida.add(new Element("Comida"));
+        comida.add(new Element("Comida"));
         
         // Creamos el arbol
-        Metodos.anadirRootChild(comida, nombre, precio, descripcion, calorias);
-        Metodos.anadirRootChild(comida2, nombre2, precio2, descripcion2, calorias2);
-        Metodos.anadirRoot(menu, comida, comida2);
+        Herramientas.crearArbolNivel3(menu, comida, comidaGlobal);
         
         // Creamos un documento que contenga el arbol
         Document doc = new Document(menu);
         
         // Escribimos el fichero
         try{
-        Metodos.escribirFichero(doc);
+            Herramientas.escribirFichero(doc,"menu");
         } catch(IOException ex) {
             ex.printStackTrace();
         }
