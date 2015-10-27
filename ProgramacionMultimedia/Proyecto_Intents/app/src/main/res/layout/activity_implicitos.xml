@@ -1,77 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="20dp">
+   
+   	<LinearLayout 
+   	    android:layout_width="match_parent"
+   	    android:layout_height="wrap_content"
+   	    android:gravity="center_horizontal"
+   	    android:padding="20dp"
+   	    android:orientation="vertical">
+   	    
+   	    
+   	    <Button 
+   	        android:id="@+id/verWeb"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Navegar sitio Web"/>
+   	    
+   	    
+   	    <Button 
+   	        android:id="@+id/verContactos"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Contactos de mi agenda"/>
+   	    
+   	    <Button 
+   	        android:id="@+id/llamar"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Iniciar una llamada telefonica"/>
+   	    
+   	    <Button 
+   	        android:id="@+id/google"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Realizar una busqueda en google"/>
+   	    
+   	    <Button 
+   	        android:id="@+id/mail"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Enviar correo electronico"/>
+   	    
+   	    <Button 
+   	        android:id="@+id/camara"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Lanzar cámara de fotos"/>
+   	    
+   	    <Button 
+   	        android:id="@+id/galeria"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Lanzar galeria imagenes"/>
+   	    
+   	    <Button 
+   	        android:id="@+id/mapas"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:onClick="lanzarActivity"
+   	        android:text="Ver ubicación en mapas"/>
+   	    
+   	    
+   	    <ImageView 
+   	        android:id="@+id/contenedorImagen"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="300dp"
+   	        android:adjustViewBounds="true"/> 
+   	        
+   	</LinearLayout> 
 
-        <Button
-            android:id="@+id/verWeb"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Navegar sitio Web" />
-
-        <Button
-            android:id="@+id/verContactos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Ver contactos" />
-
-        <Button
-            android:id="@+id/llamar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Inicia una llamada" />
-
-        <Button
-            android:id="@+id/google"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Busqueda en Google" />
-
-        <Button
-            android:id="@+id/mail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Envia un e-mail" />
-
-        <Button
-            android:id="@+id/camara"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Inicia la camara" />
-
-        <Button
-            android:id="@+id/galeria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Abre la galeria" />
-
-        <Button
-            android:id="@+id/mapas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="lanzarActivity"
-            android:text="Abre los mapas" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:id="@+id/contenedorImagen"
-            android:adjustViewBounds="true" />
-
-    </LinearLayout>
 </ScrollView>
