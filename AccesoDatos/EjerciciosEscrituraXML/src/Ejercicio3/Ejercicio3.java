@@ -2,10 +2,10 @@ package Ejercicio3;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import org.jdom2.Document;
 import org.jdom2.Element;
+
+import Herramientas.Herramientas;
 
 /**
  *
@@ -30,31 +30,31 @@ public class Ejercicio3 {
         Aereos.add(new Element("Vehiculo").setText("Avioneta"));
         Aereos.add(new Element("Vehiculo").setText("Helicoptero"));
 
+        // Creamos un ArrayList que contendra los anteriores ArrayList
+        ArrayList<ArrayList<Element>> vehiculos = new ArrayList<ArrayList<Element>>();
+        vehiculos.add(Terrestres);
+        vehiculos.add(Acuaticos);
+        vehiculos.add(Aereos);
+
         // Creamos la etiqueta root vehiculos <Vehiculos></Vehiculos>
-        Element vehiculos = new Element("Vehiculos");
+        Element root = new Element("Vehiculos");
 
         // Creamos un ArrayList para los tipos de vehiculo
-        ArrayList<Element> rootchild = new ArrayList<Element>();
+        ArrayList<Element> tipoVehiculos = new ArrayList<Element>();
 
-        rootchild.add(new Element("Terrestres"));
-        rootchild.add(new Element("Acuaticos"));
-        rootchild.add(new Element("Aereos"));
-
-        // Creamos un ArrayList que contendra los anteriores ArrayList
-        ArrayList<ArrayList<Element>> rootchildchild = new ArrayList<ArrayList<Element>>();
-        rootchildchild.add(Terrestres);
-        rootchildchild.add(Acuaticos);
-        rootchildchild.add(Aereos);
+        tipoVehiculos.add(new Element("Terrestres"));
+        tipoVehiculos.add(new Element("Acuaticos"));
+        tipoVehiculos.add(new Element("Aereos"));
 
         // Creamos el arbol
-        Metodos.crearArbol(vehiculos, rootchild, rootchildchild);
+        Herramientas.crearArbolNivel3(root, tipoVehiculos, vehiculos);
 
         // Creamos un documento que contenga el arbol
-        Document doc = new Document(vehiculos);
+        Document doc = new Document(root);
 
         // Escribimos el fichero
         try {
-            Ejercicio2.Metodos.escribirFichero(doc);
+            Herramientas.escribirFichero(doc, "vehiculos");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
