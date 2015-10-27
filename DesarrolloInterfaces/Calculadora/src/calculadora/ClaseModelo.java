@@ -5,7 +5,7 @@ import java.awt.Button;
 /**
  *
  * @author Daniel Marcos Lorrio
- * @version 3 26/10/2015
+ * @version 4 27/10/2015
  */
 public class ClaseModelo {
 

@@ -2,7 +2,8 @@ package calculadora;
 
 /**
  *
- * @author Alumnot
+ * @author Daniel Marcos Lorrio
+ * @version 4 27/10/2015
  */
 public class Principal {
 

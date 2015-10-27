@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  *
  * @author Daniel Marcos Lorrio
- * @version 2 23/10/2015
+ * @version 4 27/10/2015
  */
 public class ClaseVista extends Frame {
 

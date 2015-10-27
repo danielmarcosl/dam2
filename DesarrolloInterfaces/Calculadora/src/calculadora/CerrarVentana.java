@@ -6,7 +6,7 @@ import java.awt.event.WindowListener;
 /**
  *
  * @author Daniel Marcos Lorrio
- * @version 2 23/10/2015
+ * @version 3 26/10/2015
  */
 class CerrarVentana implements WindowListener {
 
