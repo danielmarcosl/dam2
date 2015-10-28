@@ -20,7 +20,7 @@ class pistaAterrizaje extends Thread {
     private int tiempo;
 
     // Constructor
-    pistaAterrizaje(int numeroPista, int avionActual, int tiempoActual, Semaphore semaforo) {
+    public pistaAterrizaje(int numeroPista, int avionActual, int tiempoActual, Semaphore semaforo) {
         this.pista = numeroPista;
         this.semaforo = semaforo;
         this.avion = avionActual;

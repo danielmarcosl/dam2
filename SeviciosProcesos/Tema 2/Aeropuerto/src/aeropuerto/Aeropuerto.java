@@ -9,7 +9,7 @@ import aeropuerto.Metodos;
  */
 public class Aeropuerto {
 
-    private static pistaAterrizaje aterrizarPista[];
+    public static pistaAterrizaje aterrizarPista[];
     private static Semaphore semaforoPrincipal = new Semaphore(1);
     public static int aviones = 100;// Numero de aviones
     public static int pistas = 12;// Numero de pistas de aterrizaje
