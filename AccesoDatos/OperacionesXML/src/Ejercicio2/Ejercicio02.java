@@ -4,8 +4,6 @@ import Herramientas.Herramientas;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -49,7 +47,7 @@ public class Ejercicio02 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio1.Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
         // Modificamos el texto del hijo mueble del segundo tipo
@@ -59,7 +57,7 @@ public class Ejercicio02 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio1.Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
         // Borrar la persiana del primer hijo tipo
@@ -69,7 +67,7 @@ public class Ejercicio02 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio1.Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
         // Anadir un atributo al mueble que tiene el texto muebles caros
@@ -88,7 +86,7 @@ public class Ejercicio02 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio1.Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
     }
 }
