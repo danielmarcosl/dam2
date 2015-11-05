@@ -2,13 +2,10 @@ package Ejercicio1;
 
 import Herramientas.Herramientas;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import org.jdom2.output.XMLOutputter;
 
 /**
  *
@@ -23,9 +20,9 @@ public class Ejercicio01 {
         try {
             doc = new SAXBuilder().build("C:\\petra\\tienda.xml");
         } catch (JDOMException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
         // Cogemos el element root
@@ -38,7 +35,7 @@ public class Ejercicio01 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
         // Eliminamos el atributo precio del hijo historieta
@@ -48,9 +45,9 @@ public class Ejercicio01 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
-        
+
         // Modificamos en root el atributo ubicacion por localidad
         root.getAttribute("ubicacion").setName("localidad");
 
@@ -58,29 +55,29 @@ public class Ejercicio01 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
-        
+
         // Modificamos el precio de computadora a 2300
-        root.getChild("computadora").setAttribute("precio","2300");
+        root.getChild("computadora").setAttribute("precio", "2300");
 
         // Escribimos las modificaciones
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
-        
+
         // Anadir nueva etiqueta empleado con atributo cargo, con valor responsable
-        root.addContent(new Element("empleado").setAttribute("cargo","empleado"));
+        root.addContent(new Element("empleado").setAttribute("cargo", "empleado"));
 
         // Escribimos las modificaciones
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
-        
+
         // Eliminar la etiqueta libro
         root.removeChild("libro");
 
@@ -88,7 +85,7 @@ public class Ejercicio01 {
         try {
             Herramientas.escribirXML(doc);
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio01.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
     }
 }
