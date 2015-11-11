@@ -20,9 +20,9 @@ class Cuenta {
         saldo = saldo - cantidad;
     }
 
-    void retirardinero(int cant, String nom) {
+    synchronized void retirardinero(int cant, String nom) {
         if (getsaldo() >= cant) {
-            System.out.println(nom + " retira saldo " + cant);
+            System.out.println(nom + " retira " + cant + " actual (" + getsaldo() + ")");
 
             try {
                 Thread.sleep(500);
@@ -30,7 +30,6 @@ class Cuenta {
                 ex.printStackTrace();
             }
             restar(cant);
-            System.out.println(nom + " retira " + cant + " actual (" + getsaldo() + ")");
         } else {
             System.out.println(nom + " sin saldo suficiente " + getsaldo());
         }
@@ -63,9 +62,11 @@ public class Cajero {
 
     public static void main(String args[]) {
         Cuenta c = new Cuenta(40);
+        
         sacardinero h1 = new sacardinero("Golondrino", c);
-        sacardinero h2 = new sacardinero("Petraa", c);
-        h1.start();
+        sacardinero h2 = new sacardinero("Petra", c);
+        
         h2.start();
+        h1.start();
     }
 }
