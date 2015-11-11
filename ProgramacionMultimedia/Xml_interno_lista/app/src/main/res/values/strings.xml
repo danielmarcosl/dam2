@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Xml_interno_lista</string>
+    <string name="title_activity">Detalle Activity</string>
 </resources>

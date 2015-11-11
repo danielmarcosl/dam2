@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <productos>
+        <producto nombre="Condenzador de fluzo" precio="3000€" description="un buen producto"></producto>
+        <producto nombre="Hoverboard" precio="300€" description="Sin turbo"></producto>
+        <producto nombre="Nike Air 3000" precio="350€" description="Con los nuevos robocordones!"></producto>
+    </productos>

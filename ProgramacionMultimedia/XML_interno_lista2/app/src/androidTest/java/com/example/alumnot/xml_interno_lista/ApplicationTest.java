@@ -1,4 +1,4 @@
-package com.smashkun.xml_interno_lista;
+package com.example.alumnot.xml_interno_lista;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
