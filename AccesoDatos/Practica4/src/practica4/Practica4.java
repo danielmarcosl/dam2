@@ -30,9 +30,9 @@ public class Practica4 {
 
         // Creamos y anadimos los hijos de personajes
         personajes.addContent(new Element("personaje").setAttribute("id", "P001").setAttribute("especie", "humano").setText("Asterix"));
-        personajes.addContent(new Element("personaje").setAttribute("id", "P002").setAttribute("especie", "humano").setText("Idefix"));
+        personajes.addContent(new Element("personaje").setAttribute("id", "P002").setAttribute("especie", "animal").setText("Idefix"));
         personajes.addContent(new Element("personaje").setAttribute("id", "P003").setAttribute("especie", "humano").setText("Lucky Luke"));
-        personajes.addContent(new Element("personaje").setAttribute("id", "P004").setAttribute("especie", "humano").setText("Spiderman"));
+        personajes.addContent(new Element("personaje").setAttribute("id", "P004").setAttribute("especie", "animal").setText("Spiderman"));
 
         // Creamos y anadimos los hijos de autores
         Element dibujantes = new Element("dibujantes");
