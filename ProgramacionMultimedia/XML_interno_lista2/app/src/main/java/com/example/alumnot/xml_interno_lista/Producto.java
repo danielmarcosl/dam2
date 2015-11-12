@@ -8,10 +8,10 @@ public class Producto {
     private String precio;
     private String descripcion;
 
-    public Producto(String nombre, String precio, String descripcion){
-        this.nombre=nombre;
-        this.precio=precio;
-        this.descripcion=descripcion;
+    public Producto(String nombre, String precio, String descripcion) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.descripcion = descripcion;
     }
 
     public String getNombre() {
