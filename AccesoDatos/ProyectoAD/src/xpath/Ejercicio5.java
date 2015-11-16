@@ -1,8 +1,6 @@
 package xpath;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.jdom2.Document;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
@@ -20,9 +18,9 @@ public class Ejercicio5 {
         try {
             doc = new SAXBuilder().build("C:\\petra\\cole.xml");
         } catch (JDOMException ex) {
-            Logger.getLogger(Ejercicio1.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         } catch (IOException ex) {
-            Logger.getLogger(Ejercicio1.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
         herramientas.xpath(doc, "/cole/asignatura[cred < '6']/nombre");
