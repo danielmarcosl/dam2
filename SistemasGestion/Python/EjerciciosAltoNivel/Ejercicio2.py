@@ -2,5 +2,5 @@
 	
 def esMenor(numeros) :
 	return filter(lambda x : x < 0,numeros)
-	
-print esMenor([1,-2,0,-5])
+
+print esMenor(range(-5,5))
