@@ -18,37 +18,40 @@ import java.util.ArrayList;
 /**
  * Created by AlumnoT on 05/11/2015.
  */
-public class MainActivity extends Activity {
-    private ArrayList<Producto> listaProductos = new ArrayList<Producto>();
+public class MainActivity extends Activity{
+    private ArrayList<Producto> listaProductos= new ArrayList<Producto>();
     private ArrayList<String> listaTitulos = new ArrayList<String>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
+        try{
             parsearXML();
             montarListView();
-        } catch (XmlPullParserException e) {
+        }
+        catch (XmlPullParserException e){
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e){
             e.printStackTrace();
         }
     }
 
-    private void parsearXML() throws XmlPullParserException, IOException {
+    private void parsearXML() throws XmlPullParserException , IOException{
+
         XmlPullParser parser = getResources().getXml(R.xml.productos);
         int eventType = -1;
 
-        while (eventType != XmlResourceParser.END_DOCUMENT) {
+        while (eventType != XmlResourceParser.END_DOCUMENT){
             eventType = parser.next();
-            if (eventType == XmlResourceParser.START_TAG) {
+            if(eventType == XmlResourceParser.START_TAG){
                 String currentTagName = parser.getName();
-                if (currentTagName.equals("producto")) {
-                    String nombreValue = parser.getAttributeValue(null, "nombre");
-                    String precioValue = parser.getAttributeValue(null, "precio");
-                    String descripcionValue = parser.getAttributeValue(null, "descripcion");
+                if(currentTagName.equals("producto")){
+                    String nombreValue = parser.getAttributeValue(null,"nombre");
+                    String precioValue = parser.getAttributeValue(null,"precio");
+                    String descripcionValue = parser.getAttributeValue(null,"descripcion");
 
                     Producto productoActual = new Producto(nombreValue, precioValue, descripcionValue);
 
@@ -59,10 +62,10 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void montarListView() {
+    private void montarListView(){
         ListView listView = (ListView) findViewById(R.id.lista);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, listaTitulos);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item,listaTitulos);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -70,7 +73,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(MainActivity.this, DetalleActivity.class);
 
-                i.putExtra("objetoProducto", listaProductos.get(position));
+                i.putExtra("objetoProducto",listaProductos.get(position));
                 startActivity(i);
             }
         });

@@ -15,5 +15,17 @@
         android:id="@+id/campo_nombre"
         android:text="@string/app_name"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/campo_precio"
+        android:text="@string/app_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/campo_descripcion"
+        android:text="@string/app_name"
+        />
 
 </RelativeLayout>
