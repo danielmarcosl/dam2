@@ -7,6 +7,8 @@ def cubo(x):
 	
 funcion = [cuadrado,cubo]
 
-for i in range(16) :
+for i in range(5) :
 	valor = map(lambda x : x(i),funcion)
 	print valor
+
+print map(lambda x:(x*x, x*x*x), range(5))
