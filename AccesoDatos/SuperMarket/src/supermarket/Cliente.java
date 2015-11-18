@@ -7,22 +7,22 @@ import java.util.Random;
  * @author Daniel Marcos Lorrio
  */
 public class Cliente extends Thread {
-    
-    int caja;
+
     int num = 0;
-    
-    public Cliente(int n, int c) {
+
+    public static Caja c = new Caja();
+
+    public Cliente(int n) {
         this.num = n;
-        this.caja = c;
     }
-    
+
     public void run() {
-        
-        Caja c = new Caja();
-        
-        //Random r = new Random();
-        //int pago = r.nextInt(40) + 1;
-        
-        c.atenderCliente(num,30,caja);
+
+        Random r = new Random();
+        int pago = r.nextInt(40) + 1;
+
+        int caja = c.cogerNumero();
+
+        c.atenderCliente(num, pago, caja);
     }
 }
