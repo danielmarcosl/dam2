@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<videogames>
+    <game
+        name="The Legend of Zelda"
+        platform="Famicom Disk System"
+        year="1986"></game>
+    <game
+        name="Zelda II: The Adventure of Link"
+        platform="Famicom Disk System"
+        year="1987"></game>
+    <game
+        name="The Legend of Zelda: A Link to the Past"
+        platform="Super Nintendo Entertainment System"
+        year="1991"></game>
+    <game
+        name="The Legend of Zelda: Link's Awakening"
+        platform="Game Boy"
+        year="1993"></game>
+    <game
+        name="The Legend of Zelda: Ocarina of Time"
+        platform="Nintendo 64"
+        year="1998"></game>
+    <game
+        name="The Legend of Zelda: Majora's Mask"
+        platform="Nintendo 64"
+        year="2000"></game>
+    <game
+        name="The Legend of Zelda: Oracle of Ages"
+        platform="Game Boy Color"
+        year="2001"></game>
+    <game
+        name="The Legend of Zelda: Oracle of Seasons"
+        platform="Game Boy Color"
+        year="2001"></game>
+    <game
+        name="The Legend of Zelda: A Link to the Past Four Swords"
+        platform="Game Boy Advance"
+        year="2002"></game>
+    <game
+        name="The Legend of Zelda: The Wind Waker"
+        platform="Nintendo GameCube"
+        year="2002"></game>
+    <game
+        name="The Legend of Zelda: Four Swords Adventures"
+        platform="Nintendo GameCube"
+        year="2004"></game>
+    <game
+        name="The Legend of Zelda: The Minish Cap"
+        platform="Game Boy Advance"
+        year="2004"></game>
+    <game
+        name="The Legend of Zelda: Twilight Princess"
+        platform="Wii"
+        year="2006"></game>
+    <game
+        name="The Legend of Zelda: Phantom Hourglass"
+        platform="Nintendo DS"
+        year="2007"></game>
+    <game
+        name="The Legend of Zelda: Spirit Tracks"
+        platform="Nintendo DS"
+        year="2009"></game>
+    <game
+        name="The Legend of Zelda: Skyward Sword"
+        platform="Wii"
+        year="2011"></game>
+    <game
+        name="The Legend of Zelda: A Link Between Worlds"
+        platform="Nintendo 3DS"
+        year="2013"></game>
+    <game
+        name="The Legend of Zelda: Tri Force Heroes"
+        platform="Nintendo 3DS"
+        year="2015"></game>
+</videogames>

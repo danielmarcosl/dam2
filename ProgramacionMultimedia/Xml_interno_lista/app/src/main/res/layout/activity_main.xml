@@ -9,7 +9,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lista">
+        android:id="@+id/lista"
+        android:background="#A6D1E1">
     </ListView>
 
 </LinearLayout>

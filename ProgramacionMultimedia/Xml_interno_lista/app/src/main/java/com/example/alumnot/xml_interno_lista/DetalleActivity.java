@@ -8,15 +8,20 @@ import android.widget.TextView;
  * Created by AlumnoT on 03/11/2015.
  */
 public class DetalleActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
-        TextView campoNombre = (TextView) findViewById(R.id.campo_nombre);
-        Bundle extras = getIntent() .getExtras();
+        TextView nameField = (TextView) findViewById(R.id.name_field);
+        TextView platformField = (TextView) findViewById(R.id.platform_field);
+        TextView yearField = (TextView) findViewById(R.id.year_field);
+        Bundle extras = getIntent().getExtras();
 
-        Producto productoActual = (Producto) extras.getSerializable("objetoProducto");
-        campoNombre.setText(productoActual.getNombre());
+        Videogame currentVideogame = (Videogame) extras.getSerializable("videogames");
+        nameField.setText(currentVideogame.getNameText());
+        platformField.setText(currentVideogame.getPlatform());
+        yearField.setText(currentVideogame.getYear());
     }
 }
