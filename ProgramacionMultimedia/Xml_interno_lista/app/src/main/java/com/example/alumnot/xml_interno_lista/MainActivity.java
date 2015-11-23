@@ -48,10 +48,11 @@ public class MainActivity extends Activity {
                 String currentTagName = parser.getName();
                 if (currentTagName.equals("game")) {
                     String nameValue = parser.getAttributeValue(null, "name");
-                    String yearValue = parser.getAttributeValue(null, "platform");
-                    String platformValue = parser.getAttributeValue(null, "year");
+                    String platformValue = parser.getAttributeValue(null, "platform");
+                    String yearValue = parser.getAttributeValue(null, "year");
+                    String descriptionValue = parser.getAttributeValue(null, "description");
 
-                    Videogame currentVideogame = new Videogame(nameValue, platformValue, yearValue);
+                    Videogame currentVideogame = new Videogame(nameValue, platformValue, yearValue, descriptionValue);
 
                     videogamesList.add(currentVideogame);
                     headerList.add(nameValue);

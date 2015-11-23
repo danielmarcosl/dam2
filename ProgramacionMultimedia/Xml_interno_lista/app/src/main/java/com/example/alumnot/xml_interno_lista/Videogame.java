@@ -8,13 +8,15 @@ import java.io.Serializable;
 public class Videogame implements Serializable {
 
     private String name;
-    private String year;
     private String platform;
+    private String year;
+    private String description;
 
-    public Videogame(String n, String p, String y) {
+    public Videogame(String n, String p, String y, String d) {
         this.name = n;
         this.platform = p;
         this.year = y;
+        this.description = d;
     }
 
     public String getNameText() {
@@ -27,5 +29,9 @@ public class Videogame implements Serializable {
 
     public String getYear() {
         return year;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
