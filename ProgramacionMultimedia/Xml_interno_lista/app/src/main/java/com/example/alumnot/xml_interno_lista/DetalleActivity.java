@@ -32,10 +32,10 @@ public class DetalleActivity extends Activity {
 
         Videogame currentVideogame = (Videogame) extras.getSerializable("videogames");
 
-        nameField.setText("Name: " + currentVideogame.getNameText());
-        platformField.setText("Platform: " + currentVideogame.getPlatform());
-        yearField.setText("Release Date: " + currentVideogame.getYear());
-        descriptionField.setText("Description: " + currentVideogame.getDescription());
+        nameField.setText(currentVideogame.getNameText());
+        platformField.setText(currentVideogame.getPlatform());
+        yearField.setText(currentVideogame.getYear());
+        descriptionField.setText(currentVideogame.getDescription());
 
         switch (currentVideogame.getNameText()) {
             case "The Legend of Zelda":
@@ -48,7 +48,67 @@ public class DetalleActivity extends Activity {
                 break;
             case "The Legend of Zelda: A Link to the Past":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoalinktothepast));
-                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoalinktothepast));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoalinktothepast2));
+                break;
+            case "The Legend of Zelda: Link's Awakening":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logolinkawakening));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondolinkawakening));
+                break;
+            case "The Legend of Zelda: Ocarina of Time":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoocarinaoftime));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoocarinaoftime));
+                break;
+            case "The Legend of Zelda: Majora's Mask":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logomajorasmask));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondomajorasmask));
+                break;
+            case "The Legend of Zelda: Oracle of Ages":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logooracleofages));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondooracleofages));
+                break;
+            case "The Legend of Zelda: Oracle of Seasons":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logooracleofseasons));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondooracleofseasons));
+                break;
+            case "The Legend of Zelda: A Link to the Past Four Swords":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoalinktothepastandfourswords));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoalinktothepastandfourswords));
+                break;
+            case "The Legend of Zelda: The Wind Waker":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logowindwaker));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondowindwaker));
+                break;
+            case "The Legend of Zelda: Four Swords Adventures":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logofourswordsadventures));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondofourswordsadventures));
+                break;
+            case "The Legend of Zelda: The Minish Cap":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logominishcap));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondominishcap));
+                break;
+            case "The Legend of Zelda: Twilight Princess":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logotwilightprincess));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondotwilightprincess));
+                break;
+            case "The Legend of Zelda: Phantom Hourglass":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logophantomhourglass));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondophantomhourglass));
+                break;
+            case "The Legend of Zelda: Spirit Tracks":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logospirittracks));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondospirittracks));
+                break;
+            case "The Legend of Zelda: Skyward Sword":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoskywardsword));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoskywardsword));
+                break;
+            case "The Legend of Zelda: A Link Between Worlds":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoalinkbetweenworlds));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoalinkbetweenworlds));
+                break;
+            case "The Legend of Zelda: Tri Force Heroes":
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logotriforceheroes));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondotriforceheroes));
                 break;
         }
     }
