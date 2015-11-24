@@ -2,75 +2,92 @@
 <videogames>
     <game
         name="The Legend of Zelda"
-        description="Set in the fantasy land of Hyrule, the plot centers on a boy named Link, the playable protagonist, who aims to collect the eight fragments of the Triforce of Wisdom in order to rescue Princess Zelda from the antagonist, Ganon."
+        description="A small kingdom in the land of Hyrule, the setting of the game, is engulfed in chaos after an army led by Ganon, the Prince of Darkness, invaded it and stole the Triforce of Power, a part of a magical artifact bestowing great strength.\n\nIn an attempt to prevent Ganon from acquiring the Triforce of Wisdom, another of the pieces, Princess Zelda splits it and hides the eight fragments in secret dungeons throughout the land.\n\nBefore the princess is eventually kidnapped by Ganon, she commands her nursemaid Impa to find someone courageous enough to save the kingdom.\n\nWhile wandering the land, the old woman is surrounded by Ganon's henchmen, though a young boy named Link appears and rescues her.\n\nAfter hearing Impa's plea, he resolves to save Zelda and sets out to reassemble the scattered fragments of the Triforce of Wisdom, to become powerful enough to defeat Ganon."
         platform="Famicom Disk System"
         year="1986"></game>
     <game
         name="Zelda II: The Adventure of Link"
+        description="A few years after the defeat of Ganon and the rescue of Princess Zelda, Link, now at the age of sixteen, is disturbed by the appearance of a mark on the back of his hand.\n\nUpon seeing this mark, Impa, the nurse of Princess Zelda, tells him the story of how, ages ago, the King of Hyrule had hidden a third part of the Triforce, the Triforce of Courage, in the Great Palace to safeguard it from evil.\n\nUpon the death of the king, his son had searched for the missing Triforce, but its location had been imparted only to the king's daughter, Princess Zelda. Angered upon learning this, the Prince tried to use the power of a Magician to force the truth from his sister.\n\nAfter she refused, the wizard casted a spell upon her to put her into a deep sleep, which caused the wizard to die soon after. Only by uniting the Triforce of Courage with its counterparts, Link would be able to awake the sleeping Princess Zelda.\n\nUpon hearing this tale, Link receives from Impa six crystals that serve as keys to open the seal on the Great Palace."
         platform="Famicom Disk System"
         year="1987"></game>
     <game
         name="The Legend of Zelda: A Link to the Past"
+        description="One day, a band of evil thieves managed to open the gateway to the Sacred Realm, where the mystical Triforce was hidden.\n\nUpon finding the sacred golden relic, the leader of the thieves, Ganondorf, slew his followers and claimed it as his own.\n\nBefore long, dark power began to flow forth from the Sacred Realm. People were drawn into this darkness, and never heard from again. As a result, the King of Hyrule ordered the seven sages to seal the entrance to the Sacred Realm.\n\nA great battle ensued—monsters poured into the Light World from the sacred land and attacked the castle.\n\nThe Knights of Hyrule defended the sages during the great battle against evil, and, though most of them perished in the struggle, the sages were able to cast their seal, stopping the flow of darkness and trapping the evil king Ganon within. This battle became known as the Imprisoning War."
         platform="Super Nintendo Entertainment System"
         year="1991"></game>
     <game
         name="The Legend of Zelda: Link's Awakening"
+        description="After the events of Oracle of Ages and Oracle of Seasons, the hero Link travels abroad to train for further threats. A storm destroys his boat at sea, and he washes ashore on Koholint Island, where he is taken to the house of Tarin and his daughter Marin.\n\nShe is fascinated by Link and the outside world, and tells Link wistfully that, if she were a seagull, she would leave and travel across the sea. After Link recovers his sword, a mysterious owl tells him that he must wake the Wind Fish, Koholint's guardian, in order to return home. The Wind Fish lies dreaming in a giant egg on top of Mt.\n\nTamaranch, and can only be awakened by the eight instruments of the Sirens. During his search for the sixth instrument, Link goes to the Ancient Ruins. There he finds a mural that details the reality of island: that it is merely a dream world created by the Wind Fish. After this revelation, the owl tells Link that only the Wind Fish is aware of this fact.\n\nThroughout Koholint Island, nightmare creatures attempt to obstruct Link's quest for the instruments, as they wish to rule the Wind Fish's dreamworld."
         platform="Game Boy"
         year="1993"></game>
     <game
         name="The Legend of Zelda: Ocarina of Time"
+        description="In the Kokiri Forest, all the forest children have their own guardian Fairies, bestowed upon them by the Great Deku Tree, except for one boy.\n\nThis boy who has been plagued by nightmares of a girl fleeing from an evil man clad in black is named Link. For as long as he could remember, the boy had been ostracized by the other children and has never quite fit in. One day, as he neared death, the Great Deku Tree sends Navi the fairy to summon the boy to him.\n\nIn order to test young Link’s courage, the Great Deku Tree bids Link to venture inside his hollow and break the death curse cast upon him by a wicked man dressed in black."
         platform="Nintendo 64"
         year="1998"></game>
     <game
         name="The Legend of Zelda: Majora's Mask"
+        description="Majora's Mask opens with a scene of Link leaving the land of Hyrule on a personal quest. The opening to the game states that he is searching for a beloved and invaluable friend, Navi. His trip is interrupted by the Skull Kid, an imp possessed by evil contained in Majora's Mask, which he wears after having stolen it from another traveler (with the help of two Fairies, Tatl and Tael).\n\nThe Skull Kid knocks Link unconscious, making him fall off his horse, Epona, and steals the Ocarina of Time. When Link awakens, the Skull Kid takes off and leads Link on a chase. Skull Kid transforms Link into a Deku Scrub.\n\nWhen Link eventually catches up with the Skull Kid, he tells Link that he 'got rid of' Epona, and uses the dark magic of Majora's Mask to transform Link into a Deku Scrub. He then leaves Link, while Tatl continues to beat the helpless Deku back.\n\nHer delay, though, causes her to be separated from her brother and the Skull Kid. She then insists that Link take her with him, so that they can work together to find the Skull Kid and Tael. With limited abilities, Link enters Clock Town where he meets the Happy Mask Salesman.\n\nThe Mask Salesman reveals that the Skull Kid stole Majora’s Mask from him and that he can return Link to his human form if he finds the Ocarina of Time and Majora's Mask. He warns Link also, though, that he must leave in three days, and Link must retrieve the Mask and the Ocarina by then. Link then sets off in his Deku form, finding himself in the parallel world of Termina."
         platform="Nintendo 64"
         year="2000"></game>
     <game
         name="The Legend of Zelda: Oracle of Ages"
+        description="Link, having been sent from Hyrule to Labrynna by the power of the Triforce, awoke in Labrynna, almost immediately after stumbling upon Impa, who was besieged by a group of Octoroks. Unknown to Link, Impa had fallen into the clutches of the evil Sorceress of Shadows Veran.\n\nThis allowed her to trick Link into moving a sacred barrier which obstructed her goal: to possess the Oracle of Ages, Nayru. In full view of Link and Nayru's bodyguard, Ralph, Veran quickly possessed Nayru and began to utilize her newfound power of controlling time, travelling to the past and beginning her plan to bring untold sorrow to the world.\n\nMeeting with Labrynna's guardian, the Maku Tree, Link learnt that to defeat Veran, he would need the Essences of Time. However, the Essences, as their names suggest, were hidden throughout time, making them very hard for one person to obtain. By taking up the Harp of Ages in Nayru's house, Link was able to traverse time and search for the Essences throughout Labrynna, all the while correcting the damage Veran had caused to the land, such as in Symmetry Village."
         platform="Game Boy Color"
         year="2001"></game>
     <game
         name="The Legend of Zelda: Oracle of Seasons"
+        description="Oracle of Seasons opens up the same as Oracle of Ages, with Link riding a horse. Spying a castle on the horizon, he goes inside and is sent by the Triforce to help a land being ravaged by the ruthless General Onox.\n\nLink is teleported to the land of Holodrum and after a bit of exploring discovers a traveling troupe. After hanging around and dancing with the troupe's main attraction, Din, the sky becomes dark and General Onox strikes.\n\nIn the ensuing chaos, Din, revealed to be the Oracle of Seasons, gets kidnapped, taken to Onox's mountain fortress, and imprisoned inside of a crystal. As a result, the Temple of Seasons falls into the earth and the seasons of the land begin to become erratic."
         platform="Game Boy Color"
         year="2001"></game>
     <game
         name="The Legend of Zelda: A Link to the Past Four Swords"
+        description="Long ago, in the kingdom of Hyrule, there appeared a Wind Sorcerer named Vaati. Vaati could bend the wind to his will and used this awful power to terrorize many villages of Hyrule. In his assaults on the villages, Vaati would kidnap any beautiful girls who caught his fancy.\n\nMany knights from the castle and other brave men set out to subdue the sorcerer and rescue the girls, but each one fell in turn to Vaati's awesome power. Just as the people had begun to lose hope, a lone young boy traveling with little but a sword at his side appeared.\n\nWhen this boy heard what was happening, he said only, 'I will defeat this sorcerer.' He boldly entered Vaati's palace, mystically trapped the evil sorcerer inside the blade of his sword, and returned the young girls to their villages. The boy then went deep into the forest and disappeared.\n\nThe villagers asked the girls how a boy so young could have saved them all and defeated the sorcerer when no one else could. The young girls told a story of how with just a wave of his sword, the boy's body shattered into four pieces, each of which then formed a complete copy of the boy. These four young boys then worked together to defeat the sorcerer.\n\nThe people did not believe the story, but they called it the Four Sword nonetheless. As rumors of the blade's power to divide a person into four entities spread, the people built a shrine to protect it."
         platform="Game Boy Advance"
         year="2002"></game>
     <game
         name="The Legend of Zelda: The Wind Waker"
+        description="Set hundreds of years after the events of Ocarina of Time, The Wind Waker finds the hero Link in a sea scattered with 49 islands, which necessitates frequent sailing and naval combat.\n\nLink lives with his grandmother and younger sister Aryll on Outset Island, one of the few inhabited islands in the Great Sea. The people of the Great Sea pass down a legend of a prosperous kingdom with a hidden golden power. An evil man found and stole this power, using it to spread darkness until a young boy dressed in green sealed the evil with the Blade of Evil's Bane.\n\nThe boy became known as the Hero of Time and passed into legend. One day the sealed evil began to return, but the Hero of Time did not reappear. The inhabitants of the Great Sea are unsure of the kingdom's fate, but it is clear that this legend is the story of Ocarina of Time where the Hero of Time, Link, fought Ganondorf."
         platform="Nintendo GameCube"
         year="2002"></game>
     <game
         name="The Legend of Zelda: Four Swords Adventures"
+        description="One night, an ominous cloud covers Hyrule, throwing fear into the people. Princess Zelda calls upon her most trusted childhood friend, Link. She wants to check up on the Four Sword, fearing that the seal that imprisoned the evil wind sorcerer Vaati inside of it at the end of Four Swords might have weakened. Inside the castle they meet up with the gathered six Maidens, whose purpose is to protect Hyrule as well as the Four Sword Sanctuary. With the help of the maidens Zelda summons a portal to the sanctuary.\n\nHowever, before they get a chance to enter, a dark figure that looks like Link appears. The Dark Link seals away the six maidens and Zelda in a dark crystal, before he retreats into the portal leading to the sanctuary. Link is left with no choice but to follow. Arriving at the sanctuary, the dark Link taunts Link into pulling the Four Sword, resulting in Link splitting into four copies of himself.\n\nLikewise, the seal on Vaati is broken, and he slowly creeps forward with a maniacal laugh. The four Links do not get a chance to follow the Dark Link before being thrown away from the scene by Vaati’s magic."
         platform="Nintendo GameCube"
         year="2004"></game>
     <game
         name="The Legend of Zelda: The Minish Cap"
+        description="Evil spirits appeared in the land of Hyrule, and just when it seemed that the world was to be cast into the darkest of shadows, the tiny Picori descended from the skies and bestowed on a courageous human a shining golden light and a single sword.\n\nThis bravest of men used his wisdom and courage, his golden light, and his sword to fight off the demons and restore peace to the world. The people were so grateful to the Picori that they held an annual celebration in their honor. Whoever won the sword competition held at the festival would earn the honor of touching the sacred blade.\n\nThe tradition of the Picori Festival continued, but over the generations, the Picori themselves passed into legend. The legend of the Picori tells of a mystic doorway that opens just once every hundred years. When the door is open, the Picori can cross from their world into Hyrule."
         platform="Game Boy Advance"
         year="2004"></game>
     <game
         name="The Legend of Zelda: Twilight Princess"
+        description=""
         platform="Wii"
         year="2006"></game>
     <game
         name="The Legend of Zelda: Phantom Hourglass"
+        description=""
         platform="Nintendo DS"
         year="2007"></game>
     <game
         name="The Legend of Zelda: Spirit Tracks"
+        description=""
         platform="Nintendo DS"
         year="2009"></game>
     <game
         name="The Legend of Zelda: Skyward Sword"
+        description=""
         platform="Wii"
         year="2011"></game>
     <game
         name="The Legend of Zelda: A Link Between Worlds"
+        description=""
         platform="Nintendo 3DS"
         year="2013"></game>
     <game
         name="The Legend of Zelda: Tri Force Heroes"
+        description=""
         platform="Nintendo 3DS"
         year="2015"></game>
 </videogames>
