@@ -39,14 +39,16 @@ public class DetalleActivity extends Activity {
 
         switch (currentVideogame.getNameText()) {
             case "The Legend of Zelda":
-                //imageField.setImageDrawable(getResources().getDrawable(R.drawable.logo1));
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logotloz));
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondothelegendofzelda));
                 break;
             case "Zelda II: The Adventure of Link":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logotheadventureoflink));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoadventureoflink));
                 break;
             case "The Legend of Zelda: A Link to the Past":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoalinktothepast));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoalinktothepast));
                 break;
         }
     }
