@@ -91,7 +91,7 @@ public class DetalleActivity extends Activity {
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondotwilightprincess));
                 break;
             case "The Legend of Zelda: Phantom Hourglass":
-                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logophantomhourglass));
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logophantomhourglass2));
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondophantomhourglass));
                 break;
             case "The Legend of Zelda: Spirit Tracks":
@@ -99,7 +99,7 @@ public class DetalleActivity extends Activity {
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondospirittracks));
                 break;
             case "The Legend of Zelda: Skyward Sword":
-                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoskywardsword));
+                imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoskywardsword2));
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoskywardsword));
                 break;
             case "The Legend of Zelda: A Link Between Worlds":

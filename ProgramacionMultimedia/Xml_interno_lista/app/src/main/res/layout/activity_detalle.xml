@@ -15,13 +15,16 @@
             android:id="@+id/linearl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/image_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
                 android:adjustViewBounds="true"
                 android:maxHeight="250dp" />
 
@@ -29,34 +32,37 @@
                 android:id="@+id/name_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="25dp"
+                android:textAlignment="center"
                 android:textColor="#ffffff"
-                android:layout_marginTop="50dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/platform_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/year_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/description_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="25dp"
                 android:textColor="#ffffff"
-                android:layout_marginRight="50dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="50dp" />
+                android:textSize="15dp" />
 
         </LinearLayout>
     </ScrollView>

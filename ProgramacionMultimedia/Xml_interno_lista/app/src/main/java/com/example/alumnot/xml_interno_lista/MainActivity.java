@@ -27,54 +27,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
-            parsearXML();
-            montarListView();
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //showListActivity();
     }
 
-    private void parsearXML() throws XmlPullParserException, IOException {
-
-        XmlPullParser parser = getResources().getXml(R.xml.videogames);
-        int eventType = -1;
-
-        while (eventType != XmlResourceParser.END_DOCUMENT) {
-            eventType = parser.next();
-            if (eventType == XmlResourceParser.START_TAG) {
-                String currentTagName = parser.getName();
-                if (currentTagName.equals("game")) {
-                    String nameValue = parser.getAttributeValue(null, "name");
-                    String platformValue = parser.getAttributeValue(null, "platform");
-                    String yearValue = parser.getAttributeValue(null, "year");
-                    String descriptionValue = parser.getAttributeValue(null, "description");
-
-                    Videogame currentVideogame = new Videogame(nameValue, platformValue, yearValue, descriptionValue);
-
-                    videogamesList.add(currentVideogame);
-                    headerList.add(nameValue);
-                }
-            }
-        }
-    }
-
-    private void montarListView() {
-        ListView listView = (ListView) findViewById(R.id.lista);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, headerList);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(MainActivity.this, DetalleActivity.class);
-
-                i.putExtra("videogames", videogamesList.get(position));
-                startActivity(i);
-            }
-        });
+    public void showListActivity(View v) {
+        Intent i = new Intent(this, ListActivity.class);
+        startActivity(i);
     }
 }
