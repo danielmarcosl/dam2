@@ -37,7 +37,7 @@ public class Ejercicio1 {
         Herramientas.xpathAttVal(doc, "//persona[@id=//puesto[@cargo!='camarera']/@id and nacimiento[@lugar!=//nacimiento[@lugar=//persona[@id=//puesto[@cargo='director']/@id]/nacimiento/@lugar]/@lugar]][@id]", "id");
 
         // Mostrar el cargo que ocupan las personas  que tienen más de 1 direccion
-        // de contacto  y cuyo sueldo sea mayor al  que gana la recepcionista
+        // de contacto  y cuyo sueldo sea mayor al  que gana la recepcionista 
         System.out.println("\nApartado 4\n");
         Herramientas.xpathAttVal(doc, "//puesto[@id=//persona[count(direccion)>1 and @id=//persona[sueldo>=//persona[@id=//puesto[@cargo='recepcionista']/@id]/sueldo]/@id]/@id]", "cargo");
 
