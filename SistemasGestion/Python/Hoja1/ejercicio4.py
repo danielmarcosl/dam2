@@ -1,5 +1,10 @@
 #_*_coding:utf-8_*_
 
+'''Realizar un programa en Python que pida el radio
+de una esfera, calcule su área y volumen e
+
+Informe del resultado por pantalla.'''
+
 import math
 
 # Pedimos el radio de una esfera y lo guardamos en una variable de tipo float

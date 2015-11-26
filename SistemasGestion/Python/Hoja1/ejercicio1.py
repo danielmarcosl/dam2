@@ -1,5 +1,9 @@
 #_*_coding:utf-8_*_
 
+'''Realizar un programa en Python que imprima por pantalla tus datos
+Cada dato debe aparecer en una línea.
+Repetir pero ahora los datos se piden por teclado'''
+
 # Inicializacion de variables con datos
 nombre = "Daniel"
 apellidos = "Marcos Lorrio"

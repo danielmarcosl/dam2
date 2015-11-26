@@ -1,5 +1,8 @@
 #_*_coding:utf-8_*_
 
+'''Realizar un programa que pida cinco numeros decimales,
+calcule su media e informe del resultado por pantalla.'''
+
 # Pedimos cinco numeros al usuario y los almacenamos en variables float
 num1 = float(raw_input("Introduce un numero: "))
 num2 = float(raw_input("Introduce un numero: "))
