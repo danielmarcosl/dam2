@@ -21,14 +21,11 @@ public class DetalleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativel);
-
         TextView nameField = (TextView) findViewById(R.id.name_field);
         TextView platformField = (TextView) findViewById(R.id.platform_field);
         TextView yearField = (TextView) findViewById(R.id.year_field);
         TextView descriptionField = (TextView) findViewById(R.id.description_field);
 
-        ImageView imageField = (ImageView) findViewById(R.id.image_field);
         Bundle extras = getIntent().getExtras();
 
         Videogame currentVideogame = (Videogame) extras.getSerializable("videogames");
@@ -38,11 +35,23 @@ public class DetalleActivity extends Activity {
         yearField.setText(currentVideogame.getYear());
         descriptionField.setText(currentVideogame.getDescription());
 
-        switch (currentVideogame.getNameText()) {
+        setImages(currentVideogame.getNameText());
+    } // end onCreate
+
+    /**
+     * Set ImageView and RelativeLayout background images
+     * @param name currentVideogame.getNameText()
+     */
+    protected void setImages(String name) {
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativel);
+        ImageView imageField = (ImageView) findViewById(R.id.image_field);
+
+        switch (name) {
             case "The Legend of Zelda":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logotloz));
                 //imageField.setImageDrawable(ContextCompat.getDrawable(null,R.drawable.logotloz));
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondothelegendofzelda));
+                //layout.setBackground(ContextCompat.getDrawable(null,R.drawable.fondothelegendofzelda));
                 break;
             case "Zelda II: The Adventure of Link":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logotheadventureoflink));
@@ -113,5 +122,5 @@ public class DetalleActivity extends Activity {
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondotriforceheroes));
                 break;
         }
-    }
+    } // end setImages
 }
