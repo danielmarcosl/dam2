@@ -34,7 +34,7 @@ public class Herramientas {
 
         while (it.hasNext()) {
             Element at = (Element) it.next();
-            System.out.println(at.getName() + " " + val + ": " + at.getAttributeValue(val));
+            System.out.println(at.getName() + ": " + at.getAttributeValue(val));
         }
     }
 
