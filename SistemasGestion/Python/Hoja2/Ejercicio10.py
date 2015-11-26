@@ -1,5 +1,14 @@
 #_*_coding:utf-8_*_
 
+'''Realizar un programa que pida el valor del radio de una esfera muestre
+por pantalla un menu y realice las siguientes opciones:
+
+a) Calcular el diametro (radio * 2)
+
+b) Calcular el perimetro (2 *pi*radio)
+
+c) Calcular el area (2 *pi*radio al cuadrado)'''
+
 import math
 
 # Pedimos el radio y lo almacenamos en una variable tipo float

@@ -1,5 +1,12 @@
 #_*_coding:utf-8_*_
 
+'''Un almacen realiza un descuento del 40% si se compran mas de
+100 unidades de un mismo articulo; un 20% si se compran entre 25
+y 100 unidades y un 10% si se compran entre 10 y 24 unidades.
+
+Escribir un programa que pregunte el precio de un articulo y la cantidad
+comprada informe del total a pagar asi como del descuento aplicado.'''
+
 # Pedimos el precio y lo almacenamos en una variable tipo float
 precio = float(raw_input("Introduce el precio: "))
 # Pedimos la cantidad y la almacenamos en una variable tipo int

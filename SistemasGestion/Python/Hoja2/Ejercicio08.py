@@ -1,5 +1,8 @@
 #_*_coding:utf-8_*_
 
+'''Generar un numero aleatorio entre 1 y 20. Luego
+informar si el numero tiene uno o dos digitos'''
+
 import random
 
 # Generamos un número aleatorio y lo almacenamos en una variable tipo int

@@ -1,5 +1,17 @@
 #_*_coding:utf-8_*_
 
+'''Vamos a crear un pequeno menu
+
+Calculo de areas - Elige una figura geometrica:
+
+a) Triángulo
+b) Círculo
+
+Si elegimos a o A nos debe pedir la base y la altura
+y devolvernos el area de ese triangulo
+
+Si elegimos la b o B debe pedir el radio y calcular el area(recordad a=pi*r2)'''
+
 import math
 
 # Imprimimos el menú
