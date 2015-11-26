@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by AlumnoT on 05/11/2015.
+ * Created by Daniel Marcos Lorrio on 05/11/2015.
  */
 public class MainActivity extends Activity {
     private ArrayList<Videogame> videogamesList = new ArrayList<Videogame>();
@@ -26,12 +26,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    } // end onCreate
 
-        //showListActivity();
-    }
-
+    /**
+     * Launch ListActivity
+     * @param v
+     */
     public void showListActivity(View v) {
         Intent i = new Intent(this, ListActivity.class);
         startActivity(i);
-    }
+    } // end showListActivity
 }

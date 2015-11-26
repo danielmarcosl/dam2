@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.text.Layout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,6 +41,7 @@ public class DetalleActivity extends Activity {
         switch (currentVideogame.getNameText()) {
             case "The Legend of Zelda":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logotloz));
+                //imageField.setImageDrawable(ContextCompat.getDrawable(null,R.drawable.logotloz));
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondothelegendofzelda));
                 break;
             case "Zelda II: The Adventure of Link":

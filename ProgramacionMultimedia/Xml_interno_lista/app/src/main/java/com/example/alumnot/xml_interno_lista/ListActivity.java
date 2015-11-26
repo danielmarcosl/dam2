@@ -16,10 +16,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by AlumnoT on 25/11/2015.
+ * Created by Daniel Marcos Lorrio on 25/11/2015.
  */
 public class ListActivity extends Activity {
+    // ArrayList that will contain each 'videogame' tag
     private ArrayList<Videogame> videogamesList = new ArrayList<Videogame>();
+    // ArrayList that will contain the value of 'name' attribute of each 'game' tag
     private ArrayList<String> headerList = new ArrayList<String>();
 
     @Override
@@ -28,16 +30,21 @@ public class ListActivity extends Activity {
         setContentView(R.layout.activity_list);
 
         try {
-            parsearXML();
-            montarListView();
+            parseXML();
+            mountListView();
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    } // end onCreate
 
-    private void parsearXML() throws XmlPullParserException, IOException {
+    /**
+     * Parse a XML document and get the values of the attributes of the tags
+     * @throws XmlPullParserException
+     * @throws IOException
+     */
+    private void parseXML() throws XmlPullParserException, IOException {
 
         XmlPullParser parser = getResources().getXml(R.xml.videogames);
         int eventType = -1;
@@ -59,9 +66,12 @@ public class ListActivity extends Activity {
                 }
             }
         }
-    }
+    } // end parseXML
 
-    private void montarListView() {
+    /**
+     * Create the view of the details of the selected item
+     */
+    private void mountListView() {
         ListView listView = (ListView) findViewById(R.id.lista);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, headerList);
@@ -76,5 +86,5 @@ public class ListActivity extends Activity {
                 startActivity(i);
             }
         });
-    }
+    } // end mountListView
 }
