@@ -1,5 +1,8 @@
 #_*_coding:utf-8_*_
 
+'''Generaremos tres numeros aleatorios y
+luego imprimiremos el mayor de los tres'''
+
 # Importamos Random para poder generar numeros aleatorios
 import random
 

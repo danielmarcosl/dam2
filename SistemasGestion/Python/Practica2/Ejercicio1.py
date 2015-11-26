@@ -1,5 +1,9 @@
 #_*_coding:utf-8_*_
 
+'''Definimos la siguiente lista: lista = [1, 3, 4, 6, 8,10]
+Debemos crear el siguiente menu, pero tenemos que hacer cada
+caso tal y como se nos indican en los mensajes'''
+
 # Creamos la lista
 lista = [1,3,4,6,8,10]
 
