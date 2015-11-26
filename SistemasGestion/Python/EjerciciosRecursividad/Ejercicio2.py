@@ -1,5 +1,7 @@
 #_*_coding_utf-8_*_
 
+'''Elemento en la posicion k de una lista L'''
+
 def pos(k,L) :
 	if L == [] :
 		return False

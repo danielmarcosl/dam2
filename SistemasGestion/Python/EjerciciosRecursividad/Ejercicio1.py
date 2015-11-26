@@ -1,5 +1,7 @@
 #_*_coding:utf-8_*_
 
+'''Largo de una lista L'''
+
 def largo(lista) :
 	if lista == [] :
 		return 0

@@ -1,5 +1,7 @@
 #_*_coding:utf-8_*_
 
+'''Concatenar dos listas L y M'''
+
 def concatenar(L,M) :
 	if L == [] :
 		return [] + M

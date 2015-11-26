@@ -1,5 +1,7 @@
 #_*_coding:utf-8_*_
 
+'''Recibir una lista de enteros y retornar una lista con los numeros pares'''
+
 def pares(lista) :
 	if lista == [] :
 		return P

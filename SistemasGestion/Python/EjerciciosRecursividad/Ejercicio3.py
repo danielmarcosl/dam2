@@ -1,5 +1,7 @@
 #_*_coding:utf-8_*_
 
+'''Retornar el ultimo elemento en una lista L'''
+
 def ultimoElemento(lista) :
 	if lista == [] :
 		return False
