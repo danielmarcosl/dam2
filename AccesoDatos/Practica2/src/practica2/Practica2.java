@@ -71,13 +71,49 @@ public class Practica2 {
                     } catch (IOException ex) {
                         Logger.getLogger(Practica2.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Practica2.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                        Logger.getLogger(Practica2.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    //Mostramos la lista
+                    mostrarLista();
+
+                    // Variable donde se almacenará la letra del menu introducida por el usuario
+                    letra = null;
+                    try {
+                        System.out.print("Tu opcion: ");
+                        letra = teclado.readLine();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
                 break;
                 case "B":
+
+                    //Mostramos la lista
+                    mostrarLista();
+
+                    // Variable donde se almacenará la letra del menu introducida por el usuario
+                    letra = null;
+                    try {
+                        System.out.print("Tu opcion: ");
+                        letra = teclado.readLine();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                     break;
                 case "C":
+
+                    //Mostramos la lista
+                    mostrarLista();
+
+                    // Variable donde se almacenará la letra del menu introducida por el usuario
+                    letra = null;
+                    try {
+                        System.out.print("Tu opcion: ");
+                        letra = teclado.readLine();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                     break;
             }
         }
@@ -131,7 +167,7 @@ public class Practica2 {
      * @throws ClassNotFoundException
      */
     public static void leerMap(ObjectInputStream ob) throws IOException, ClassNotFoundException {
-        Map m = null;
+        HashMap<String, Alumno> m = null;
         try {
             while (true) {
                 m = (HashMap) ob.readObject();
