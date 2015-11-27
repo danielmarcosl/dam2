@@ -3,7 +3,7 @@ package com.example.alumnot.xml_interno_lista;
 import java.io.Serializable;
 
 /**
- * Created by AlumnoT on 03/11/2015.
+ * Created by Daniel Marcos Lorrio on 03/11/2015.
  */
 public class Videogame implements Serializable {
 

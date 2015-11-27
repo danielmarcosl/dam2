@@ -80,7 +80,7 @@ public class ListActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(ListActivity.this, DetalleActivity.class);
+                Intent i = new Intent(ListActivity.this, DetailActivity.class);
 
                 i.putExtra("videogames", videogamesList.get(position));
                 startActivity(i);
