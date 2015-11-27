@@ -19,9 +19,7 @@ import java.util.ArrayList;
  * Created by Daniel Marcos Lorrio on 25/11/2015.
  */
 public class ListActivity extends Activity {
-    // ArrayList that will contain each 'videogame' tag
     private ArrayList<Videogame> videogamesList = new ArrayList<Videogame>();
-    // ArrayList that will contain the value of 'name' attribute of each 'game' tag
     private ArrayList<String> headerList = new ArrayList<String>();
 
     @Override
