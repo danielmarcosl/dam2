@@ -33,7 +33,7 @@ public class list2 {
 
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Alumnot\\Documents\\hash.obj"));
 
-            herramientas.escribirMap(oos, mapa);
+            oos.writeObject(mapa);
 
             oos.close();
         } catch (IOException e) {
