@@ -22,9 +22,9 @@ public class crearAgendas {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Alumnot\\Documents\\agenda.obj"));
 
-            herramientas.escribirObjetos(oos, ag1);
-            herramientas.escribirObjetos(oos, ag2);
-            herramientas.escribirObjetos(oos, ag3);
+            oos.writeObject(ag1);
+            oos.writeObject(ag2);
+            oos.writeObject(ag3);
 
             oos.close();
         } catch (IOException e) {
