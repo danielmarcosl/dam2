@@ -20,6 +20,7 @@ import java.util.StringTokenizer;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.filter.Filters;
+import org.jdom2.output.XMLOutputter;
 import org.jdom2.xpath.XPathExpression;
 import org.jdom2.xpath.XPathFactory;
 
@@ -244,6 +245,56 @@ public class herramientas {
     }
 
     /**
+     * Crear arbol de tres niveles
+     *
+     * @param root Element root
+     * @param hijo ArrayList<Element> hijos de root
+     * @param hijoDeHijo ArrayList<ArrayList<Element>> hijos de hijos de root
+     */
+    public static void crearArbol(Element root,
+            ArrayList<Element> hijo,
+            ArrayList<ArrayList<Element>> hijoDeHijo) {
+
+        Element child;
+        Element childchild;
+
+        for (int j = 0; j < hijo.size(); j++) {
+            child = hijo.get(j);
+            for (int i = 0; i < hijoDeHijo.get(j).size(); i++) {
+                childchild = hijoDeHijo.get(j).get(i);
+                child.addContent(childchild);
+            }
+            root.addContent(child);
+        }
+    }
+
+    /**
+     * Crea un fichero xml a partir de un documento y lo muestra por pantalla
+     *
+     * @param documento Documento con elementos agregados previamente
+     * @param nombre Nombre del fichero que se creara
+     * @throws IOException
+     */
+    public static void escribirFicheroXML(Document documento, String nombre) throws IOException {
+        XMLOutputter salida = new XMLOutputter();
+
+        salida.output(documento, System.out);
+        salida.output(documento, new FileOutputStream("C:\\petra\\" + nombre + ".xml"));
+    }
+
+    /**
+     * Lee el fichero
+     *
+     * @param doc Fichero xml
+     * @throws IOException
+     */
+    public static void leerFicheroXML(Document doc) throws IOException {
+        XMLOutputter salida = new XMLOutputter();
+
+        salida.output(doc, System.out);
+    }
+
+    /**
      * Lee el documento con la ruta xpath indicada
      *
      * @param doc Documento xml
@@ -280,5 +331,4 @@ public class herramientas {
             System.out.println(at.getName() + ": " + at.getAttributeValue(val));
         }
     }
-
 }
