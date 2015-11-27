@@ -1,5 +1,7 @@
 package comienzoclase;
 
+import static java.lang.Thread.sleep;
+
 class Bienvenida {
 
     boolean clase_comenzada;
@@ -12,6 +14,7 @@ class Bienvenida {
     public synchronized void saludarProfesor(String nombreA) {
 
         try {
+            sleep(1000);
             while (clase_comenzada == false) {
                 wait();
             }
