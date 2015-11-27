@@ -1,8 +1,7 @@
 package Herramientas;
 
 /**
- * @author Alvaro Gomez Muñoz
- * @version 1.0.1 de Octubre de 2015
+ * @author Daniel Marcos Lorrio
  */
 import java.io.BufferedReader;
 import java.io.EOFException;
@@ -137,93 +136,10 @@ public class herramientas {
     }
 
     /**
-     * Metodo para contar los Integers de un ArrayList menores de 10
+     * Metodo para serializar un array en el fichero de la ruta introducida
      *
-     * @param ar ArrayList de Integers declarado previamente
-     * @return Cantidad de Integers menores de 10
-     */
-    public static int contarUnaCifra(ArrayList<Integer> ar) {
-        // Declarar e inicializar contador
-        int count = 0;
-
-        // Recorrer el ArrayList<Integer>
-        for (int i = 0; i < ar.size(); i++) {
-            // Si un valor es menor de 10, aumentar el contador
-            if (ar.get(i) < 10) {
-                count++;
-            }
-        }
-        // Devolver el valor del contador
-        return count;
-    }
-
-    /**
-     * Metodo para contar los Integers de un ArrayList mayores o igual a 10
-     *
-     * @param ar ArrayList de Integers declarado previamente
-     * @return Cantidad de Integers mayores o igual a 10
-     */
-    public static int contarDosCifras(ArrayList<Integer> ar) {
-        // Declarar e inicializar el contador
-        int count = 0;
-
-        // Recorrer el ArrayList<Integer>
-        for (int i = 0; i < ar.size(); i++) {
-            // Si un valor es igual o mayor a 10, aumentar el contador
-            if (ar.get(i) >= 10) {
-                count++;
-            }
-        }
-        // Devolver el valor del contador
-        return count;
-    }
-
-    /**
-     * Metodo para sumar los Integers menores de 10 de un ArrayList
-     *
-     * @param ar ArrayList de Integers declarado previamente
-     * @return Suma de los integers
-     */
-    public static int sumaUnaCifra(ArrayList<Integer> ar) {
-        // Declarar e inicializar una variable para añadir numeros y sumarlos
-        int suma = 0;
-
-        // Recorremos el ArrayList<Integer>
-        for (int i = 0; i < ar.size(); i++) {
-            // Si un valor es menor a 10, sumarlo a la variable
-            if (ar.get(i) < 10) {
-                suma += ar.get(i);
-            }
-        }
-        // Devolver el valor de la suma
-        return suma;
-    }
-
-    /**
-     * Metodo para sumar los Integers mayores o igual a 10 de un ArrayList
-     *
-     * @param ar ArrayList de Integers declarado previamente
-     * @return Suma de los integers
-     */
-    public static int sumaDosCifras(ArrayList<Integer> ar) {
-        // Declarar e inicializar una variable para añadir numeros y sumarlos
-        int suma = 0;
-
-        //Recorremos el ArrayList<Integer>
-        for (int i = 0; i < ar.size(); i++) {
-            // Si un valor es mayor o igual a 10, sumarlo a la variable
-            if (ar.get(i) >= 10) {
-                suma += ar.get(i);
-            }
-        }
-        // Devolver el valor de la variable
-        return suma;
-    }
-
-    /**
-     *
-     * @param array
-     * @param ruta
+     * @param array Array introducido con cualquier tipo de valores
+     * @param ruta Ruta donde se creara el fichero serializado
      * @throws IOException
      */
     public static void serializarArray(int array[], String ruta) throws IOException {
@@ -233,8 +149,9 @@ public class herramientas {
     }
 
     /**
+     * Metodo para deserializar un array del fichero de la ruta indicada
      *
-     * @param ruta
+     * @param ruta Ruta donde esta el fichero serializado
      * @throws IOException
      * @throws ClassNotFoundException
      */
@@ -248,9 +165,10 @@ public class herramientas {
     }
 
     /**
+     * Metodo para serializar un objeto en la ruta indicada
      *
-     * @param obj
-     * @param ruta
+     * @param obj Objeto introducido
+     * @param ruta Ruta donde se creara el fichero serializado
      * @throws IOException
      */
     public static void serializarObject(Object obj, String ruta) throws IOException {
@@ -260,8 +178,9 @@ public class herramientas {
     }
 
     /**
+     * Metodo para deserializar el objeto del fichero de la ruta indicada
      *
-     * @param ruta
+     * @param ruta Ruta donde esta el fichero serializado
      * @throws IOException
      * @throws ClassNotFoundException
      */
@@ -273,21 +192,9 @@ public class herramientas {
     }
 
     /**
-     * Metodo para escribir "n" objetos entro de un fichero
-     *
-     * @param escribir
-     * @param objeto
-     * @throws IOException
-     */
-    public static void escribirObjetos(ObjectOutputStream escribir, Object objeto) throws IOException {
-        escribir.writeObject(objeto);
-    }
-
-    /**
      * Metodo para leer "n" objetos dentro de un fichero
      *
-     * @param leer
-     * @param objeto
+     * @param leer ObjectInputStream con la ruta del fichero
      * @throws IOException
      * @throws ClassNotFoundException
      */
@@ -307,10 +214,13 @@ public class herramientas {
         }
     }
 
-    public static void escribirMap(ObjectOutputStream ob, Map mapa) throws IOException {
-        ob.writeObject(mapa);
-    }
-
+    /**
+     * Metodo para leer un map dentro de un fichero
+     *
+     * @param ob ObjectInputStream con la ruta del fichero
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public static void leerMap(ObjectInputStream ob) throws IOException, ClassNotFoundException {
         Map m = null;
         try {
@@ -348,6 +258,26 @@ public class herramientas {
         while (it.hasNext()) {
             Element at = (Element) it.next();
             System.out.println(at.getName() + ": " + at.getText());
+        }
+    }
+
+    /**
+     * Lee el documento con la ruta xpath indicada retornando el valor del
+     * atributo indicado
+     *
+     * @param doc Documento xml
+     * @param ruta Ruta xpath
+     * @param val Nombre atributo
+     */
+    public static void xpathAttVal(Document doc, String ruta, String val) {
+
+        XPathExpression<Element> xpath = XPathFactory.instance().compile(ruta, Filters.element());
+        List<Element> elemento = xpath.evaluate(doc);
+        Iterator it = elemento.iterator();
+
+        while (it.hasNext()) {
+            Element at = (Element) it.next();
+            System.out.println(at.getName() + ": " + at.getAttributeValue(val));
         }
     }
 
