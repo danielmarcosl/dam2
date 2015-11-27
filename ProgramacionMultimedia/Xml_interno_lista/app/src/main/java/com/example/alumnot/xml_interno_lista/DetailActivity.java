@@ -1,25 +1,20 @@
 package com.example.alumnot.xml_interno_lista;
 
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.text.Layout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
- * Created by AlumnoT on 03/11/2015.
+ * Created by Daniel Marcos Lorrio on 03/11/2015.
  */
-public class DetalleActivity extends Activity {
+public class DetailActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalle);
+        setContentView(R.layout.activity_detail);
 
         TextView nameField = (TextView) findViewById(R.id.name_field);
         TextView platformField = (TextView) findViewById(R.id.platform_field);
