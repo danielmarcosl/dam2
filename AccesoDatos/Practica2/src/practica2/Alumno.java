@@ -4,12 +4,12 @@ package practica2;
  *
  * @author Daniel Marcos Lorrio
  */
-public class Alumno {
+public class Alumno implements java.io.Serializable {
 
     String nombre;
     int nota;
 
-    public Alumno(String n, int no) {
+    public void nuevoAlumno(String n, int no) {
         this.nombre = n;
         this.nota = no;
     }
