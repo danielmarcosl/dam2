@@ -54,7 +54,7 @@ public class DetailActivity extends Activity {
                 break;
             case "The Legend of Zelda: A Link to the Past":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logoalinktothepast));
-                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoalinktothepast2));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoalinktothepast));
                 break;
             case "The Legend of Zelda: Link's Awakening":
                 imageField.setImageDrawable(getResources().getDrawable(R.drawable.logolinkawakening));
