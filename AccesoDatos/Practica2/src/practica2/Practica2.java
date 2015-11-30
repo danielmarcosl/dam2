@@ -12,8 +12,6 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -24,7 +22,7 @@ public class Practica2 {
     public static void main(String[] args) {
 
         // Numero de alumnos
-        int numeroAlumnos = 1;
+        int numeroAlumnos = 2;
         // Metodo para leer por teclado
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
         // Map de alumnos con su dni
@@ -65,13 +63,12 @@ public class Practica2 {
                     try {
                         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\petra\\alumnos.obj"));
                         leerMap(ois);
-                        ois.close();
                     } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Practica2.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     } catch (IOException ex) {
-                        Logger.getLogger(Practica2.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     } catch (ClassNotFoundException ex) {
-                        Logger.getLogger(Practica2.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     }
 
                     //Mostramos la lista
@@ -115,6 +112,21 @@ public class Practica2 {
                         ex.printStackTrace();
                     }
                     break;
+                default:
+                    System.out.println("Letra Incorrecta, vuelve a intentarlo.");
+
+                    //Mostramos la lista
+                    mostrarLista();
+
+                    // Variable donde se almacenará la letra del menu introducida por el usuario
+                    letra = null;
+                    try {
+                        System.out.print("Tu opcion: ");
+                        letra = teclado.readLine();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    break;
             }
         }
     }
@@ -139,9 +151,7 @@ public class Practica2 {
         System.out.print("Introduce el dni: ");
         String dni = te.readLine();
 
-        Alumno a = new Alumno();
-
-        a.nuevoAlumno(nombre, nota);
+        Alumno a = new Alumno(nombre, nota);
 
         map.put(dni, a);
     }
@@ -167,23 +177,42 @@ public class Practica2 {
      * @throws ClassNotFoundException
      */
     public static void leerMap(ObjectInputStream ob) throws IOException, ClassNotFoundException {
-        HashMap<String, Alumno> m = null;
+        Map m = null;
+        int media = 0;
         try {
             while (true) {
                 m = (HashMap) ob.readObject();
+
+                Iterator it = m.keySet().iterator();
+                while (it.hasNext()) {
+                    String clave = (String) it.next();
+                    Object valor = (Object) m.get(clave);
+                    System.out.println(clave);
+                    System.out.println(valor.toString());
+                }
             }
         } catch (EOFException e) {
             System.out.println("Final del fichero");
-
-            Iterator it = m.keySet().iterator();
-            while (it.hasNext()) {
-                String clave = (String) it.next();
-                Object valor = (Object) m.get(clave);
-                System.out.println(m.toString());
-            }
         } finally {
             if (ob != null) {
                 ob.close();
+            }
+        }
+    }
+
+    public static void leerMapSerializable(ObjectInputStream leer) throws IOException, ClassNotFoundException {
+        Map m = null;
+        try {
+
+            while (true) {
+                m = (HashMap) leer.readObject();
+            }
+        } catch (EOFException ex) {
+            System.out.println("FINAL DE FICHERO");
+            System.out.println(m.toString());
+        } finally {
+            if (leer != null) {
+                leer.close();
             }
         }
     }
