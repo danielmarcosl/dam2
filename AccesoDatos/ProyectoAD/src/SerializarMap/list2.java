@@ -25,6 +25,7 @@ public class list2 {
             con2.nuevoContacto("asdf", 251);
             con3.nuevoContacto("por ejemplo", 882);
 
+            System.out.println(con1);
             HashMap mapa = new HashMap();
 
             mapa.put(1, con1);
