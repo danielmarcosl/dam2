@@ -6,10 +6,10 @@ package practica2;
  */
 public class Alumno implements java.io.Serializable {
 
-    String nombre;
-    int nota;
+    public static String nombre;
+    public static int nota;
 
-    public void nuevoAlumno(String n, int no) {
+    public Alumno(String n, int no) {
         this.nombre = n;
         this.nota = no;
     }
@@ -28,5 +28,9 @@ public class Alumno implements java.io.Serializable {
 
     public int getNota() {
         return nota;
+    }
+
+    public String toString() {
+        return "nombre " + nombre + ", nota " + nota;
     }
 }
