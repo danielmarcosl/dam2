@@ -12,6 +12,8 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,7 +28,7 @@ public class Practica2 {
         // Metodo para leer por teclado
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
         // Map de alumnos con su dni
-        HashMap<String, Object> mapAlumno = new HashMap();
+        HashMap<String, Alumno> mapAlumno = new HashMap();
 
         // Creamos los alumnos pidiendo sus datos y los anadimos al hashmap
         for (int i = 0; i < numeroAlumnos; i++) {
@@ -85,6 +87,17 @@ public class Practica2 {
                 }
                 break;
                 case "B":
+                    try {
+                        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\petra\\alumnos.obj"));
+
+                        calcularMedia(ois);
+                    } catch (FileNotFoundException ex) {
+                        ex.printStackTrace();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    } catch (ClassNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
 
                     //Mostramos la lista
                     mostrarLista();
@@ -99,7 +112,17 @@ public class Practica2 {
                     }
                     break;
                 case "C":
+                    try {
+                        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\petra\\alumnos.obj"));
 
+                        mostrarNovels(ois);
+                    } catch (FileNotFoundException ex) {
+                        ex.printStackTrace();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    } catch (ClassNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
                     //Mostramos la lista
                     mostrarLista();
 
@@ -152,7 +175,7 @@ public class Practica2 {
         String dni = te.readLine();
 
         Alumno a = new Alumno(nombre, nota);
-
+        System.out.println(a);
         map.put(dni, a);
     }
 
@@ -177,11 +200,11 @@ public class Practica2 {
      * @throws ClassNotFoundException
      */
     public static void leerMap(ObjectInputStream ob) throws IOException, ClassNotFoundException {
-        Map m = null;
-        int media = 0;
+        HashMap m = null;
         try {
             while (true) {
                 m = (HashMap) ob.readObject();
+                System.out.println(m);
 
                 Iterator it = m.keySet().iterator();
                 while (it.hasNext()) {
@@ -189,6 +212,86 @@ public class Practica2 {
                     Object valor = (Object) m.get(clave);
                     System.out.println(clave);
                     System.out.println(valor.toString());
+                }
+            }
+        } catch (EOFException e) {
+            System.out.println("Final del fichero");
+        } finally {
+            if (ob != null) {
+                ob.close();
+            }
+        }
+    }
+
+    /**
+     * Metodo para leer un map dentro de un fichero y calcular la media de las
+     * notas
+     *
+     * @param ob ObjectInputStream con la ruta del fichero
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public static void calcularMedia(ObjectInputStream ob) throws IOException, ClassNotFoundException {
+        HashMap<String, Alumno> m = null;
+        try {
+            while (true) {
+                m = (HashMap) ob.readObject();
+
+                int media = 0;
+                int count = 0;
+
+                Iterator it = m.keySet().iterator();
+                while (it.hasNext()) {
+                    String clave = (String) it.next();
+                    media += m.get(clave).getNota();
+                    count++;
+                }
+
+                media /= count;
+
+                System.out.println(media);
+            }
+        } catch (EOFException e) {
+            System.out.println("Final del fichero");
+        } finally {
+            if (ob != null) {
+                ob.close();
+            }
+        }
+    }
+
+    /**
+     * Metodo para leer un map dentro de un fichero y filtrar alumnos por notas
+     *
+     * @param ob ObjectInputStream con la ruta del fichero
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public static void mostrarNovels(ObjectInputStream ob) throws IOException, ClassNotFoundException {
+        HashMap<String, Alumno> m = null;
+        try {
+            while (true) {
+                m = (HashMap) ob.readObject();
+
+                int media = 0;
+                int count = 0;
+
+                Iterator it = m.keySet().iterator();
+                while (it.hasNext()) {
+                    String clave = (String) it.next();
+                    media += m.get(clave).getNota();
+                    count++;
+                }
+                media /= count;
+
+                Iterator it2 = m.keySet().iterator();
+                while (it.hasNext()) {
+                    String clave = (String) it2.next();
+                    int nota = m.get(clave).getNota();
+
+                    if (nota > media) {
+                        System.out.println("Alumno " + m.get(clave).getNombre() + " nota: " + nota);
+                    }
                 }
             }
         } catch (EOFException e) {
