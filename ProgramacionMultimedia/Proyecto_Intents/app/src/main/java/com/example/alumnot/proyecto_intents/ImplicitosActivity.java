@@ -1,4 +1,4 @@
- ﻿package com.example.alumnot.proyecto_intents;
+package com.example.alumnot.proyecto_intents;
 
 import java.io.File;
 import java.util.Locale;
