@@ -2,7 +2,6 @@ package Herramientas;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +14,7 @@ import Ejercicio1.Alumno;
  *
  * @author Daniel Marcos Lorrio
  */
-public class Herramientas {
+public class HerramientasEjercicio1 {
 
     /**
      * Metodo para crear los usuarios, anadirlos al HashMap y al fichero

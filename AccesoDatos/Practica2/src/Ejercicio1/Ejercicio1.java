@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-import Herramientas.Herramientas;
+import Herramientas.HerramientasEjercicio1;
 
 /**
  *
@@ -31,24 +31,24 @@ public class Ejercicio1 {
 
         try {
             // Creamos los alumnos, los anadimos al HashMap y los escribimos en el fichero
-            Herramientas.escribirMapYFichero(teclado, ruta, mapAlumno, numeroAlumnos);
+            HerramientasEjercicio1.escribirMapYFichero(teclado, ruta, mapAlumno, numeroAlumnos);
 
             //Mostramos la lista
-            Herramientas.mostrarLista();
+            HerramientasEjercicio1.mostrarLista();
             // Pedimos al usuario que escoja una opcion
-            opcion = Herramientas.pedirOpcion(teclado);
+            opcion = HerramientasEjercicio1.pedirOpcion(teclado);
 
             // Switch para filtrar el resultado
             while (!opcion.equals("F")) {
                 switch (opcion) {
                     case "A":
-                        Herramientas.mostrarDatos(ruta);
+                        HerramientasEjercicio1.mostrarDatos(ruta);
                         break;
                     case "B":
-                        media = Herramientas.calcularMedia(ruta);
+                        media = HerramientasEjercicio1.calcularMedia(ruta);
                         break;
                     case "C":
-                        Herramientas.mostrarAlumnosMedia(ruta, media);
+                        HerramientasEjercicio1.mostrarAlumnosMedia(ruta, media);
                         break;
                     default:
                         System.out.println("\nOpcion no valida, vuelva a intentarlo\n");
@@ -56,9 +56,9 @@ public class Ejercicio1 {
                 } // fin switch
 
                 //Mostramos la lista
-                Herramientas.mostrarLista();
+                HerramientasEjercicio1.mostrarLista();
                 // Pedimos al usuario que escoja una opcion
-                opcion = Herramientas.pedirOpcion(teclado);
+                opcion = HerramientasEjercicio1.pedirOpcion(teclado);
             } // fin while
         } catch (IOException ex) {
             ex.printStackTrace();
