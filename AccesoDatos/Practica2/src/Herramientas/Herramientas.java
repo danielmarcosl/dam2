@@ -48,7 +48,7 @@ public class Herramientas {
 
         for (int i = 0; i < nAlumnos; i++) {
             // Pedimos los valores por teclado
-            System.out.print("Introduce la dni: ");
+            System.out.print("Introduce el DNI: ");
             dni = teclado.readLine();
 
             System.out.print("Introduce el nombre: ");
