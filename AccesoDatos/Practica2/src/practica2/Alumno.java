@@ -7,9 +7,9 @@ package practica2;
 public class Alumno implements java.io.Serializable {
 
     public static String nombre;
-    public static int nota;
+    public static double nota;
 
-    public Alumno(String n, int no) {
+    public Alumno(String n, double no) {
         this.nombre = n;
         this.nota = no;
     }
@@ -18,7 +18,7 @@ public class Alumno implements java.io.Serializable {
         this.nombre = n;
     }
 
-    public void setNota(int n) {
+    public void setNota(double n) {
         this.nota = n;
     }
 
@@ -26,7 +26,7 @@ public class Alumno implements java.io.Serializable {
         return nombre;
     }
 
-    public int getNota() {
+    public double getNota() {
         return nota;
     }
 
