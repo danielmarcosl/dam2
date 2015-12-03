@@ -1,4 +1,4 @@
-package practica2;
+package Ejercicio1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import Herramientas.Herramientas;
  *
  * @author Daniel Marcos Lorrio
  */
-public class Practica2 {
+public class Ejercicio1 {
 
     public static void main(String[] args) {
         // Metodo para leer por teclado

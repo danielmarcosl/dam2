@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-import practica2.Alumno;
+import Ejercicio1.Alumno;
 
 /**
  *
