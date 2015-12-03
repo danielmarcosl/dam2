@@ -22,7 +22,7 @@ public class Ejercicio1 {
         // Variable para almacenar la opcion del menu introducida por el usuario
         String opcion = null;
         // Direccion donde se creara y se leera el fichero
-        String ruta = "C:\\petra\\alumnos.obj";
+        String ruta = "C:\\petra\\FichInfoAlumno.txt";
         // Variable para almacenar la media
         double media = 0;
 
