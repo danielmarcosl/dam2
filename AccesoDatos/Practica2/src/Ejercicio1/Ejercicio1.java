@@ -33,7 +33,7 @@ public class Ejercicio1 {
             // Creamos los alumnos, los anadimos al HashMap y los escribimos en el fichero
             HerramientasEjercicio1.escribirMapYFichero(teclado, ruta, mapAlumno, numeroAlumnos);
 
-            //Mostramos la lista
+            // Mostramos la lista
             HerramientasEjercicio1.mostrarLista();
             // Pedimos al usuario que escoja una opcion
             opcion = HerramientasEjercicio1.pedirOpcion(teclado);
@@ -55,7 +55,7 @@ public class Ejercicio1 {
                         break;
                 } // fin switch
 
-                //Mostramos la lista
+                // Mostramos la lista
                 HerramientasEjercicio1.mostrarLista();
                 // Pedimos al usuario que escoja una opcion
                 opcion = HerramientasEjercicio1.pedirOpcion(teclado);
