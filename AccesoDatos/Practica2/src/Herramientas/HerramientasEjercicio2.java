@@ -46,6 +46,7 @@ public class HerramientasEjercicio2 {
 
         // Pedimos los datos y los escribimos en el fichero
         for (int i = 0; i < numeroLibros; i++) {
+            System.out.println(i);
             System.out.print("Introduce el ISBN: ");
             raf.writeUTF(convertUTF(teclado.readLine(), maximo));
             System.out.print("Introduce el precio: ");
