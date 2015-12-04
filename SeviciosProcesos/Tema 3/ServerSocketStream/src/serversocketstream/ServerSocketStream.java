@@ -1,9 +1,7 @@
 package serversocketstream;
 
-import static com.sun.org.apache.xerces.internal.xinclude.XIncludeHandler.BUFFER_SIZE;
 import java.io.*;
 import java.net.*;
-import java.nio.ByteBuffer;
 
 public class ServerSocketStream {
 
@@ -11,41 +9,30 @@ public class ServerSocketStream {
         try {
             ServerSocket serverSocket = new ServerSocket(); //nuevo socket servidor
 
-            //Realizando bind
+            // Realizando bind
             InetSocketAddress addr = new InetSocketAddress("192.168.35.185", 1027);
             serverSocket.bind(addr);
 
-            //Aceptando conexiones
+            // Aceptando conexiones
             Socket newSocket = serverSocket.accept();
 
-            //Recibiendo mensaje
+            // Recibiendo mensaje
             InputStream is = newSocket.getInputStream();
             OutputStream os = newSocket.getOutputStream();
+            BufferedReader fentrada = new BufferedReader(new InputStreamReader(is));
 
-            byte[] message = new byte[1024];
-            String messageString = "";
-            int num;
-            boolean funcionando = true;
+            // Variable donde se almacenará el mensaje
+            String mensaje = "";
 
-            //while ((num = is.read(message, 0, 1024)) != -1) {
-            while(!messageString.equals("cerrar")) {
-                messageString = null;
-                message = new byte[1024];
-                num = 0;
-                
-                is.read(message);
-                
-                String numStr = new String(message, 0, 1024);
-                System.out.println(numStr);
-                num = Integer.parseInt(numStr);
-                
-                System.out.println(num);
-                is.read(message);
-                messageString = new String(message, 0, num);
-                System.out.println("Teniente dise: " + messageString);
+            while (!mensaje.equals("cerrar")) {
+                mensaje = fentrada.readLine();
+                System.out.println(mensaje);
             }
-            //cerrando el nuevo socket
+            // cerrando el nuevo socket
             newSocket.close();
+            // cerrando el buffer
+            fentrada.close();
+            
 
             //cerrando el socket servidor
             serverSocket.close();
