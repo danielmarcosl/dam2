@@ -1,0 +1,96 @@
+<Megacines> 
+
+<!--CINES--> 
+<cine ubicacion="granada" id="100"> 
+<direccion>Cortijo de Piedrahita, Boulevard Billy Wilder s/n 18197 Pulianas, Granada</direccion> 
+<horario>De lunes a jueves de 10:30 a 14:00 y de 16:30 a 23:00 / Viernes de 10:30 a 14:00 y de 16:00 a 0:30 / Sabado de 11:30 a 14:30 y de 16:00 a 0:30 / Domingo de 11:30 a 14:30 y de 16:00 a 23:00. </horario> 
+<hora numsala="12">22:00</hora> 
+		<hora numsala="11">20:00</hora> 
+</cine> 
+<cine ubicacion="madrid" id="200"> 
+		<direccion>C/Edgar Neville s/n, Ciudad de la Imagen 28223 Madrid</direccion> 
+<horario>De domingo a jueves de 11:00 a 23:00 / Viernes, sabados y visperas de festivo de 11:00 a 1:15</horario> 
+			<hora numsala="18">16:45</hora> 
+		<hora numsala="17">19:30</hora> 
+		<hora numsala="25">17:15</hora> 
+</cine> 
+
+<cine ubicacion="valencia" id="300"> 
+<direccion>Avenida de Francisco Tomas y Valiente s/n 46980 PATERNA, Valencia</direccion> 
+<horario>Lunes a Jueves de 15:30 a 23:00 / Viernes y Visperas de festivos de 15:30 a 01:15 / Sabados de14:30 a 01:15 / Domingos</horario> 
+<hora numsala="17">20:00</hora> 
+<hora numsala="9">17:00</hora> 
+</cine> 
+<!--CARTELERA--> 
+<cartelera> 
+<pelicula idpelicula='001'> 
+			<titulo>Amanecer. Parte 2</titulo> 
+			<genero>Romantica, Fantastico</genero> 
+			<director>Bill Condon</director> 
+			<pais>USA</pais> 
+			<cines> 
+				<cine id="200"/> 
+				<cine id="300"/> 
+			</cines> 
+
+<reparto> 
+				<actor tipo="protagonista" nacionalidad='uk'> 
+					<nombre>Robert Pattinson</nombre> 
+					<fechaNacimiento>13/05/1986</fechaNacimiento> 
+				</actor> 
+				<actor tipo="protagonista" nacionalidad='usa'> 
+					<nombre>Kristen Stewart</nombre> 
+					<fechaNacimiento>09/04/1990</fechaNacimiento> 
+				</actor> 
+				<actor tipo="protagonista" nacionalidad='usa'> 
+					<nombre>Taylor Lautner</nombre> 
+					<fechaNacimiento>11/02/1992</fechaNacimiento> 
+				</actor> 
+</reparto> 
+</pelicula> 
+
+<pelicula  idpelicula='002'> 
+			<titulo>La vida de pi</titulo> 
+			<genero>Drama</genero> 
+			<director>Ang Lee</director> 
+			<pais>USA</pais> 
+			<cines> 
+				<cine id="100"/> 
+				<cine id="200"/> 
+				<cine id="300"/> 
+			</cines> 
+<reparto> 
+				<actor tipo="protagonista" nacionalidad="india"> 
+					<nombre>Suraj Sharma</nombre> 
+					<fechaNacimiento>1993</fechaNacimiento> 
+				</actor> 
+				<actor tipo="secundario" nacionalidad="usa"> 
+					<nombre>Tobey Maguire</nombre> 
+					<fechaNacimiento>27/06/1975</fechaNacimiento> 
+				</actor> 
+</reparto> 
+
+</pelicula> 
+
+<pelicula idpelicula="003"> 
+			<titulo>El Hobbit</titulo> 
+			<genero>Fantastico, Aventuras</genero> 
+			<director>Peter Jackson</director> 
+			<pais>USA</pais> 
+			<cines> 
+				<cine id="100"/> 
+				<cine id="300"/> 
+			</cines> 
+<reparto> 
+				<actor tipo="protagonista" nacionalidad="uk"> 
+					<nombre>Martin Freeman</nombre> 
+					<fechaNacimiento>08/09/1971</fechaNacimiento> 
+				</actor> 
+				<actor tipo="secundario" nacionalidad="usa"> 
+					<nombre>Elijah Wood</nombre> 
+					<fechaNacimiento>28/01/1981</fechaNacimiento> 
+				</actor> 
+</reparto> 
+</pelicula> 
+</cartelera> 
+</Megacines>
