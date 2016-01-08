@@ -20,14 +20,25 @@ public class Server {
     public static int count = 0;
 
     public static void main(String[] args) {
+        ServerSocket serverSocket = null;
+        Socket socket = null;
+
         try {
-            ServerSocket serverSocket = new ServerSocket(); //nuevo socket servidor
+            serverSocket = new ServerSocket(); //nuevo socket servidor
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
-            // Realizando bind
-            InetSocketAddress addr = new InetSocketAddress("192.168.35.185", 1027);
+        // Realizando bind
+        InetSocketAddress addr = new InetSocketAddress("192.168.35.185", 1027);
+        try {
             serverSocket.bind(addr);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
-            while (count < 20) {
+        while (true) {
+            try {
                 // Aceptando conexiones
                 Socket newSocket = serverSocket.accept();
 
@@ -50,16 +61,9 @@ public class Server {
                 // cerrando el nuevo socket
                 //newSocket.close();
                 // cerrando el buffer
-                t.join();
-                fentrada.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
-
-            //cerrando el socket servidor
-            serverSocket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
