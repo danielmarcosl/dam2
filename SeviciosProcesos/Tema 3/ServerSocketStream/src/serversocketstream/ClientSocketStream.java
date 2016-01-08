@@ -7,7 +7,6 @@ public class ClientSocketStream {
 
     public static void main(String[] args) {
         try {
-
             //Creando socket cliente
             Socket clientSocket = new Socket();
 
