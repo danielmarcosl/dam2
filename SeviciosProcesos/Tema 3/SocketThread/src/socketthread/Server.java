@@ -41,7 +41,7 @@ public class Server {
                 // Lanzamos el hilo
                 t.start();
 
-                // Variable donde se almacenará el mensaje
+                // Variable donde se almacenara el mensaje
                 String mensaje = "";
 
                 mensaje = fentrada.readLine();

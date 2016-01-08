@@ -21,7 +21,7 @@ class Client extends Thread {
     public void run() {
 
         try {
-            //enviando mensaje
+            //Enviando mensaje
             InputStream is = socket.getInputStream();
             OutputStream os = socket.getOutputStream();
 
