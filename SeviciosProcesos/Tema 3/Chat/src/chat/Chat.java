@@ -15,16 +15,13 @@ public class Chat {
 
             // Aceptando conexiones
             Socket newSocket = serverSocket.accept();
-            
-            
+
             //Creando socket cliente
             Socket clientSocket = new Socket();
 
             //Estableciendo conexión
             InetSocketAddress addrCliente = new InetSocketAddress("192.168.35.186", 1027);
-            clientSocket.connect(addrCliente);
-            
-            
+
             // Recibiendo mensaje
             InputStream is = newSocket.getInputStream();
             OutputStream os = clientSocket.getOutputStream();
@@ -32,24 +29,30 @@ public class Chat {
             PrintWriter fsalida = new PrintWriter(os, true);
             BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
-
             // Variable donde se almacenará el mensaje
             String mensajeCliente = "";
             String mensajeMio = "";
+            boolean conectado = false;
 
             while (!mensajeCliente.equals("cerrar") || !mensajeMio.equals("cerrar")) {
-                mensajeCliente = fentrada.readLine();
-                System.out.println("Gunto dice: " + mensajeCliente);
-                
                 System.out.print("Introduce argo: ");
                 mensajeMio = teclado.readLine();
                 fsalida.println(mensajeMio);
+
+                if (mensajeMio.equals("conectar") && !conectado) {
+                    clientSocket.connect(addrCliente);
+                    conectado = true;
+                }
+
+                if (fentrada.readLine() != null) {
+                    mensajeCliente = fentrada.readLine();
+                    System.out.println("Gunto dice: " + mensajeCliente);
+                }
             }
             // cerrando el nuevo socket
             newSocket.close();
             // cerrando el buffer
             fentrada.close();
-            
 
             //cerrando el socket servidor
             serverSocket.close();
