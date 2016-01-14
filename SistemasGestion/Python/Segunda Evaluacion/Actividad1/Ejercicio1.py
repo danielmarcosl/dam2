@@ -2,18 +2,18 @@
 
 import os
 
-def comprobarFichero(d) :
-	if (d, os.W_OK) :
+def comprobarFichero(f) :
+	if (f, os.W_OK) :
 		print 'Fichero OK, Escritura OK'
-	elif (d, os.R_OK) :
+	elif (f, os.R_OK) :
 		print 'Fichero OK, Lectura OK'
 	else :
 		print 'Fichero no OK'
 
-def escribirPares(d) :
+def escribirPares(f) :
 	for i in range(100) :
 		if i % 2 == 0 :
-			d.write(str(i))
+			f.write(str(i))
 
 # main
 
