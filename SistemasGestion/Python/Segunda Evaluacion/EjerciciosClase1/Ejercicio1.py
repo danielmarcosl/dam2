@@ -3,7 +3,7 @@
 '''
 Mostrar el contenido de un fichero de texto cuyo nombre es
 introducido por el usuario. Realizar todas las comprobaciones
-pertinentes antes de leerlo línea a línea
+pertinentes antes de leerlo linea a linea
 '''
 
 import os
