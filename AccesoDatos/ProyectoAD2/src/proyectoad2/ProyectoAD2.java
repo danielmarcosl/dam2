@@ -12,5 +12,4 @@ public class ProyectoAD2 {
         Collection col = Herramientas.connectExistDB("prueba","admin");
         Herramientas.consultExistDB(col, "for $t in //titulo return $t");
     }
-    
 }
