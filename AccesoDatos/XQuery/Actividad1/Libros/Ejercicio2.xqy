@@ -8,5 +8,5 @@ xquery version "3.0";
 where $b/precio <= 30
 return $b/titulo :)
 
-let $a:= //libro[precio > 30]/titulo
+let $a:= //libro[precio < 30]/titulo
 return $a
