@@ -1,3 +1,0 @@
-manzana 1 23
-platano 2 32
-pera 3 42

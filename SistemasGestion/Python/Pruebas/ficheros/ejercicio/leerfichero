@@ -1,5 +1,0 @@
-#_*_coding:utf-8_*_
-
-resultado = open("resultado.txt","r")
-
-print resultado.read(10)
