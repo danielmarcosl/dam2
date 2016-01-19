@@ -13,7 +13,7 @@ def comprobarFichero(f) :
 def escribirPares(f) :
 	for i in range(100) :
 		if i % 2 == 0 :
-			f.write(str(i))
+			f.write(str(i) + " ")
 
 # main
 
