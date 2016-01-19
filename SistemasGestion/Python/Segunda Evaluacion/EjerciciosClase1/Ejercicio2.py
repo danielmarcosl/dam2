@@ -17,3 +17,23 @@ def comprobarFichero(f) :
 		print 'Fichero OK, Lectura OK'
 	else :
 		print 'Fichero no OK'
+
+def entrantes(f) :
+	contador = 0
+	for i in f.readlines() :
+		if contador == 0 :
+			print i
+			contador += 1
+		elif contador == 2 :
+			contador = 0
+		else :
+			contador += 1
+
+f = open ('menu.txt','r')
+
+comprobarFichero(f)
+
+entrantes(f)
+
+f.seek(-8,2)
+print f.readline()
