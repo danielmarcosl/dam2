@@ -1,5 +1,10 @@
 #_*_coding:utf-8_*_
 
+'''
+Escribir los numeros pares comprendidos entre
+el 1 y el 100 en un fichero y luego lo muestras
+'''
+
 import os
 
 def comprobarFichero(f) :
