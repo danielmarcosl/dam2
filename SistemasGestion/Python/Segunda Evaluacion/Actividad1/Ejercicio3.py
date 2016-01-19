@@ -8,6 +8,15 @@ en blanco, devuelva la suma de dichos numeros
 
 import os
 
+def comprobarFichero(f) :
+	if (f, os.W_OK) :
+		print 'Fichero OK, Escritura OK'
+	elif (f, os.R_OK) :
+		print 'Fichero OK, Lectura OK'
+	else :
+		print 'Fichero no OK'
+
+
 def sumador(f) :
 	numeros = f.read().split()
 	suma = 0
@@ -20,5 +29,9 @@ def sumador(f) :
 # main
 
 f = open ('numeros.txt','r')
+comprobarFichero(f)
 
 print sumador(f)
+
+f.close()
+comprobarFichero(f)
