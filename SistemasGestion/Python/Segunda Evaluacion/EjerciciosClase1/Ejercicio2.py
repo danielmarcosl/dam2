@@ -29,6 +29,8 @@ def entrantes(f) :
 		else :
 			contador += 1
 
+# main
+
 f = open ('menu.txt','r')
 
 comprobarFichero(f)
