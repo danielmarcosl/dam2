@@ -18,9 +18,6 @@ def comprobarFichero(f) :
 def buscarCaracter(f) :
 	texto = f.read().split()
 	for i in texto :
-		palabras = i.split()
-		for j in palabras :
-			print j
 
 # main
 
