@@ -39,3 +39,4 @@ def concat(f1,f2,f3) :
 comprobar(str(raw_input("Introduce un primer fichero: ")),
 str(raw_input("Introduce un segundo: ")),
 str(raw_input("Introduce un tercero: ")))
+# Nombres de ficheros fich1.txt fich2.txt fich3.txt
