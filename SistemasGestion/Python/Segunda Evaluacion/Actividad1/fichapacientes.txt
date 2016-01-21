@@ -1,0 +1,4 @@
+Daniel 42 Si
+Jose 15 Si
+Manolo 50 No
+Alicia 12 No
