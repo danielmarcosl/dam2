@@ -16,7 +16,7 @@ def comprobarFichero(f) :
 		print 'Fichero no OK'
 
 def preguntarCaracter() :
-	return str(raw_input("Que caracter quieres bugcar?: "))
+	return str(raw_input("Que caracter quieres buscar?: "))
 
 def buscarCaracter(f) :
 	caracter = preguntarCaracter()
