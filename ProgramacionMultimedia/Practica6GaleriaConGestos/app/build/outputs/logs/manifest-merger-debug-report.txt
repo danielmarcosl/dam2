@@ -24,7 +24,7 @@ ADDED from C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\Practica6Galer
 		INJECTED from C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\Practica6GaleriaConGestos\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\Practica6GaleriaConGestos\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\Practica6GaleriaConGestos\app\src\main\AndroidManifest.xml:10:5-66
+ADDED from C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\Practica6GaleriaConGestos\app\src\main\AndroidManifest.xml:10:5-67
 	android:name
 		ADDED from C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\Practica6GaleriaConGestos\app\src\main\AndroidManifest.xml:10:22-64
 application
