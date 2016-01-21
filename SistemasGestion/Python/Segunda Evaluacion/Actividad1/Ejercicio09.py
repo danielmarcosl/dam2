@@ -27,13 +27,15 @@ def comprobar(f1,f2,f3) :
 def concat(f1,f2,f3) :
 	with open (f1,'r') as fichero1lectura :
 		with open (f2,'a') as fichero2 :
-			fichero2.write(fichero1lectura.read())
+			fichero2.write('\n' + fichero1lectura.read())
 		with open (f2,'r') as fichero2lectura :
 			with open (f3,'a') as fichero3 :
-				fichero3.write(fichero2lectura)
-			with open (f3,'a') as fichero3lectura :
-				print fichero3lectura.read()
+				fichero3.write('\n' + fichero2lectura.read())
+		with open (f3,'r') as fichero3lectura :
+			print fichero3lectura.read()
 
 # main
 
-comprobar(str(raw_input("Introduce un primer fichero: ")),str(raw_input("Introduce un segundo: ")),str(raw_input("Introduce un tercero: ")))
+comprobar(str(raw_input("Introduce un primer fichero: ")),
+str(raw_input("Introduce un segundo: ")),
+str(raw_input("Introduce un tercero: ")))
