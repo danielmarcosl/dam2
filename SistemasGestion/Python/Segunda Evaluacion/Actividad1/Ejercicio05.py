@@ -22,15 +22,12 @@ def buscarCaracter(f) :
 	caracter = preguntarCaracter()
 	
 	texto = f.read().split()
-	countlinea = 0
 	for i in texto :
 		letra = list(i)
-		countchar = 0
 		for j in letra :
 			if j == caracter :
-				print "Caracter encontrado en la palabra " + i + ", en la linea " + str(countlinea) + ", en la posicion " + str(countchar)
-			countchar += 1
-		countlinea +=1
+				print "Caracter encontrado en la palabra " + i
+				
 # main
 
 f = open ('ej4.txt','r')

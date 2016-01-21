@@ -22,3 +22,4 @@ def comprobar(f) :
 # main
 
 comprobar(pedirDirectorio())
+# Nombre del fichero 'numeros.txt'

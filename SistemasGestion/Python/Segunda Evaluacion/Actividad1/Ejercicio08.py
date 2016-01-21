@@ -29,3 +29,5 @@ def muestra(ruta) :
 # main
 
 muestra(raw_input("Introduce una ruta: "))
+# Nombre del directorio 'aaa'
+# Nombre de archivos 'ej4.txt' 'numeros.txt'
