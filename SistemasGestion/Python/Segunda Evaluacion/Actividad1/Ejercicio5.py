@@ -15,9 +15,18 @@ def comprobarFichero(f) :
 	else :
 		print 'Fichero no OK'
 
+def preguntarCaracter() :
+	return str(raw_input("Que caracter quieres bugcar?: "))
+
 def buscarCaracter(f) :
+	caracter = preguntarCaracter()
+	
 	texto = f.read().split()
 	for i in texto :
+		letra = list(i)
+		for j in letra :
+			if j == caracter :
+				print "Caracter encontrado en la palabra " + i
 
 # main
 
