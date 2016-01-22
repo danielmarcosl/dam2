@@ -53,11 +53,12 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    } 
 
     private static void sendName(PrintWriter fo, BufferedReader fi, BufferedReader kb) throws IOException {
-        String name = fi.readLine(); // TODO in sockets
+        ClientWindow.clientText.setText((fi.readLine()));
+        String name = kb.readLine(); // TODO in sockets
         ClientWindow.clientText.setText("Usuario " + name + " se ha conectado\n");
-        fo.println(kb.readLine());
+        fo.println(name);
     }
 }

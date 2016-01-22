@@ -2,6 +2,7 @@ package chat;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -9,12 +10,13 @@ import java.net.*;
  */
 public class Server {
     
-    public static String nombres[];
-    
     private static int N = 4;
     private static int puerto = 1027;
     private static String ip = "192.168.35.185";
-
+    
+    public static ArrayList<String> nombres = new ArrayList<String>();
+    public static int clientesConectados = 0;
+    
     public static void main(String args[]) {
         // Creacion de ventana
         new ServerWindow();
