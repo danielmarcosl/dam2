@@ -16,6 +16,7 @@ public class Herramientas {
 
     /**
      * Metodo para inicializar el driver de ExistDB
+     *
      * @param driver Ruta del driver
      */
     private static void initializeDriver(String driver) {
@@ -33,6 +34,7 @@ public class Herramientas {
 
     /**
      * Metodo para establecer una conexion con la DB especificada
+     *
      * @param uri Nombre de la base de datos
      * @param user Nombre de usuario
      * @return Collection con la URI, username y password
@@ -67,6 +69,7 @@ public class Herramientas {
 
     /**
      * Metodo para realizar una consulta a la base de datos
+     *
      * @param col Collection con la URI, username y password
      * @param consulta Consulta con sintaxis de XPath
      */
@@ -80,6 +83,24 @@ public class Herramientas {
                 Resource r = i.nextResource();
                 System.out.println(r.getContent()); // r.getId() + r.getContent()
             }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * Metodo para realizar operaciones en la base de datos y retornar el
+     * resultado
+     *
+     * @param col Collection con la URI, username y password
+     * @param consulta Consulta con sintaxis de XPath
+     */
+    public static void operationExistDB(Collection col, String consulta) {
+        try {
+            XPathQueryService s = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+            ResourceSet operacion = s.query(consulta);
+
+            consultExistDB(col, consulta);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
