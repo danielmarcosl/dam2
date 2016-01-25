@@ -15,7 +15,7 @@ public class Ejercicio01 {
         
         Collection col = Herramientas.connectExistDB("prueba", "admin");
         Herramientas.consultExistDB(col, "for $doc in //libro\n"
-                + "let $a := update insert attribute cambio{'siglo'} into $doc\n"
+                + "let $a := update insert attribute cambio{'siglo'} into $doc\n    "
                 + "where $doc/@ano = '1999'\n"
                 + "return $doc");
     }
