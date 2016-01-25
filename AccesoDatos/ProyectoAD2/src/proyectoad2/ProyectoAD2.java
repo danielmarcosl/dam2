@@ -2,6 +2,7 @@ package proyectoad2;
 
 import Herramientas.Herramientas;
 import org.xmldb.api.base.Collection;
+
 /**
  *
  * @author Daniel Marcos Lorrio
@@ -9,7 +10,9 @@ import org.xmldb.api.base.Collection;
 public class ProyectoAD2 {
 
     public static void main(String[] args) {
-        Collection col = Herramientas.connectExistDB("prueba","admin");
-        Herramientas.consultExistDB(col, "for $t in //titulo return $t");
+        Collection col = Herramientas.connectExistDB("prueba", "admin");
+        Herramientas.operationExistDB(col, "for $doc in //libro/titulo\n"
+                + "let $a := update insert attribute traduccion{'espanol'} into $doc\n"
+                + "return $doc");
     }
 }
