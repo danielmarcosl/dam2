@@ -17,7 +17,7 @@ public class Client {
 
     public static void main(String[] args) {
 
-        new ClientWindow();
+        new ClientWindow().setVisible(true);
 
         try {
             //Creando socket cliente
@@ -58,7 +58,7 @@ public class Client {
     private static void sendName(PrintWriter fo, BufferedReader fi, BufferedReader kb) throws IOException {
         ClientWindow.clientText.setText((fi.readLine()));
         String name = kb.readLine(); // TODO in sockets
-        ClientWindow.clientText.setText("Usuario " + name + " se ha conectado\n");
+        ClientWindow.clientText.setText("Bienvenido, " + name + ".\n");
         fo.println(name);
     }
 }

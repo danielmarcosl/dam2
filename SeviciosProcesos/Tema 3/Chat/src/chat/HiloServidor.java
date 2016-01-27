@@ -7,13 +7,13 @@ import java.net.*;
  *
  * @author Daniel Marcos Lorrio
  */
-public class Sockets extends Thread {
+public class HiloServidor extends Thread {
 
     Socket clientSocket = null;
     
     private int num = 0;
 
-    Sockets(Socket s) {
+    HiloServidor(Socket s) {
         clientSocket = s;
     }
 
@@ -46,16 +46,16 @@ public class Sockets extends Thread {
     private void requestName(PrintWriter fo, BufferedReader fi) throws IOException {
         fo.println("Introduce tu nombre de usuario: ");
         Server.nombres.add((String) fi.readLine());
-        ServerWindow.serverText.setText(ServerWindow.serverText.getText() + "Cliente " + Server.nombres.get(Server.clientesConectados) + " ha entrado al servidor " + "\n");
+        //ServerWindow.serverText.setText(ServerWindow.serverText.getText() + "Cliente " + Server.nombres.get(Server.clientesConectados) + " ha entrado al servidor " + "\n");
         num = Server.clientesConectados;
         Server.clientesConectados += 1;
     }
 
     private void printMessage(String m) {
         if (!m.equals("cerrar")) {
-            ServerWindow.serverText.setText(ServerWindow.serverText.getText() + Server.nombres.get(num) + " dice: " + m + "\n");
+            //ServerWindow.serverText.setText(ServerWindow.serverText.getText() + Server.nombres.get(num) + " dice: " + m + "\n");
         } else {
-            ServerWindow.serverText.setText(ServerWindow.serverText.getText() + Server.nombres.get(num) + " se ha desconectado." + "\n");
+            //ServerWindow.serverText.setText(ServerWindow.serverText.getText() + Server.nombres.get(num) + " se ha desconectado." + "\n");
         }
     }
 }
