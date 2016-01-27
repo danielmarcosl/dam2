@@ -2,6 +2,8 @@ package chat;
 
 import java.io.*;
 import java.net.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -9,53 +11,63 @@ import java.net.*;
  */
 public class HiloServidor extends Thread {
 
-    Socket clientSocket = null;
-    
-    private int num = 0;
+    DataInputStream fentrada;
+    Socket socket = null;
 
-    HiloServidor(Socket s) {
-        clientSocket = s;
-    }
+    public HiloServidor(Socket s) {
+        socket = s;
 
-    public void run() {
         try {
-            // Buffer de salida
-            OutputStream os = clientSocket.getOutputStream();
-            PrintWriter fOut = new PrintWriter(os, true);
-
-            // Buffer de entrada
-            InputStream is = clientSocket.getInputStream();
-            BufferedReader fIn = new BufferedReader(new InputStreamReader(is));
-
-            requestName(fOut, fIn);
-            
-            String message = "";
-            while ((message = fIn.readLine()) != null) {
-                //fOut.println(message);
-                printMessage(message);
-            }
-
-            // Cerrar buffers
-            fOut.close();
-            fIn.close();
+            // Crear flujo de entrada
+            fentrada = new DataInputStream(socket.getInputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    } // end constructor
 
-    private void requestName(PrintWriter fo, BufferedReader fi) throws IOException {
-        fo.println("Introduce tu nombre de usuario: ");
-        Server.nombres.add((String) fi.readLine());
-        //ServerWindow.serverText.setText(ServerWindow.serverText.getText() + "Cliente " + Server.nombres.get(Server.clientesConectados) + " ha entrado al servidor " + "\n");
-        num = Server.clientesConectados;
-        Server.clientesConectados += 1;
-    }
+    public void run() {
+        Chat.mensaje.setText("Numero de conexiones actuales: " + Chat.activas);
 
-    private void printMessage(String m) {
-        if (!m.equals("cerrar")) {
-            //ServerWindow.serverText.setText(ServerWindow.serverText.getText() + Server.nombres.get(num) + " dice: " + m + "\n");
-        } else {
-            //ServerWindow.serverText.setText(ServerWindow.serverText.getText() + Server.nombres.get(num) + " se ha desconectado." + "\n");
-        }
-    }
-}
+        // Enviar el historial de mensajes
+        String texto = Chat.textarea.getText();
+        EnviarMensajes(texto);
+
+        // bucle que recibe lo que el cliente escribe en el chat
+        // al salir se le envia un * al servidor
+        while (true) {
+            String cadena = "";
+
+            try {
+                cadena = fentrada.readUTF(); // Lee lo que el cliente escribe
+
+                if (cadena.trim().equals("*")) {
+                    Chat.activas -= 1;
+                    Chat.mensaje.setText("Numero de conexiones actuales: " + Chat.activas);
+                    break; // Salir del bucle
+                } // end if
+
+                Chat.textarea.append(cadena + "\n");
+                texto = Chat.textarea.getText();
+                EnviarMensajes(texto); // Se envia el texto a todos los clientes
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } // end bucle
+    } // end run
+
+    private void EnviarMensajes(String t) {
+
+        // Recorrer tabla de sockets para enviar mensajes a todos
+        for (int i = 0; i < Chat.conexiones; i++) {
+            Socket s1 = Chat.tabla[i]; // Obtener socket
+            try {
+                DataOutputStream fsalida = new DataOutputStream(s1.getOutputStream());
+                fsalida.writeUTF(t);
+            } catch (SocketException se) {
+                se.printStackTrace();
+            } catch (IOException ex) {
+                Logger.getLogger(HiloServidor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } // end for
+    } // end EnviarMensaje
+} // end HiloServidor

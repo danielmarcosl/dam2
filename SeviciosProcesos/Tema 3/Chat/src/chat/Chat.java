@@ -1,10 +1,10 @@
 package chat;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -15,18 +15,18 @@ import javax.swing.JTextField;
  *
  * @author Daniel Marcos Lorrio
  */
-public class Server extends JFrame implements ActionListener {
+public class Chat extends JFrame implements ActionListener {
 
-    private static int conexiones = 0;
+    private static long serialVersionUID = 1L;
+    public static int conexiones = 0;
     private static int maximas = 4;
     private static int puerto = 1027;
     private static String ip = "192.168.35.185";
 
     public static int activas = 0;
-    public static ServerSocket servidor;
-
-    public static ArrayList<String> nombres = new ArrayList<String>();
     public static int clientesConectados = 0;
+    public static ServerSocket servidor;
+    public static Socket tabla[] = new Socket[maximas];
 
     static JTextField mensaje = new JTextField("");
     static JTextField mensaje2 = new JTextField("");
@@ -34,7 +34,7 @@ public class Server extends JFrame implements ActionListener {
     static JTextArea textarea;
     JButton salir = new JButton("Salir");
 
-    public Server() {
+    public Chat() {
         super("Ventana del servidor de CHAT");
         setLayout(null);
         mensaje.setBounds(10, 10, 400, 30);
@@ -54,7 +54,7 @@ public class Server extends JFrame implements ActionListener {
         add(salir);
 
         textarea.setEditable(false);
-        
+
         salir.addActionListener(this);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
@@ -64,7 +64,7 @@ public class Server extends JFrame implements ActionListener {
             // Socket servidor
             servidor = new ServerSocket(puerto);
 
-            Server pantalla = new Server();
+            Chat pantalla = new Chat();
             pantalla.setBounds(0, 0, 540, 400);
             pantalla.setVisible(true);
             mensaje.setText("Numero de conexiones actuales: " + 0);
@@ -72,13 +72,21 @@ public class Server extends JFrame implements ActionListener {
             while (conexiones != maximas) {
                 Socket s = servidor.accept();
 
-                HiloServidor h = new HiloServidor(s);
-                h.start();
+                tabla[conexiones] = s;
                 conexiones += 1;
                 activas += 1;
+
+                HiloServidor h = new HiloServidor(s);
+                h.start();
             }
 
-            servidor.close();
+            if (!servidor.isClosed()) {
+                mensaje2.setForeground(Color.red);
+                mensaje2.setText("Maximo nº de conexiones establecidas: " + conexiones);
+                servidor.close();
+                System.out.println("Servidor finalizado...");
+            }
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
