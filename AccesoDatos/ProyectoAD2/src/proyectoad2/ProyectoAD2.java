@@ -10,9 +10,19 @@ import org.xmldb.api.base.Collection;
 public class ProyectoAD2 {
 
     public static void main(String[] args) {
-        Collection col = Herramientas.connectExistDB("prueba", "admin");
-        Herramientas.operationExistDB(col, "for $doc in //libro/titulo\n"
-                + "let $a := update insert attribute traduccion{'espanol'} into $doc\n"
-                + "return $doc");
+//        Collection col = Herramientas.connectExistDB("prueba", "admin");
+//        Herramientas.operationExistDB(col, "for $doc in //libro/titulo\n"
+//                + "let $a := update insert attribute traduccion{'espanol'} into $doc\n"
+//                + "return $doc");
+//        Herramientas.createTableSQLite("ejemplo", "create table companya("
+//                + "id int primary key,"
+//                + "nombre varchar(20),"
+//                + "edad int,"
+//                + "salary float);");
+        
+        Herramientas.tordo("ejemplo", "select id from eje1 where id < ? ", 100.0f);
+        
     }
+
+    
 }

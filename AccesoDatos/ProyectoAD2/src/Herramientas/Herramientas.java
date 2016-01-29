@@ -1,5 +1,13 @@
 package Herramientas;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.Database;
@@ -102,6 +110,68 @@ public class Herramientas {
 
             consultExistDB(col, consulta);
         } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static Connection connectSQLite(String ruta) {
+        Connection c = null;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite3\\" + ruta + ".db");
+            System.out.println("DB abierta con exito :D");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al iniciar la DB D:");
+        }
+        return c;
+    }
+
+    public static void consultSQLite(String ruta, String consulta) {
+        try {
+            Statement stmt = connectSQLite(ruta).createStatement();
+
+            ResultSet rs = stmt.executeQuery(consulta + ";");
+
+            while (rs.next()) {
+                int id = rs.getInt(1); // posicion que devuelve
+                String nom = rs.getString(2);
+                System.out.println("El id es: " + id);
+                System.out.println("El nombre es: " + nom);
+            }
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createTableSQLite(String ruta, String insercion) {
+        try {
+            Statement stmt = connectSQLite(ruta).createStatement();
+
+            stmt.execute(insercion);
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void tordo(String ruta, String consulta, float f) {
+        try {
+            PreparedStatement sel = connectSQLite(ruta).prepareStatement(consulta);
+            // select id from companya where salary > ? and nombre like '?'
+
+            sel.setFloat(1, f); // El 1 corresponde a los interrogantes del where
+
+            ResultSet r1 = sel.executeQuery();
+            while (r1.next()) {
+                System.out.println(r1.getInt(1)); // El 1 corresponde al numero de columnas del select
+            }
+            r1.close();
+            sel.close();
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
