@@ -62,7 +62,10 @@ public class Chat extends JFrame implements ActionListener {
     public static void main(String args[]) {
         try {
             // Socket servidor
-            servidor = new ServerSocket(puerto);
+            servidor = new ServerSocket();
+            
+            InetSocketAddress addr = new InetSocketAddress(ip,puerto);
+            servidor.bind(addr);
 
             Chat pantalla = new Chat();
             pantalla.setBounds(0, 0, 540, 400);
