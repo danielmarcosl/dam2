@@ -58,7 +58,8 @@ public class Cliente extends JFrame implements ActionListener {
     } // end constructor
 
     // Al pulsar el boton enviar se envia al flujo de salida el mensaje escrito
-    // Accion cuando se pulsan botones    @Override
+    // Accion cuando se pulsan botones
+    @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == boton) { // Se pulsa el boton Enviar
             String texto = nombre + " > " + mensaje.getText();
