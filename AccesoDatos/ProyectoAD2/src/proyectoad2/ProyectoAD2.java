@@ -20,8 +20,7 @@ public class ProyectoAD2 {
 //                + "edad int,"
 //                + "salary float);");
         
-        Herramientas.tordo("ejemplo", "select id from eje1 where id < ? ", 100.0f);
-        
+        Herramientas.insertArraySQLite("gestion", "java");
     }
 
     
