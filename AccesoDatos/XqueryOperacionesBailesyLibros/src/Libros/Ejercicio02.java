@@ -14,9 +14,8 @@ public class Ejercicio02 {
         // Anadir un nuevo titulo <titulo>TCP/IP ilustrado</titulo> pero solo donde el titulo sea TCP/IP Illustrated
         
         Collection col = Herramientas.connectExistDB("prueba", "admin");
-        Herramientas.operationExistDB(col, "for $doc in //libro\n"
+        Herramientas.operationExistDB(col, "let $doc := //libro[titulo = 'TCP/IP Illustrated']\n"
                 + "let $a := update insert <titulo>{'TCP/IP Ilustrado'}</titulo> into $doc\n"
-                + "where $doc/titulo = 'TCP/IP Illustrated'\n"
                 + "return $doc");
     }
 }
