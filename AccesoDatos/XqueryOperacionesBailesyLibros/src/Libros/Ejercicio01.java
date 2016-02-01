@@ -10,13 +10,11 @@ import org.xmldb.api.base.Collection;
 public class Ejercicio01 {
 
     public static void main(String args[]) {
-        
+
         // Añadir un nuevo atributo en los libros publicados despues de 1999, cambio:”siglo”
-        
         Collection col = Herramientas.connectExistDB("prueba", "admin");
-        Herramientas.consultExistDB(col, "for $doc in //libro\n"
-                + "let $a := update insert attribute cambio{'siglo'} into $doc\n    "
-                + "where $doc/@ano = '1999'\n"
+        Herramientas.consultExistDB(col, "for $doc in //libro[@ano = '1999']\n"
+                + "let $a := update insert attribute cambio{'siglo'} into $doc\n"
                 + "return $doc");
     }
 }
