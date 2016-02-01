@@ -147,21 +147,21 @@ public class Herramientas {
         }
     }
 
-    public static void createTableSQLite(String ruta, String insercion) {
+    public static void createTableSQLite(String ruta, String create) {
         try {
             Statement stmt = connectSQLite(ruta).createStatement();
 
-            stmt.execute(insercion);
+            stmt.execute(create);
             stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static void tordo(String ruta, String consulta, float f) {
+    public static void selectSQLite(String ruta, String consulta, float f) {
         try {
             PreparedStatement sel = connectSQLite(ruta).prepareStatement(consulta);
-            // select id from companya where salary > ? and nombre like '?'
+            // select id from companya where salary > ? and nombre like "?"
 
             sel.setFloat(1, f); // El 1 corresponde a los interrogantes del where
 
@@ -171,6 +171,36 @@ public class Herramientas {
             }
             r1.close();
             sel.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void insert2SQLite(String ruta, String tabla) {
+        try {
+            PreparedStatement insert = connectSQLite(ruta).prepareStatement("insert into " + tabla + " values(?,?)");
+            insert.setInt(1, 100);
+            insert.setString(2, "lenguaje");
+            insert.executeUpdate();
+            insert.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void insertArraySQLite(String ruta, String tabla) {
+        String[] values = {"101", "Programacion", "102", "Script", "103", "0.0", "104", "Pargela"};
+        PreparedStatement c1;
+        try {
+            c1 = connectSQLite(ruta).prepareStatement("insert into java2 values(?,?)");
+            for (int i = 0; i < values.length; i++) {
+                if (i % 2 != 0) {
+                    c1.setString(2, values[i]);
+                } else {
+                    c1.setInt(1, Integer.parseInt(values[i]));
+                }
+                c1.executeUpdate();
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
