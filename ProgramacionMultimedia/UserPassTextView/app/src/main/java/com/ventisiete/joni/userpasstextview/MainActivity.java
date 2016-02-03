@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity
 
         user.setText(usuariotxt);
         contr.setText(contrasenatxt);
-    }
+    }// end logIn
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+    }// end onCreate
 }
