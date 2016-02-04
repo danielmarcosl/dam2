@@ -13,13 +13,16 @@ public class SecondActivity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
-		
-		textNombre = (TextView) findViewById(R.id.textNombre);
-		textApellidos = (TextView) findViewById(R.id.testApellido);
-		
+
+		// Declaracion de TextViews
+		TextView textNombre = (TextView) findViewById(R.id.textNombre);
+		TextView textApellidos = (TextView) findViewById(R.id.testApellido);
+
+		// Cogemos la informacion pasada del otro layaut y lo metemos en Strings
 		String nombre = getIntent().getStringExtra("nombre");
 		String apellidos = getIntent().getStringExtra("apellido");
-		
+
+		// Anadimos los Strings a los TextViews
 		textNombre.setText(nombre);
 		textApellidos.setText(apellidos);
 		

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#000"
+    android:background="#494949"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".PrimerActivity" >
@@ -77,7 +77,7 @@
             android:id="@+id/BotonPasar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Pasar Datos !!!"
+            android:text="Pasar Activity"
             android:textColor="#fff" />
 
     </LinearLayout>

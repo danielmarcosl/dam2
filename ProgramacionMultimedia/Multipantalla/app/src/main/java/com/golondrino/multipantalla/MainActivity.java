@@ -8,8 +8,7 @@ import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class MainActivity
-		extends Activity {
+public class MainActivity extends Activity {
 
 	private EditText campoNombre, campoApellidos;
 	private Button miBoton;
@@ -18,11 +17,14 @@ public class MainActivity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		campoNombre = (EditText) findViewById(R.id.EditNombre);
-		campoApellidos = (EditText) findViewById(R.id.EditApellidos);
-		miBoton = (Button) findViewById(R.id.BotonPasar);
-		
+
+		// Declaracion de EditTexts
+		final EditText campoNombre = (EditText) findViewById(R.id.EditNombre);
+		final EditText campoApellidos = (EditText) findViewById(R.id.EditApellidos);
+		// Declaracion de Button
+		Button miBoton = (Button) findViewById(R.id.BotonPasar);
+
+		// Cogemos le texto de los EditTexts y lo pasamos a la siguiente activity
 		miBoton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
