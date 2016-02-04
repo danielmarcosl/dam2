@@ -1,11 +1,16 @@
 package Herramientas;
 
+import java.io.EOFException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.xmldb.api.DatabaseManager;
@@ -200,6 +205,46 @@ public class Herramientas {
                     c1.setInt(1, Integer.parseInt(values[i]));
                 }
                 c1.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void insertArrayListSQLite(String db, ArrayList al, String tabla) {
+
+        String consulta = "Insert into " + tabla + "(id, nombre) values (?,?)";
+
+        try {
+            PreparedStatement ps = connectSQLite(db).prepareStatement(consulta);
+
+            Iterator it = al.iterator();
+
+            while (it.hasNext()) {
+                ps.setInt(1, (int) it.next());
+                ps.setString(2, (String) it.next());
+                ps.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void insertHashMapSQLite(String db, HashMap m) {
+
+        String consulta = "insert into eje1(id, nombre) values (?,?)";
+
+        try {
+            PreparedStatement ps = connectSQLite(db).prepareStatement(consulta);
+
+            Iterator it = m.keySet().iterator();
+            while (it.hasNext()) {
+                int clave = (Integer) it.next();
+                String valor = (String) m.get(clave);
+                
+                ps.setInt(1, clave);
+                ps.setString(2, valor);
+                ps.executeUpdate();
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
