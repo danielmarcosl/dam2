@@ -1,6 +1,8 @@
 package proyectoad2;
 
 import Herramientas.Herramientas;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.xmldb.api.base.Collection;
 
 /**
@@ -20,7 +22,22 @@ public class ProyectoAD2 {
 //                + "edad int,"
 //                + "salary float);");
         
-        Herramientas.insertArraySQLite("gestion", "java");
+        
+        ArrayList lista = new ArrayList();
+
+        lista.add(1);
+        lista.add("pepe");
+        lista.add(2);
+        lista.add("pepa");
+        lista.add(3);
+        lista.add("silvia");
+        
+        HashMap map = new HashMap();
+        map.put(1, "pepe");
+        map.put(2, "pepa");
+        map.put(3, "silvia");
+        
+        Herramientas.insertTokenizerSQLite("ejemplo");
     }
 
     
