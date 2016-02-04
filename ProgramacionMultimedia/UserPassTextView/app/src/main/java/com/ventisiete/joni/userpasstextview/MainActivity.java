@@ -11,15 +11,18 @@ public class MainActivity extends AppCompatActivity
 
     public void logIn(View view)
     {
+        // Declaracion de EditTexts
         EditText usuario=(EditText) findViewById(R.id.Usuario);
         EditText contrasena=(EditText) findViewById(R.id.Contr);
-
-        String usuariotxt=usuario.getText().toString();
-        String contrasenatxt=contrasena.getText().toString();
-
+        // Declaracion de TextViews
         TextView user=(TextView) findViewById(R.id.User);
         TextView contr=(TextView) findViewById(R.id.Pass);
 
+        // Anadimos el contenido de los EditTexts a Strings
+        String usuariotxt=usuario.getText().toString();
+        String contrasenatxt=contrasena.getText().toString();
+
+        // Anadimos el texto de los Strings a los TextViews
         user.setText(usuariotxt);
         contr.setText(contrasenatxt);
     }// end logIn
