@@ -23,3 +23,4 @@ def comprobar(f) :
 
 comprobar(pedirDirectorio())
 # Nombre del fichero 'numeros.txt'
+# Nombre del directorio 'aaa'
