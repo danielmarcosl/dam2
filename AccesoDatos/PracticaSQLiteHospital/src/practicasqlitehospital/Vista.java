@@ -54,7 +54,8 @@ public class Vista extends JFrame implements ActionListener {
         } else if (e.getSource() == Vista.bAlta) {
             Herramientas.insertArrayListSQLite("ejemplo", Herramientas.crearArrayPaciente(), "paciente(cod_pac, dni, nombre, edad, sexo, alergias, cod_hab)");
         } else if (e.getSource() == Vista.bBaja) {
-            //Herramientas.deleteSQLite();
+            String codigo = null;
+            Herramientas.deleteSQLite("ejemplo", codigo);
         } else if (e.getSource() == Vista.bMod) {
 
         }

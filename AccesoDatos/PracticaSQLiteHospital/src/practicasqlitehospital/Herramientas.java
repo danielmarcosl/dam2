@@ -211,4 +211,16 @@ public class Herramientas {
         }
         return a;
     }
+
+    public static void deleteSQLite(String db, String cod) {
+        String consulta = "delete from paciente where cod_pac = " + cod;
+
+        try {
+            PreparedStatement delete = connectSQLite(db).prepareStatement(consulta);
+            delete.executeUpdate();
+            delete.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
