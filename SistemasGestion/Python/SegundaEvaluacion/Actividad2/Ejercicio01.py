@@ -18,6 +18,5 @@ ojo( modificando los datos con los del día del ejercicio)
 
 import time
 
-# main
-
-print time.strftime("%H:%M:%S")
+time.strftime("%H:%M:%S")
+print(time.strftime("%y/%m/%d"))
