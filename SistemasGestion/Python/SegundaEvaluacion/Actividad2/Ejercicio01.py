@@ -16,7 +16,29 @@ Formato hh:mm:ss = 18:5:4
 ojo( modificando los datos con los del día del ejercicio)
 '''
 
+from datetime import datetime
+from datetime import date
 import time
 
-time.strftime("%H:%M:%S")
-print(time.strftime("%y/%m/%d"))
+print "Fecha y hora: " + str(datetime.now())
+print "Fecha y hora en ISO: " + str(datetime.now().isoformat())
+
+year = date.today().year
+month = date.today().month
+day = date.today().day
+
+print "Year: " + str(year)
+print "Month: " + str(month)
+print "Day: " + str(day)
+
+print time.strftime("%d/%m/%y")
+
+hour = time.strftime("%H")
+minute = time.strftime("%M")
+second = time.strftime("%S")
+
+print "Hora: " + str(hour)
+print "Minutos: " + str(minute)
+print "Segundos: " + str(second)
+
+print "Hora completa" + str(time.strftime("%H:%M:%S"))
