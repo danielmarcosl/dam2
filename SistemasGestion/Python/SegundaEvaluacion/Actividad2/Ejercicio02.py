@@ -1,4 +1,4 @@
-_*_coding:utf-8_*_
+#_*_coding:utf-8_*_
 
 '''
 Se nos pregunta que queremos comer hoy, debemos guardar los platos
@@ -8,5 +8,10 @@ nueva con una secuencia aleatoria de los platos que guardamos.
 Debemos usar el módulo pertinente y  uno de sus métodos
 '''
 
-# main
+import random
 
+platos = ["Tarta","Fresa","Chocolate","Lays campesinas","Cui a la brasa","Huevo centenario","Patas de gallina"]
+
+platosAleatorios = random.sample(platos, len(platos))
+
+print platosAleatorios
