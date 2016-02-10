@@ -1,33 +1,53 @@
 package practicasqlitehospital;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Daniel Marcos Lorrio
  */
-public class Vista extends JFrame implements ActionListener {
+public class Vista extends JFrame {
 
+    // Panel con scroll para el panel de texto
     private JScrollPane scrollpanel;
+    // Panel de texto
     static JTextArea textarea;
-    static JButton bAlta = new JButton("Alta");
-    static JButton bBaja = new JButton("Baja");
-    static JButton bMod = new JButton("Modificar");
-    public static JButton bSalir = new JButton("Salir");
+    // Botones
+    static JButton bAlta;
+    static JButton bBaja;
+    static JButton bMod;
+    static JButton bSalir;
+    // Campo de texto
+    static JTextField campoTexto;
 
+    /**
+     * Constructor de Vista
+     */
     public Vista() {
-        super("BD del hospital");
+        // Detalles de la ventana
+        setTitle("Hospital");
         setLayout(null);
+        setBounds(0, 0, 435, 440);
+        setResizable(false);
 
+        // Inicializamos los botones
+        bAlta = new JButton("Alta");
+        bBaja = new JButton("Baja");
+        bMod = new JButton("Modificar");
+        bSalir = new JButton("Salir");
+
+        // Inicializamos el campod e texto
+        campoTexto = new JTextField("");
+
+        // Inicializamos el panel de texto y lo anadimos al scroll
         textarea = new JTextArea();
         scrollpanel = new JScrollPane(textarea);
 
+        // Posicionamos los botones y su tamano, y los anadimos a la ventana
         bAlta.setBounds(10, 10, 100, 30);
         add(bAlta);
         bBaja.setBounds(110, 10, 100, 30);
@@ -37,27 +57,15 @@ public class Vista extends JFrame implements ActionListener {
         bSalir.setBounds(310, 10, 100, 30);
         add(bSalir);
 
+        // Posicionamos el scroll y lo anadimos a la ventana
         scrollpanel.setBounds(10, 50, 400, 300);
         add(scrollpanel);
 
+        // Posicionamos el campo de texto y lo anadimos a la ventana
+        campoTexto.setBounds(10, 360, 400, 40);
+        add(campoTexto);
+
+        // Hacemos que el panel de texto no sea editable
         textarea.setEditable(false);
-
-        bSalir.addActionListener(this);
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == Vista.bSalir) {
-            System.out.println("Se ha cerrado el programa");
-            System.exit(0);
-        } else if (e.getSource() == Vista.bAlta) {
-            Herramientas.insertArrayListSQLite("ejemplo", Herramientas.crearArrayPaciente(), "paciente(cod_pac, dni, nombre, edad, sexo, alergias, cod_hab)");
-        } else if (e.getSource() == Vista.bBaja) {
-            String codigo = null;
-            Herramientas.deleteSQLite("ejemplo", codigo);
-        } else if (e.getSource() == Vista.bMod) {
-
-        }
     }
 }
