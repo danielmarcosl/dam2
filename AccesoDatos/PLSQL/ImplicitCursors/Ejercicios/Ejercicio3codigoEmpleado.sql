@@ -5,7 +5,9 @@ RETURN
 IS
 	c empleado.codigo%type;
 BEGIN
-	SELECT codigo into c from empleado where codigo = cod;
+	SELECT codigo
+	INTO c 
+	FROM empleado WHERE codigo = cod;
 	IF (c LIKE cod) THEN
 		RETURN 1;
 	END IF;
