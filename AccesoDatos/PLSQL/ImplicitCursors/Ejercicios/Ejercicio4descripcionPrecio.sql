@@ -1,0 +1,1 @@
+CREATE OR REPLACE FUNCTION producto_descripcion_precio
