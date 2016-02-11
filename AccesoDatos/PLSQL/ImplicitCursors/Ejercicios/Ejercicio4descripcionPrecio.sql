@@ -1,5 +1,5 @@
 CREATE OR REPLACE PROCEDURE producto_descripcion_precio(
-num producto.numero%type)
+	num producto.numero%type)
 IS
 	des producto.descripcion%type;
 	pre producto.precio%type;
@@ -12,7 +12,6 @@ BEGIN
 	DBMS_OUTPUT.PUT_LINE('Descripcon: '|| des ||', precio'|| pre);
 END producto_descripcion_precio;
 /
-show errors;
 
 SET SERVEROUTPUT ON;
 BEGIN
