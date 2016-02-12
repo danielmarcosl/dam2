@@ -1,5 +1,5 @@
-CREATE OR REPLACE FUNCTION buscar_codigo_empleado
-(cod empleado.codigo%type)
+CREATE OR REPLACE FUNCTION buscar_codigo_empleado(
+	cod empleado.codigo%type)
 RETURN
 	NUMBER
 IS
