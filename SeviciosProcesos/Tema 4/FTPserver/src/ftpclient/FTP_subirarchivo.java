@@ -27,18 +27,18 @@ public class FTP_subirarchivo {
                 cliente.setFileType(FTP.BINARY_FILE_TYPE);
 
                 //Stream de entrada con el fichero a subir 
-                BufferedInputStream in = new BufferedInputStream(new FileInputStream("c:\\petra\\gunto.jpg"));
+                BufferedInputStream in = new BufferedInputStream(new FileInputStream("c:\\petra\\prueba.txt"));
 
-                cliente.storeFile("gunto.jpg", in);
-
+                    cliente.storeFile("prueba.txt", in);
+                    
                 //Stream de entrada con el fichero a subir 
                 //in = new BufferedInputStream(new FileInputStream("c:\\petra\\gunto.jpg"));
                 //cliente.storeFile("gunto.jpg", in);
-
                 in.close(); //cerrar flujo 
                 cliente.logout(); //logout del usuario 
                 cliente.disconnect(); // desconexion del servidor 
             }
+
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
