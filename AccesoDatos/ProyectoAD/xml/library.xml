@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<bib>
+<book isbn="0-471-34506-7" year="2000">
+<title>Theory of Computational Complexity</title>
+<author>Du</author>
+<author>Ko</author>
+</book>
+<book isbn="1-55860-622-X" year="2000">
+<title>Data on the Web</title>
+<author>Abiteboul</author>
+<author>Buneman</author>
+<author>Suciu</author>
+</book>
+<book isbn="1-55860-626-X" year="2000">
+<title>DAO</title>
+<author>Philipe</author>
+<author>King</author>
+<author>Pattronu</author>
+<author>Perkins</author>
+</book>
+</bib>

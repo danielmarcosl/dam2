@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <Facturas>
+ <Factura Numero="0000-00001234" Fecha="25-05-2007">
+<Cliente>
+<Nombre> Prudencia Saviano</Nombre>
+ <IVA Condicion="Responsasble Inscripto" Porcentaje="21"/>
+ </Cliente>
+<Detalle>
+<Articulo Descripcion="Tenaza" Precio="20"/>
+<Articulo Descripcion=" Alicate" Precio="15"/>
+</Detalle>
+</Factura>
+<Factura Numero="0000-00001235" Fecha="26-05-2007">
+ <Cliente>
+ <Nombre>Eusebio Sanabria</Nombre>
+ <Direccion Calle="Urquiza 2250" Localidad="Bernal"/>
+ <IVA Condicion="Responsasble Inscripto" Porcentaje="21"/>
+</Cliente>
+<Detalle>
+<Articulo Descripcion="Pinza" Precio="25"/>
+<Articulo Descripcion="Destornillador" Precio="12"/>
+<Articulo Descripcion="Sierra" Precio="22"/>
+</Detalle>
+ </Factura>
+<Factura Numero="0000-00001236" Fecha="26-05-2007">
+ <Cliente>
+ <Nombre>Prudencia Saviano</Nombre>
+ <Direccion Calle=" Medrano 511" Localidad="Buenos Aires"/>
+<IVA Condicion="Responsasble Inscripto" Porcentaje="21"/>
+</Cliente>
+ <Detalle>
+<Articulo Descripcion="Martillo" Precio="15"/>
+ </Detalle>
+</Factura>
+<Factura Numero="0000-00001237" Fecha="25-05-2007">
+<Cliente>
+<Nombre>Toribio Colinas</Nombre>
+ <Direccion Calle="Maipu 326" Localidad="Bernal"/>
+<IVA Condicion="Excento" Porcentaje="0"/> 
+</Cliente>
+ <Detalle>
+ <Articulo Descripcion="Tenaza" Precio="20"/>
+ <Articulo Descripcion="Destornillador" Precio="9"/>
+</Detalle>
+ </Factura>
+</Facturas>

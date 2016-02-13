@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<cine>
+ <personas>
+ <persona sexo="hombre">
+ <nombre>Alfred Hitchcock</nombre>
+ <fechas nacimiento="1899" fallecimiento="1980" />
+ </persona>
+ <persona sexo="mujer">
+ <nombre>Lauren Bacall</nombre>
+ <fechas nacimiento="1924" />
+ </persona>
+ <persona sexo="hombre">
+ <nombre>Sidney Lumet</nombre>
+ <fechas nacimiento="1924" fallecimiento="2011" />
+ </persona>
+ <persona sexo="hombre">
+ <nombre>Jerry Lewis</nombre>
+ <fechas nacimiento="1926" />
+ </persona>
+ <persona sexo="mujer">
+ <nombre>Janet Leigh</nombre>
+ <fechas nacimiento="1927" fallecimiento="2004" />
+ </persona>
+ <persona sexo="hombre">
+ <nombre>Anthony Perkins</nombre>
+ <fechas nacimiento="1932" fallecimiento="1992" />
+ </persona>
+ </personas>
+ <peliculas>
+<pelicula>
+ <titulo>Psicosis</titulo>
+ <fecha>1960</fecha>
+ <director>Alfred Hitchcock</director>
+ <actor>Anthony Perkins</actor>
+ <actor>Janet Leigh</actor>
+ </pelicula>
+ <pelicula>
+ <titulo>Tres en un sofa</titulo>
+ <fecha>1966</fecha>
+ <director>Jerry Lewis</director>
+ <actor>David Perry</actor>
+ <actor>Janet Leigh</actor>
+ </pelicula>
+ <pelicula>
+ <titulo>Asesinato en el Orient Express</titulo>
+ <fecha>1966</fecha>
+ <director>Sidney Lumet</director>
+ <actor>Anthony Perkins</actor>
+ <actor>Lauren Bacall</actor>
+ </pelicula>
+ <pelicula>
+ <titulo>Los animales</titulo>
+ <fecha>1976</fecha>
+ <director>Jerry Lewis</director>
+ <actor>David Lunch</actor>
+ <actor>Jenifer parkinson</actor>
+ </pelicula>
+<pelicula>
+ <titulo>Los Pajaros</titulo>
+ <fecha>1966</fecha>
+ <director>Alfred Hitchcock</director>
+ <actor>David perry</actor>
+ <actor>Janet Leigh</actor>
+ </pelicula>
+ </peliculas>
+</cine>

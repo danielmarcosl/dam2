@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<libro>
+<titulo>Dos por tres calles</titulo>
+<autor>Josefa Santos</autor>
+<capitulo num="1">
+ 	<parrafo> Era una sombria noche del mes de agosto... 
+	</parrafo>
+ 	<parrafo destacar="si"> Ella, inocente cual mariposa que surca elcielo en busca de libaciones...
+ 	</parrafo>
+</capitulo>
+<capitulo num="2" public="si">
+ 	<parrafo>Era una obscura noche del mes de septiembre...
+	</parrafo>
+ 	<parrafo>Ella, inocente cual que surca el viento en busca del nectar de las flores... 
+	</parrafo>
+</capitulo>
+<apendice num="a" public="si">
+ 	<parrafo> Era una densa noche del mes de diciembre... 
+	</parrafo>
+ 	<parrafo> Ella, candida cual que surca el espacio en busca de bichejos para comer...
+ 	</parrafo>
+</apendice>
+</libro>

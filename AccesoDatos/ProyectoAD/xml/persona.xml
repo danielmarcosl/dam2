@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personas>
+ <persona>
+  <nombre>PePe</nombre>
+  <edad>30</edad>
+  <sexo>H</sexo>
+ </persona>
+ <persona>
+  <nombre>Maria</nombre>
+  <edad>15</edad>
+  <sexo>M</sexo>
+ </persona>
+ <persona>
+  <nombre>Juan</nombre>
+  <edad>35</edad>
+  <sexo>mucho</sexo>
+ </persona>
+</personas>

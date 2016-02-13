@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libro isbn="100">
+  <titulo>Hurujuayo</titulo>
+  <precio>3,5</precio>
+</libro>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cine>
+  <directores>
+    <director nombre="Christopher Nolan" fecha_nacimiento="1970" pais_nacimiento="UK" />
+    <director nombre="Martin Scorsese" fecha_nacimiento="1942" pais_nacimiento="EEUU" />
+    <director nombre="Drew Goddard" fecha_nacimiento="1975" pais_nacimiento="EEUU" />
+  </directores>
+  <compositores>
+    <compositor nombre="Hans Zimmer" fecha_nacimiento="1957" pais_nacimiento="Alemania" />
+    <compositor nombre="David Julyan" fecha_nacimiento="1967" pais_nacimiento="UK" />
+  </compositores>
+  <peliculas>
+    <pelicula titulo="Uno de los nuestros">
+      <estreno>1990</estreno>
+      <titulo>Goodfellas</titulo>
+      <director>Martin Scorsese</director>
+      <compositor>Varios</compositor>
+    </pelicula>
+    <pelicula titulo="Thelma y Louise">
+      <estreno>1991</estreno>
+      <titulo>Thelma y Louise</titulo>
+      <director>Ridley Scott</director>
+      <compositor>Hans Zimmer</compositor>
+    </pelicula>
+    <pelicula titulo="El truco final">
+      <estreno>2006</estreno>
+      <titulo>The Prestige</titulo>
+      <director>Christopher Nolan</director>
+      <compositor>David Julyan</compositor>
+    </pelicula>
+    <pelicula titulo="Origen">
+      <estreno>2010</estreno>
+      <titulo>Inception</titulo>
+      <director>Christopher Nolan</director>
+      <compositor>Hans Zimmer</compositor>
+    </pelicula>
+   <pelicula titulo="La cabana en el bosque">
+      <estreno>2011</estreno>
+      <titulo>The Cabin in the Woods</titulo>
+      <director>Drew Goddard</director>
+      <compositor>David Julyan</compositor>
+    </pelicula>
+  </peliculas>
+</cine>
+

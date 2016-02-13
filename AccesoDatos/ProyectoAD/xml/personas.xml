@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arbol>
+  <nacionalidad>
+    	<lugar nombre="Valencia" pais="Espana" />
+    	<lugar nombre="Gandia" pais="Espana" />
+    	<lugar nombre="Marsella" pais="Francia" />
+  </nacionalidad>
+  <personas>
+    	<persona id="100">
+      		<nombre>Pedro Ramirez Dupont</nombre>
+      		<padre>Juan Ramirez Amigo</padre>
+      		<madre>Jeanne Dupont</madre>
+      		<nacimiento lugar="Valencia" fecha="1992-07-14" />
+		<direccion> calle pez</direccion>
+		<sueldo>1000</sueldo>
+    	</persona>
+    	<persona  id="200">
+      		<nombre>Juan Ramirez Amigo</nombre>
+      		<nacimiento lugar="Gandia" fecha="1961-11-19" />
+		<direccion> calle pez2</direccion>
+		<direccion> calle pez3</direccion>
+		<sueldo>1200</sueldo>
+    	</persona>
+    	<persona id="300">
+     		 <nombre>Jeanne Dupont</nombre>
+      		<nacimiento lugar="Marsella" />
+		<sueldo>2000</sueldo>
+    	</persona>
+	<persona id="400">
+      		<nombre>Sara Soto Otazo</nombre>
+      		<padre>Juan Soto Recio</padre>
+      		<madre>Juana Otazo Sanchez</madre>
+      		<nacimiento lugar="Gandia" fecha="1990-07-14"/>
+		<direccion> calle pez4</direccion>
+		<sueldo>1000</sueldo>
+    	</persona>
+
+  </personas>
+
+ <puestos>
+	<puesto cargo="director" id="200"/>
+	<puesto cargo="recepcionista" id="100"/>
+	<puesto cargo="camarera" id="300"/>
+	<puesto cargo="camarera" id="400"/>
+</puestos>	
+</arbol>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empresa>
+<departamento telefono="8741460">
+	<codigo>B02</codigo>
+	<nombre>Marketing</nombre>
+		<empleado salario="2000">
+			<rut>10934412</rut>
+			<nombre>Parra</nombre>
+		</empleado>
+		<empleado salario="6000">
+			<rut>12008991</rut>
+			<nombre>Chavez</nombre>	
+		</empleado>
+</departamento>
+<departamento telefono="2354928">
+	<codigo>A03</codigo>
+	<nombre>Finanzas</nombre>
+		<empleado salario="1000">
+		<rut>881672</rut>
+		<nombre>Gonzalez</nombre>
+		</empleado>
+</departamento>
+</empresa>
