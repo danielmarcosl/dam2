@@ -8,6 +8,11 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
+
+/**
+ *
+ * @author Daniel Marcos Lorrio
+ */
 public class FicheroCarga {
 
     public static void main(String[] args) {
