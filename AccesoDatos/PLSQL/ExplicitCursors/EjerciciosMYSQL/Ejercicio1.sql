@@ -23,14 +23,13 @@ BEGIN
 	DECLARE v_nombr VARCHAR(20);
 	DECLARE v_asign VARCHAR(15);
 	DECLARE n INT DEFAULT 0;
-	DECLARE i INT DEFAULT 0;
 	DECLARE c_recorrer_alumnos CURSOR
 	FOR
 		SELECT dni, nombre, asignatura
 		FROM alumnos;
 	SELECT COUNT(*) FROM alumnos INTO n;
 	OPEN c_recorrer_alumnos;
-		WHILE i < n DO
+		WHILE n > 0 DO
 			FETCH c_recorrer_alumnos
 			INTO v_dni, v_nombr, v_asign;
 			IF UPPER(v_asign) = 'INFORMATICA' THEN
@@ -40,7 +39,7 @@ BEGIN
 				INSERT INTO otros
 				VALUES (v_dni, v_nombr, v_asign);
 			END IF;
-			SET i = i + 1;
+			SET n = n - 1;
 		END WHILE;
 	CLOSE c_recorrer_alumnos;
 END; $$

@@ -11,24 +11,24 @@ INSERT INTO empleados VALUES
 ('38875A','Rebeca','Perez','1987-09-13');
 
 DELIMITER ##
-CREATE PROCEDURE pro_apellido_fechas()
+CREATE PROCEDURE pro_apellido_fecha()
 BEGIN
 	DECLARE v_apell VARCHAR(10);
 	DECLARE v_fecha DATE;
 	DECLARE n INT DEFAULT 0;
-	DECLARE i INT DEFAULT 0;
 	DECLARE c_recorrer_empleados CURSOR
 	FOR
 		SELECT apellido, fecha
 		FROM empleados
 		ORDER BY apellido;
-	SELECT COUNT(*) FROM alumnos INTO n;
+	SELECT COUNT(*) FROM empleados INTO n;
 	OPEN c_recorrer_empleados;
-		WHILE i < n DO
+		WHILE n > 0 DO
 			FETCH c_recorrer_empleados
 			INTO v_apell, v_fecha;
 			SELECT concat('Apellido ', v_apell, ', Fecha ', v_fecha)
 			AS 'Apellido, Fecha';
+			SET n = n - 1;
 		END WHILE;
 	CLOSE c_recorrer_empleados;
 END; ##
