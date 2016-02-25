@@ -61,8 +61,8 @@ public class Herramientas {
         // Direccion del controlador
         String Driver = "org.exist.xmldb.DatabaseImpl";
         // Ruta completa para llegar al contenedor del que se hacen consultas
-        // "xmldb:exist://localhost:8080/exist/xmlrpc/db/prueba"
-        String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/" + uri;
+        // "xmldb:exist://localhost:8085/exist/xmlrpc/db/prueba"
+        String URI = "xmldb:exist://localhost:8085/exist/xmlrpc/db/" + uri;
         // Usuario y contrasena de la DB
         // "admin"
         String username = user;
