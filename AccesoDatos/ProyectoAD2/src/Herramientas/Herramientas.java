@@ -289,4 +289,106 @@ public class Herramientas {
             ex.printStackTrace();
         }
     }
+
+    public static Connection connectORACLE(String user, String pass) {
+        String host = "localhost"; // O ip como "192.168.35.185"
+        String puerto = "1521";
+        String sid = "XE";
+        String driver = "oracle.jdbc.driver.OracleDriver";
+        String ulrjdbc = "jdbc:oracle:thin:" + user + "/" + pass + "@" + host + ":" + puerto + ":" + sid;
+
+        Connection c = null;
+
+        try {
+            Class.forName(driver).newInstance();
+            c = DriverManager.getConnection(ulrjdbc);
+            System.out.println("BD Abierta con exito");
+        } catch (Exception e) {
+            System.out.println("Error al abrir BD");
+            e.printStackTrace();
+        }
+        return c;
+    }
+
+    public static void implicitCursorORACLE(String llamada) {
+
+        // Crear CallableStatement con conexion y llamada
+        try {
+            // Introducir los parametros de e/s con sus tipos
+            // Ejecutar CallableStatement 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (x != null) {
+                try {
+                    x.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (c != null) {
+                try {
+                    c.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void explicitCursorORACLE(String llamada) {
+
+        // Crear CallableStatement con conexion y llamada
+        try {
+            // Introducir los parametros de e/s con sus tipos
+            // Ejecutar CallableStatement 
+
+            // Crear la coleccion ResultSet para recibir el cursor e iterar para mostrar los datos
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (x != null) {
+                try {
+                    x.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (c != null) {
+                try {
+                    c.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void callFunctionORACLE(String llamada) {
+
+        // Crear CallableStatement con conexion y llamada
+        try {
+            // Introducir los parametros de e/s con sus tipos
+            // Ejecutar CallableStatement 
+
+            // Crear la coleccion ResultSet para recibir el cursor e iterar para mostrar los datos
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (x != null) {
+                try {
+                    x.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (c != null) {
+                try {
+                    c.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
