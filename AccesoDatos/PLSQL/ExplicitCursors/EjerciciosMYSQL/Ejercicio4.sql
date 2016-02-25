@@ -14,14 +14,16 @@ CONSTRAINT FK_empleado2_cod_dept FOREIGN KEY (cod_dept) REFERENCES departamento(
 );
 
 INSERT INTO departamento VALUES
-(11,'RRHH',2),
-(22,'Direccion',1);
+(1,'Ventas',NULL),
+(2,'Marketing',NULL),
+(3,'RRHH',NULL),
+(4,'Direccion',NULL);
 
 INSERT INTO empleado2 VALUES
-('1234G','Reki',25,'H',null),
-('4564E','Eiichiro',21,'H',null),
-('7862L','Haruka',24,'M',null),
-('1678M','Eir',26,'M',null);
+('10','Juan',30,'H',NULL),
+('20','Pedro',40,'H',3),
+('30','Raul',50,'H',2),
+('40','Sonia',20,'M',NULL);
 
 DELIMITER %%
 CREATE PROCEDURE pro_actualizar_departamento()
@@ -40,11 +42,11 @@ BEGIN
 			INTO v_dni, v_sexo;
 			IF v_sexo = 'M' THEN
 				UPDATE empleado2
-				SET cod_dept = 22
+				SET cod_dept = 4
 				WHERE dni = v_dni;
 			ELSEIF v_sexo = 'H' THEN
 				UPDATE empleado2
-				SET cod_dept = 11
+				SET cod_dept = 3
 				WHERE dni = v_dni;
 			END IF;
 			SET n = n - 1;
