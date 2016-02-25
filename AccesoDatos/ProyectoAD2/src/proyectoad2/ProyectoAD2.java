@@ -12,7 +12,7 @@ import org.xmldb.api.base.Collection;
 public class ProyectoAD2 {
 
     public static void main(String[] args) {
-//        Collection col = Herramientas.connectExistDB("prueba", "admin");
+        Collection col = Herramientas.connectExistDB("prueba", "admin");
 //        Herramientas.operationExistDB(col, "for $doc in //libro/titulo\n"
 //                + "let $a := update insert attribute traduccion{'espanol'} into $doc\n"
 //                + "return $doc");
@@ -21,24 +21,24 @@ public class ProyectoAD2 {
 //                + "nombre varchar(20),"
 //                + "edad int,"
 //                + "salary float);");
-        
-        
-        ArrayList lista = new ArrayList();
+        Herramientas.operationExistDB(col, "let $b:= //libro/titulo\n"
+                + "return $b");
 
-        lista.add(1);
-        lista.add("pepe");
-        lista.add(2);
-        lista.add("pepa");
-        lista.add(3);
-        lista.add("silvia");
-        
-        HashMap map = new HashMap();
-        map.put(1, "pepe");
-        map.put(2, "pepa");
-        map.put(3, "silvia");
-        
-        Herramientas.insertTokenizerSQLite("ejemplo");
+//        ArrayList lista = new ArrayList();
+//
+//        lista.add(1);
+//        lista.add("pepe");
+//        lista.add(2);
+//        lista.add("pepa");
+//        lista.add(3);
+//        lista.add("silvia");
+//        
+//        HashMap map = new HashMap();
+//        map.put(1, "pepe");
+//        map.put(2, "pepa");
+//        map.put(3, "silvia");
+//        
+//        Herramientas.insertTokenizerSQLite("ejemplo");
     }
 
-    
 }
