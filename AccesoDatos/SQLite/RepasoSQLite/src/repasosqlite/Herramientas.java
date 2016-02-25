@@ -158,10 +158,10 @@ public class Herramientas {
         }
     }
 
-    public static void insertTokenizerSQLite(String db) {
+    public static void insertTokenizerSQLite(String db, String fi, String tabla) {
         try {
-            BufferedReader entrada = new BufferedReader(new FileReader("C:\\petra\\prueba.txt"));
-            String consulta = "insert into eje1 values(?,?)";
+            BufferedReader entrada = new BufferedReader(new FileReader("C:\\petra\\" + fi));
+            String consulta = "INSERT INTO " + tabla + " VALUES(?,?,?)";
             String linea = null;
             PreparedStatement ps = connectSQLite(db).prepareStatement(consulta);
 
@@ -169,14 +169,16 @@ public class Herramientas {
             while ((linea = entrada.readLine()) != null) {
                 // Declaracion de StringTokenizer para la linea almacenada
                 // con el token !
-                StringTokenizer tok = new StringTokenizer(linea, "#");
+                StringTokenizer tok = new StringTokenizer(linea, "@");
                 // Mientras haya tokens, añadirlos al ArrayList<Integer>
                 while (tok.hasMoreTokens()) {
-                    int id = Integer.parseInt(tok.nextToken());
-                    String nom = tok.nextToken();
+                    int cod = Integer.parseInt(tok.nextToken());
+                    int edad = Integer.parseInt(tok.nextToken());
+                    String dir = tok.nextToken();
 
-                    ps.setInt(1, id);
-                    ps.setString(2, nom);
+                    ps.setInt(1, cod);
+                    ps.setInt(2, edad);
+                    ps.setString(3, dir);
                     ps.executeUpdate();
                 }
             }
