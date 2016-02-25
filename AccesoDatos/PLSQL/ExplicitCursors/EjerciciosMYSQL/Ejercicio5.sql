@@ -16,9 +16,9 @@ DELIMITER &&
 CREATE TRIGGER tr_borrar_empleado
 AFTER DELETE ON empleado3 FOR EACH ROW
 BEGIN
-	IF old.comision = 0 THEN
+	IF OLD.comision = 0 THEN
 		INSERT INTO copia_emple (dni, nombre, comision)
-		VALUES (old.dni, old.nombre, old.comision);
+		VALUES (OLD.dni, OLD.nombre, OLD.comision);
 	END IF;
 END; &&
 DELIMITER ;
