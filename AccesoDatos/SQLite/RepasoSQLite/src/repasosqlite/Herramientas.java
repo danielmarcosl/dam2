@@ -22,7 +22,7 @@ import java.util.StringTokenizer;
 
 /**
  *
- * @author AlumnoT
+ * @author Daniel Marcos Lorrio
  */
 public class Herramientas {
 
