@@ -1,4 +1,4 @@
-1@25@Calle de la piruleta
-@2@24@Calle del bollo de chocolate
-@3@26@Calle del bizcocho
-@4@22@Calle de la torrija
+1@25@Madrid
+@2@24@Burgos
+@3@26@Madrid
+@4@22@EuskalHerria
