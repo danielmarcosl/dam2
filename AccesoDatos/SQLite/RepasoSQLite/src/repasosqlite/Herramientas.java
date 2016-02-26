@@ -34,7 +34,6 @@ public class Herramientas {
         try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite3\\" + ruta + ".db");
-            System.out.println("DB abierta con exito :D");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error al iniciar la DB D:");
@@ -92,16 +91,20 @@ public class Herramientas {
         }
     }
 
-    public static void selectSQLite(String ruta, String consulta, float f) {
+    public static void selectDireccion(String ruta, String s) {
         try {
+            String consulta = "SELECT codigo_pedido, descripcion"
+                    + " FROM pedido p"
+                    + " JOIN cliente c"
+                    + " ON p.codigo_cliente = c.codigo_cliente"
+                    + " WHERE c.direccion = '" + s + "'";
             PreparedStatement sel = connectSQLite(ruta).prepareStatement(consulta);
-            // select id from companya where salary > ? and nombre like "?"
-
-            sel.setFloat(1, f); // El 1 corresponde a los interrogantes del where
-
+            
             ResultSet r1 = sel.executeQuery();
             while (r1.next()) {
-                System.out.println(r1.getInt(1)); // El 1 corresponde al numero de columnas del select
+                System.out.println("-------------------------");
+                System.out.println("Codigo de producto: " + r1.getInt(1));
+                System.out.println("Descripcion: " + r1.getString(2));
             }
             r1.close();
             sel.close();
@@ -129,6 +132,8 @@ public class Herramientas {
                 ps.setInt(6, (int) it.next());
                 ps.executeUpdate();
             }
+            System.out.println("Insercion en Pedido finalizado con exito");
+            ps.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -162,7 +167,7 @@ public class Herramientas {
         }
     }
 
-    public static void insertTokenizerSQLite(String db, String fi, String tabla) {
+    public static void insertClientes(String db, String fi, String tabla) {
         try {
             BufferedReader entrada = new BufferedReader(new FileReader("C:\\petra\\" + fi));
             String consulta = "INSERT INTO " + tabla + " VALUES(?,?,?)";
@@ -186,6 +191,7 @@ public class Herramientas {
                     ps.executeUpdate();
                 }
             }
+            System.out.println("Clientes insertados con exito");
             // Cerrar el fichero
             entrada.close();
             // SI ha habido un error, mostrarlo

@@ -9,11 +9,15 @@ import java.util.ArrayList;
 public class RepasoSQLite {
 
     public static void main(String[] args) {
-        // Insertar desde fichero con tokens
-        //Herramientas.insertTokenizerSQLite("gurru", "clientes.txt", "cliente");
+        // Inserts
+        //Herramientas.insertClientes("gurru", "clientes.txt", "cliente");
         //Herramientas.insertPedidos("pedidos.txt", "gurru", "pedido");
         
-        Herramientas.selectCliente("gurru");
-        Herramientas.selectPedido("gurru");
+        // Selects
+        //Herramientas.selectCliente("gurru");
+        //Herramientas.selectPedido("gurru");
+        
+        // Select pedidos con direccion = Madrid
+        Herramientas.selectDireccion("gurru", "Madrid");
     }
 }
