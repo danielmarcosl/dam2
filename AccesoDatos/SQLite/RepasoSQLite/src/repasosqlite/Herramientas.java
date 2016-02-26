@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -120,7 +122,7 @@ public class Herramientas {
 
     public static void insertArrayListSQLite(String db, ArrayList al, String tabla) {
 
-        String consulta = "Insert into " + tabla + "(id, nombre) values (?,?)";
+        String consulta = "Insert into " + tabla + "(codigo_pedido, descripcion, fecha_pedido, email_contacto, telefono_cliente, codigo_cliente) values (?,?,?,?,?,?)";
 
         try {
             PreparedStatement ps = connectSQLite(db).prepareStatement(consulta);
@@ -130,6 +132,10 @@ public class Herramientas {
             while (it.hasNext()) {
                 ps.setInt(1, (int) it.next());
                 ps.setString(2, (String) it.next());
+                ps.setString(3, (String) it.next());
+                ps.setString(4, (String) it.next());
+                ps.setInt(5, (int) it.next());
+                ps.setInt(6, (int) it.next());
                 ps.executeUpdate();
             }
         } catch (SQLException ex) {
@@ -154,6 +160,34 @@ public class Herramientas {
                 ps.executeUpdate();
             }
         } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void insertPedidos(String archivo, String db, String tabla) {
+        ArrayList p = new ArrayList();
+        
+        try {
+            BufferedReader fl = new BufferedReader(new FileReader("C:\\petra\\" + archivo));
+            String linea = null;
+            
+            while((linea = fl.readLine()) != null) {
+                StringTokenizer tok = new StringTokenizer(linea, "#");
+                
+                while(tok.hasMoreTokens()) {
+                    p.add(Integer.parseInt(tok.nextToken()));
+                    p.add(tok.nextToken());
+                    p.add(tok.nextToken());
+                    p.add(tok.nextToken());
+                    p.add(Integer.parseInt(tok.nextToken()));
+                    p.add(Integer.parseInt(tok.nextToken()));
+                }
+                insertArrayListSQLite(db, p, tabla);
+                p.clear();
+            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
