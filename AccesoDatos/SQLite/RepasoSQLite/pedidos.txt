@@ -1,6 +1,6 @@
-1 Tornillos 2014-10-15 piruleto@gmail.com 123456789 1
-2 Bombillas 2014-10-17 bollito@hotmail.es 789654258 1
-3 Papeles 2014-10-21 bizcochito@yahoo.es 956745892,4
-4 Senoras 2014-1022 piruleto@gmail.com 963569874 2
-5 IOExceptions 2014-11-02 teletorrija@gmail.com 125789658 3
-6 Cazamariposas 2014-11-12 claves@java.com 915364785 3
+1#Tornillos#2014-10-15#piruleto@gmail.com#123456789#1
+#2#Bombillas#2014-10-17#bollito@hotmail.es#789654258#1
+#3#Papeles#2014-10-21#bizcochito@yahoo.es#956745892#4
+#4#Senoras#2014-1022#piruleto@gmail.com#963569874#2
+#5#IOExceptions#2014-11-02#teletorrija@gmail.com#125789658#3
+#6#Cazamariposas#2014-11-12#claves@java.com#915364785#3
