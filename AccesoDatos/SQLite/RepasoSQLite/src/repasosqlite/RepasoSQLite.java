@@ -13,6 +13,7 @@ public class RepasoSQLite {
         //Herramientas.insertTokenizerSQLite("gurru", "clientes.txt", "cliente");
         //Herramientas.insertPedidos("pedidos.txt", "gurru", "pedido");
         
-        Herramientas.consultSQLite("gurru");
+        Herramientas.selectCliente("gurru");
+        Herramientas.selectPedido("gurru");
     }
 }

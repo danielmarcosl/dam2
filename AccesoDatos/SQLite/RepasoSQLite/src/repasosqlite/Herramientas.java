@@ -42,7 +42,7 @@ public class Herramientas {
         return c;
     }
 
-    public static void consultSQLite(String ruta) {
+    public static void selectPedido(String ruta) {
         try {
             Statement stmt = connectSQLite(ruta).createStatement();
             String consulta = "select * from pedido;";
@@ -62,6 +62,28 @@ public class Herramientas {
                 System.out.println("El email de contacto es: " + email_contacto);
                 System.out.println("El telefono de cliente es: " + telefono_cliente);
                 System.out.println("El codigo de cliente es: " + codigo_cliente);
+            }
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void selectCliente(String ruta) {
+        try {
+            Statement stmt = connectSQLite(ruta).createStatement();
+            String consulta = "select * from cliente;";
+            ResultSet rs = stmt.executeQuery(consulta + ";");
+
+            while (rs.next()) {
+                int codigo_cliente = rs.getInt(1); // posicion que devuelve
+                int edad = rs.getInt(2);
+                String direccion = rs.getString(3);
+                System.out.println("------------------------------------");
+                System.out.println("El codigo del cliente es: " + codigo_cliente);
+                System.out.println("La edad es: " + edad);
+                System.out.println("La direccion es: " + direccion);
             }
             rs.close();
             stmt.close();
