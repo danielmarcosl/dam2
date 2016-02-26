@@ -42,17 +42,26 @@ public class Herramientas {
         return c;
     }
 
-    public static void consultSQLite(String ruta, String consulta) {
+    public static void consultSQLite(String ruta) {
         try {
             Statement stmt = connectSQLite(ruta).createStatement();
-
+            String consulta = "select * from pedido;";
             ResultSet rs = stmt.executeQuery(consulta + ";");
 
             while (rs.next()) {
-                int id = rs.getInt(1); // posicion que devuelve
-                String nom = rs.getString(2);
-                System.out.println("El id es: " + id);
-                System.out.println("El nombre es: " + nom);
+                int codigo_pedido = rs.getInt(1); // posicion que devuelve
+                String descripcion = rs.getString(2);
+                String fecha_pedido = rs.getString(3);
+                String email_contacto = rs.getString(4);
+                int telefono_cliente = rs.getInt(5);
+                int codigo_cliente = rs.getInt(6);
+                System.out.println("------------------------------------");
+                System.out.println("El codigo del pedido es: " + codigo_pedido);
+                System.out.println("La descripcion es: " + descripcion);
+                System.out.println("La fecha del pedido es: " + fecha_pedido);
+                System.out.println("El email de contacto es: " + email_contacto);
+                System.out.println("El telefono de cliente es: " + telefono_cliente);
+                System.out.println("El codigo de cliente es: " + codigo_cliente);
             }
             rs.close();
             stmt.close();
@@ -81,7 +90,8 @@ public class Herramientas {
 
     public static void insertArrayListSQLite(String db, ArrayList al, String tabla) {
 
-        String consulta = "Insert into " + tabla + "(codigo_pedido, descripcion, fecha_pedido, email_contacto, telefono_cliente, codigo_cliente) values (?,?,?,?,?,?)";
+        String consulta = "Insert into " + tabla
+                + "(codigo_pedido, descripcion, fecha_pedido, email_contacto, telefono_cliente, codigo_cliente) values (?,?,?,?,?,?)";
 
         try {
             PreparedStatement ps = connectSQLite(db).prepareStatement(consulta);
@@ -101,18 +111,18 @@ public class Herramientas {
             ex.printStackTrace();
         }
     }
-    
+
     public static void insertPedidos(String archivo, String db, String tabla) {
         ArrayList p = new ArrayList();
-        
+
         try {
             BufferedReader fl = new BufferedReader(new FileReader("C:\\petra\\" + archivo));
             String linea = null;
-            
-            while((linea = fl.readLine()) != null) {
+
+            while ((linea = fl.readLine()) != null) {
                 StringTokenizer tok = new StringTokenizer(linea, "#");
-                
-                while(tok.hasMoreTokens()) {
+
+                while (tok.hasMoreTokens()) {
                     p.add(Integer.parseInt(tok.nextToken()));
                     p.add(tok.nextToken());
                     p.add(tok.nextToken());
