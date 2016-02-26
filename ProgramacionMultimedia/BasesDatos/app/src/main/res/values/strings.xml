@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android Base Datos</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="val">Valor:</string>
+    <string name="nreg">Codigo:</string>
+    <string name="ins">Insertar</string>
+    <string name="act">Actualizar</string>
+    <string name="elim">Eliminar</string>
+    <string name="cons">Consultar</string>
+
+</resources>
