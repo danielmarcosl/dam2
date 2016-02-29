@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.sgoliver.android.bd.test">
+    package="com.alumnot.basesdatos.test">
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="23" />
 
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="net.sgoliver.android.bd"
+                     android:targetPackage="com.alumnot.basesdatos"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for net.sgoliver.android.bd"/>
+                     android:label="Tests for com.alumnot.basesdatos"/>
 </manifest>

@@ -2,11 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\AlumnoT\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jar="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-524c5fd915afb970523b8f9dbb9f39aa7145604f.jar" />
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-4bb443bdd96a4cfb4c7b7148cab43319fdbc9cb3.jar" />
+    </item>
+    <item
+        jar="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\pre-dexed\debug\classes-93d515029892425bf182790e03640308bfe7dd21.jar" />
+    </item>
+    <item
+        jar="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\pre-dexed\debug\classes-b92b3ec943a7c61851083df10b9e0d3de21e9834.jar" />
+    </item>
+    <item
+        jar="C:\Users\AlumnoT\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\AlumnoT\Documents\dam2\ProgramacionMultimedia\BasesDatos\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-04d81ab58564d53e2a6ad3da91ac900c3c39e323.jar" />
     </item>
 
 </items>
