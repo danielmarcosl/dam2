@@ -20,9 +20,9 @@ public final class R {
     public static final class id {
         public static final int LinearLayout1=0x7f080000;
         public static final int action_settings=0x7f08000a;
-        public static final int btnActualizar=0x7f080006;
+        public static final int btnActualizar=0x7f080007;
         public static final int btnConsultar=0x7f080008;
-        public static final int btnEliminar=0x7f080007;
+        public static final int btnEliminar=0x7f080006;
         public static final int btnInsertar=0x7f080005;
         public static final int textView1=0x7f080001;
         public static final int textView2=0x7f080003;
