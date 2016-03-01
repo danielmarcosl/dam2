@@ -38,6 +38,24 @@ public class Herramientas {
         return c;
     }
 
+    public static void selectEj3(String ruta, String consulta, float f) {
+        try {
+            PreparedStatement sel = connectSQLite(ruta).prepareStatement(consulta);
+            // select id from companya where salary > ? and nombre like "?"
+
+            sel.setFloat(1, f); // El 1 corresponde a los interrogantes del where
+
+            ResultSet r1 = sel.executeQuery();
+            while (r1.next()) {
+                System.out.println(r1.getString(1)); // El 1 corresponde al numero de columnas del select
+            }
+            r1.close();
+            sel.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public static void selectPedido(String ruta) {
         try {
             Statement stmt = connectSQLite(ruta).createStatement();
@@ -96,7 +114,7 @@ public class Herramientas {
                     + " ON p.codigo_cliente = c.codigo_cliente"
                     + " WHERE c.direccion = '" + s + "'";
             PreparedStatement sel = connectSQLite(ruta).prepareStatement(consulta);
-            
+
             ResultSet r1 = sel.executeQuery();
             while (r1.next()) {
                 System.out.println("-------------------------");

@@ -18,6 +18,10 @@ public class RepasoSQLite {
         //Herramientas.selectPedido("gurru");
         
         // Select pedidos con direccion = Madrid
-        Herramientas.selectDireccion("gurru", "Madrid");
+        //Herramientas.selectDireccion("gurru", "Madrid");
+        
+        // Select direccion del cliente con mas de 5 pedidos
+        Herramientas.selectEj3("guru", "SELECT direccion FROM cliente WHERE codigo_cliente IN ("
+                + "SELECT codigo_cliente FROM pedido GROUP BY codigo_cliente HAVING COUNT(codigo_pedido) > ?)", 2);
     }
 }
