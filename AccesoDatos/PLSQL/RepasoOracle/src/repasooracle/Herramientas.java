@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -13,7 +14,7 @@ import oracle.jdbc.OracleTypes;
  */
 public class Herramientas {
 
-    public static Connection connectORACLE(String user, String pass) {
+    private static Connection connectORACLE(String user, String pass) {
         String host = "localhost"; // O ip como "192.168.35.185"
         String puerto = "1521";
         String sid = "XE";
@@ -140,6 +141,45 @@ public class Herramientas {
             System.out.println("Datos insertados");
 
             // Recoger y mostrar resultados
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (x != null) {
+                try {
+                    x.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (c != null) {
+                try {
+                    c.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
+    public static void ej4(String llamada) {
+        
+        // Crear CallableStatement con conexion y llamada
+        Connection c = null;
+        CallableStatement x = null;
+        try {
+            c = connectORACLE("usu1", "root");
+            x = c.prepareCall(llamada);
+            // Introducir los parametros de e/s con sus tipos
+            x.registerOutParameter(1, Types.INTEGER);
+            x.setInt(2, 3);
+            
+            // Ejecutar CallableStatement
+            x.executeUpdate();
+            
+            int re = x.getInt(1);
+            
+            System.out.println(re);
+            
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
