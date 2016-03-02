@@ -83,23 +83,63 @@ public class Herramientas {
         try {
             c = connectORACLE("usu1", "root");
             x = c.prepareCall(llamada);
-            
+
             // Introducir los parametros de e/s con sus tipos
             x.registerOutParameter(1, OracleTypes.CURSOR);
             x.setString(2, "Idol");
             x.setInt(3, 10);
-            
+
             // Ejecutar CallableStatement
             x.executeUpdate();
-            
+
             ResultSet rs = (ResultSet) x.getObject(1);
-            
+
             // Recoger y mostrar resultados
-            while(rs.next()) {
+            while (rs.next()) {
                 String nombre = rs.getString("Nombre");
                 System.out.println(nombre);
             }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (x != null) {
+                try {
+                    x.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (c != null) {
+                try {
+                    c.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void ej3(String llamada) {
+
+        // Crear CallableStatement con conexion y llamada
+        Connection c = null;
+        CallableStatement x = null;
+        try {
+            c = connectORACLE("usu1", "root");
+            x = c.prepareCall(llamada);
+
+            // Introducir los parametros de e/s con sus tipos
+            x.setString(1, "Plastilina");
+            x.setInt(2, 5);
+            x.setString(3, "Papo");
+
+            // Ejecutar CallableStatement
+            x.executeUpdate();
+
+            System.out.println("Datos insertados");
+
+            // Recoger y mostrar resultados
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
