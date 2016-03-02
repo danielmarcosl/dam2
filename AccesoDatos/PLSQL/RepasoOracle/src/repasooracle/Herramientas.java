@@ -33,7 +33,7 @@ public class Herramientas {
         return c;
     }
 
-    public static void selectExplicitCursor(String llamada) {
+    public static void ej1(String llamada) {
 
         // Crear CallableStatement con conexion y llamada
         CallableStatement x = null;
@@ -75,20 +75,30 @@ public class Herramientas {
         }
     }
 
-    public static void insertExplicitCursor(String llamada) {
+    public static void ej2(String llamada) {
 
         // Crear CallableStatement con conexion y llamada
         Connection c = null;
         CallableStatement x = null;
         try {
-            c = connectORACLE("hr", "root");
+            c = connectORACLE("usu1", "root");
             x = c.prepareCall(llamada);
             
             // Introducir los parametros de e/s con sus tipos
+            x.registerOutParameter(1, OracleTypes.CURSOR);
+            x.setString(2, "Idol");
+            x.setInt(3, 10);
             
             // Ejecutar CallableStatement
+            x.executeUpdate();
+            
+            ResultSet rs = (ResultSet) x.getObject(1);
             
             // Recoger y mostrar resultados
+            while(rs.next()) {
+                String nombre = rs.getString("Nombre");
+                System.out.println(nombre);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
