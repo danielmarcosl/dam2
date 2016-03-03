@@ -1,0 +1,8 @@
+gato cat
+casa house
+espada sword
+ordenador computer
+coche car
+pelicula movie
+musica music
+libro book
