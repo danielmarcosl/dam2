@@ -1,0 +1,3 @@
+Chihuahua;2;Mexico
+Boxer;17;Vallecas
+Perropatada;6;Madrid
