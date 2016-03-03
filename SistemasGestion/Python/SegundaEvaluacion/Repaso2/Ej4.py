@@ -14,11 +14,10 @@ from os import listdir
 from os.path import isfile, join
 
 def comprobar_nombre(s) :
-	files = [f for f in listdir(os.getcwd()) if isfile(join(os.getcwd(),f))]
-	for i in files :
-		if s == i :
+		if s == sys.argv[1] :
 			return True
-	return False
+		else :
+			return False
 
 # main
 
