@@ -14,14 +14,14 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.second_activity);
 
         // Cogemos el paquete del intent.
-        SharedPreferences preferences=getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
 
         // Creamos las variables donde introduciremos los datos.
-        TextView usuario=(TextView) findViewById(R.id.usuarioA2);
-        TextView contraseña=(TextView) findViewById(R.id.contraseñaA2);
+        TextView usuario = (TextView) findViewById(R.id.usuarioA2);
+        TextView contraseña = (TextView) findViewById(R.id.contraseñaA2);
 
         // Escribiremos el texto en cada textView del paquete.
-        usuario.setText(preferences.getString("user","No encontrado"));
-        contraseña.setText(preferences.getString("pass","No encontrado"));
+        usuario.setText(preferences.getString("user", "No encontrado"));
+        contraseña.setText(preferences.getString("pass", "No encontrado"));
     }
 }
